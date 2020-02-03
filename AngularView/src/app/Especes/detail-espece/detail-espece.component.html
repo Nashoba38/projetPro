@@ -1,0 +1,64 @@
+<div class="titreBox container-fluid ">
+  <div class="row mt-5">
+    <div class="col-12" *ngIf="espece">
+      <h2 class="animated slideInLeft">{{ espece.NomFrancais }}</h2>
+    </div>
+  </div>
+  <div class="row mb-5">
+    <div class="col-12" *ngIf="espece">
+      <h4><i>{{ espece.NomLatin }}</i></h4>
+    </div>
+  </div>
+</div>
+<div id="boutonRetour" class="row">
+  <div class="wrapper col-12 d-flex">
+    <nav>
+      <a [routerLink]="['/discover']" class="btn btn--border btn--primary btn--animated mx-2 mt-5">Retour<i
+          class="fas fa-image"></i></a>
+    </nav>
+  </div>
+</div>
+
+<div class="content container">
+  <div class="insert row p-5">
+    <div class="col-12 col-md-6 mb-5">
+      <div>
+        <h6><i class="fas fa-tree"> </i><strong> Habitat : </strong></h6>
+        <p *ngIf="espece">{{espece.Habitat}}</p>
+      </div>
+      <br>
+      <div>
+        <h6><i class="fas fa-globe-africa pb-3"> </i><strong>Distribution : </strong></h6>
+        <p *ngIf="espece">{{espece.Repartition}}</p>
+      </div>
+      <br>
+      <div>
+        <h6><i class="fas fa-utensils"> </i><strong> Alimentation : </strong></h6>
+        <p *ngIf="espece">{{espece.Alimentation}}</p>
+      </div>
+      <div>
+        <h6><i class="fas fa-venus-mars"> </i><strong> Reproduction / floraison: </strong></h6>
+        <p *ngIf="espece">{{ espece.Reproduction }}</p>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <div>
+        <h6><i class="fas fa-paw"> </i><strong> Description : </strong></h6>
+        <p *ngIf="espece">{{ espece.Description }}</p>
+      </div>
+      <br>
+      <div>
+        <h6><i class="fas fa-feather-alt"> </i><strong> Moeurs / généralités : </strong></h6>
+        <p *ngIf="espece">{{ espece.Moeurs }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="photoBox container-fluid">
+  <div class="row" *ngIf="espece">
+    <img src="http://127.0.0.1:8000/uploads/images/espece/{{espece.Image}}" alt="{{espece.NomFrancais}}"
+      title="{{espece.NomFrancais}}">
+  </div>
+</div>

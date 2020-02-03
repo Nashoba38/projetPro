@@ -1,0 +1,24 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+  <p class="animated slideInDown navbar-brand">NaturaClic <i class="fas fa-seedling"></i></p>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="animated slideInDown navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Accueil <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link" [routerLink]="['/discover']"><i class="fas fa-book pr-2"></i>Découvrir</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link" [routerLink]="['/galerie']"><i class="fas fa-camera pr-2"></i>Galerie</a>
+      </li>
+      <li class="nav-item dropdown">
+          <a class="nav-link" [routerLink]="['/articles']"><i class="fas fa-file-signature pr-2"></i>Articles</a>
+        </li>
+    </ul>
+  </div>
+</nav>

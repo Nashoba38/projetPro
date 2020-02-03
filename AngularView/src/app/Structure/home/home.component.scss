@@ -1,0 +1,25 @@
+.firstTitle {
+  margin-top: 100px;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.home {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.548);
+  padding: 20px 15px;
+  margin-bottom: 30px;
+
+  p {
+    color: rgba(223, 255, 106, 0.603);
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: 0!important;
+    font-family: "Rajdhani", sans-serif;
+
+    .route {
+      color: white;
+      font-weight: bolder;
+    }
+  }
+}
