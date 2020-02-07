@@ -1,72 +1,37 @@
-
 <div class="container mt-5">
-    <div class="row mt-5">
-        <div class="col-12 mt-5">
-          <h1 class="mb-3">Galerie photo</h1>
-          <h4>Ici vous trouverez toutes mes photos, soit en vrac, soit classées par genre, pays, styles, ...</h4>
-          <br>
-          <div class="button_cont mb-5" align="center">
-            <a class="bouton mx-3" href="#" rel="nofollow noopener">Amphibiens</a>
-            <a class="bouton mx-3" href="#" rel="nofollow noopener">Flore</a>
-            <a class="bouton mx-3" href="#" rel="nofollow noopener">Invertébrés</a>
-            <a class="bouton mx-3" href="#" rel="nofollow noopener">Mammifères</a>
-            <a class="bouton mx-3" href="#" rel="nofollow noopener">Paysages</a>
-            <a class="bouton mx-3" href="#" rel="nofollow noopener">Oiseaux</a>
-            <a class="bouton mx-3" href="#" rel="nofollow noopener">Reptiles</a>
-
-          </div>
-        </div>
+  <div class="row mt-5">
+    <div class="col-12 mt-5">
+      <h1 class="mb-3">Galerie photo</h1>
+      <h4>
+        Ici vous trouverez toutes mes photos, soit en vrac, soit classées par
+        genre, pays, styles, ...
+      </h4>
+      <br />
+      <div class="button_cont mb-5" align="center">
+        <a class="bouton mx-3" href="#" rel="nofollow noopener">Amphibiens</a>
+        <a class="bouton mx-3" href="#" rel="nofollow noopener">Flore</a>
+        <a class="bouton mx-3" href="#" rel="nofollow noopener">Invertébrés</a>
+        <a class="bouton mx-3" href="#" rel="nofollow noopener">Mammifères</a>
+        <a class="bouton mx-3" href="#" rel="nofollow noopener">Paysages</a>
+        <a class="bouton mx-3" href="#" rel="nofollow noopener">Oiseaux</a>
+        <a class="bouton mx-3" href="#" rel="nofollow noopener">Reptiles</a>
       </div>
-      <div class='list-group gallery mt-5'>
-        <div class="row mt-5">
-            <div class='col-3'>
-                <a class="thumbnail fancybox" rel="ligthbox" href="../../../assets/images/vipere.jpg">
-                    <img class="img-responsive" alt="" src="http://placehold.it/320x320" />
-                    <div class='text-right'>
-                        <small class='text-muted'>Image Title</small>
-                    </div> <!-- text-right / end -->
-                </a>
-            </div> <!-- col-6 / end -->
-            <div class='col-3'>
-                <a class="thumbnail fancybox" rel="ligthbox" href="http://placehold.it/300x320.png">
-                    <img class="img-responsive" alt="" src="http://placehold.it/320x320" />
-                    <div class='text-right'>
-                        <small class='text-muted'>Image Title</small>
-                    </div> <!-- text-right / end -->
-                </a>
-            </div> <!-- col-6 / end -->
-            <div class='col-3'>
-                <a class="thumbnail fancybox" rel="ligthbox" href="http://placehold.it/300x320.png">
-                    <img class="img-responsive" alt="" src="http://placehold.it/320x320" />
-                    <div class='text-right'>
-                        <small class='text-muted'>Image Title</small>
-                    </div> <!-- text-right / end -->
-                </a>
-            </div> <!-- col-6 / end -->
-            <div class='col-3'>
-                <a class="thumbnail fancybox" rel="ligthbox" href="http://placehold.it/300x320.png">
-                    <img class="img-responsive" alt="" src="http://placehold.it/320x320" />
-                    <div class='text-right'>
-                        <small class='text-muted'>Image Title</small>
-                    </div> <!-- text-right / end -->
-                </a>
-            </div> <!-- col-6 / end -->
-            <div class='col-3'>
-                <a class="thumbnail fancybox" rel="ligthbox" href="http://placehold.it/300x320.png">
-                    <img class="img-responsive" alt="" src="http://placehold.it/320x320" />
-                    <div class='text-right'>
-                        <small class='text-muted'>Image Title</small>
-                    </div> <!-- text-right / end -->
-                </a>
-            </div> <!-- col-6 / end -->
-            <div class='col-3'>
-                <a class="thumbnail fancybox" rel="ligthbox" href="http://placehold.it/300x320.png">
-                    <img class="img-responsive" alt="" src="http://placehold.it/320x320" />
-                    <div class='text-right'>
-                        <small class='text-muted'>Image Title</small>
-                    </div> <!-- text-right / end -->
-                </a>
-            </div> <!-- col-6 / end -->
-        </div> <!-- list-group / end -->
-	</div> <!-- row / end -->
-</div> <!-- container / end -->
+    </div>
+  </div>
+  <div class="list-group gallery mt-5">
+    <div class="row mt-5">
+      <div class="col-4" *ngFor="let photo of photos">
+        <img
+          class="img-responsive"
+          alt=""
+          src="http://127.0.0.1:8000/uploads/images/espece/{{ photo.Image }}"
+          width="250"
+        />
+      </div>
+      <!-- col-6 / end -->
+    </div>
+    <!-- list-group / end -->
+  </div>
+  <!-- row / end -->
+</div>
+<!-- container / end -->

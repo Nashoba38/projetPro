@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EspecesService } from '../../Especes/especes.service';
 
 @Component({
   selector: 'app-galerie-all',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GalerieAllComponent implements OnInit {
 
-  constructor() { }
+  photos = [];
+
+  constructor(private especesService: EspecesService) { }
 
   ngOnInit() {
+    this.getPhotos();
+  }
+
+  getPhotos(): void {
+    this.especesService.getPhotos().subscribe(data => ((this.photos = data)));
   }
 
 }

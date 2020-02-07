@@ -1,5 +1,5 @@
 import { CategoriesService } from '../categories.service';
-import { EspecesService } from './../../Especes/especes.service';
+import { EspecesService } from '../../Especes/especes.service';
 import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-reptiles',

@@ -15,7 +15,6 @@ export class ListeEspecesComponent implements OnInit {
     this.getEspeces();
   }
 
-
   getEspeces(): void {
     this.especesService.getEspeces().subscribe(data => ((this.especes = data)));
   }
