@@ -19,6 +19,7 @@ import { GalerieFloreComponent } from './Galeries/galerie-flore/galerie-flore.co
 import { GaleriePaysagesComponent } from './Galeries/galerie-paysages/galerie-paysages.component';
 import { GalerieAmphibiensComponent } from './Galeries/galerie-amphibiens/galerie-amphibiens.component';
 import { GalerieAllComponent } from './Galeries/galerie-all/galerie-all.component';
+import { Angular2ImageGalleryModule } from 'angular2-image-gallery';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { GalerieAllComponent } from './Galeries/galerie-all/galerie-all.componen
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
+    Angular2ImageGalleryModule
   ],
   providers: [],
   bootstrap: [AppComponent]
