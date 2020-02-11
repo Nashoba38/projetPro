@@ -8,24 +8,70 @@
       </h4>
       <br />
       <div class="button_cont row filters" align="center">
-        <a class="bouton m-2 col-6 col-sm-4 col-md-2" href="#" rel="nofollow noopener">Amphibiens</a>
-        <a class="bouton m-2 col-6 col-sm-4 col-md-2" href="#" rel="nofollow noopener">Flore</a>
-        <a class="bouton m-2 col-6 col-sm-4 col-md-2" href="#" rel="nofollow noopener">Invertébrés</a>
-        <a class="bouton m-2 col-6 col-sm-4 col-md-2" href="#" rel="nofollow noopener">Mammifères</a>
-        <a class="bouton m-2 col-6 col-sm-4 col-md-2" href="#" rel="nofollow noopener">Paysages</a>
-        <a class="bouton m-2 col-6 col-sm-4 col-md-2" href="#" rel="nofollow noopener">Oiseaux</a>
-        <a class="bouton m-2 col-6 col-sm-4 col-md-2" href="#" rel="nofollow noopener">Reptiles</a>
+        <a
+          class="bouton m-2 col-6 col-sm-4 col-md-2"
+          href="#"
+          rel="nofollow noopener"
+          >Amphibiens</a
+        >
+        <a
+          class="bouton m-2 col-6 col-sm-4 col-md-2"
+          href="#"
+          rel="nofollow noopener"
+          >Flore</a
+        >
+        <a
+          class="bouton m-2 col-6 col-sm-4 col-md-2"
+          href="#"
+          rel="nofollow noopener"
+          >Invertébrés</a
+        >
+        <a
+          class="bouton m-2 col-6 col-sm-4 col-md-2"
+          href="#"
+          rel="nofollow noopener"
+          >Mammifères</a
+        >
+        <a
+          class="bouton m-2 col-6 col-sm-4 col-md-2"
+          href="#"
+          rel="nofollow noopener"
+          >Paysages</a
+        >
+        <a
+          class="bouton m-2 col-6 col-sm-4 col-md-2"
+          href="#"
+          rel="nofollow noopener"
+          >Oiseaux</a
+        >
+        <a
+          class="bouton m-2 col-6 col-sm-4 col-md-2"
+          href="#"
+          rel="nofollow noopener"
+          >Reptiles</a
+        >
+        <a
+          class="bouton m-2 col-6 col-sm-4 col-md-2"
+          href="#"
+          rel="nofollow noopener"
+          >Tout voir</a
+        >
       </div>
     </div>
   </div>
   <div class="list-group gallery mt-5">
     <div class="row mt-5">
-      <div class="mb-2 col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let photo of photos">
-        <img
-          class="img-fluid"
-          alt=""
-          src="http://127.0.0.1:8000/uploads/images/espece/{{ photo.Image }}"
-        />
+      <div
+        class="mb-2 col-12 col-sm-6 col-md-4 col-lg-3"
+        *ngFor="let photo of photos"
+      >
+        <a href="http://127.0.0.1:8000/uploads/images/espece/{{ photo.Image }}" data-toggle="lightbox" data-title="{{photo.NomLatin}}">
+          <img
+            class="img-fluid"
+            alt=""
+            src="http://127.0.0.1:8000/uploads/images/espece/{{ photo.Image }}"
+          />
+        </a>
       </div>
       <!-- col-6 / end -->
     </div>

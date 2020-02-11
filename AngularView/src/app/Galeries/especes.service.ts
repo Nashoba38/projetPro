@@ -14,6 +14,8 @@ export class EspecesService {
     const especes = this.http.get<Especes[]>('http://localhost:8000/api/EspecesDetails');
     return especes;
   }
+
+  // Voir comment virer cette fonction
   getPhotos(): Observable<Especes[]> {
     const photos = this.http.get<Especes[]>('http://localhost:8000/api/EspecesDetails');
     return photos;

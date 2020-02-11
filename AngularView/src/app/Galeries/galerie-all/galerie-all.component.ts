@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EspecesService } from '../../Especes/especes.service';
+import '../../../assets/js/script.js';
 
 @Component({
   selector: 'app-galerie-all',

@@ -1,3 +1,9 @@
+$desktop: 960px;
+$tablet: 768px;
+$mobile-large: 640px;
+$mobile: 480px;
+$mobile-small: 300px;
+
 @media (max-width: 991px) {
   .collapse.show {
     display: none;
@@ -18,7 +24,6 @@
     left: 10px;
     background-color: rgb(223, 255, 106) !important;
 
-
     .dropdown-item {
       &:hover {
         background-color: rgb(223, 255, 106) !important;
@@ -31,16 +36,14 @@
     padding: 0px 30px;
     font-weight: 600;
 
-      &:hover{
-        background-color: rgb(64, 87, 2);
-        text-decoration: underline;
-      }
-
+    &:hover {
+      background-color: rgb(64, 87, 2);
+      text-decoration: underline;
+    }
   }
 }
 .navbar {
   background-color: rgb(223, 255, 106) !important;
-
 
   .collapse.show {
     display: flex;
@@ -58,5 +61,8 @@
   .navbar-brand {
     margin: 0;
     font-size: 1.8rem;
+    @media only screen and (max-width: $tablet) {
+      visibility: hidden;
+    }
   }
 }
