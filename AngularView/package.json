@@ -21,6 +21,7 @@
     "@angular/router": "~8.2.5",
     "@fancyapps/fancybox": "^3.5.7",
     "angular2-image-gallery": "^8.0.0",
+    "compass-mixins": "^0.12.10",
     "hammerjs": "^2.0.8",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",

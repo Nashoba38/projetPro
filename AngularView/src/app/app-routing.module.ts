@@ -1,3 +1,4 @@
+import { LoginComponent } from './Structure/login/login.component';
 import { GalerieAllComponent } from './Galeries/galerie-all/galerie-all.component';
 import { ArticlesComponent } from './Articles/articles/articles.component';
 import { ReptilesComponent } from './Genres/reptiles/reptiles.component';
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'EspecesByCat/2', component: ReptilesComponent },
   { path: 'articles', component: ArticlesComponent },
   { path: 'galerie', component: GalerieAllComponent },
+  { path: 'register', component: LoginComponent },
 ];
 
 @NgModule({

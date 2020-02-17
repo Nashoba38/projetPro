@@ -10,6 +10,10 @@ $mobile-small: 300px;
   }
 }
 
+.fixed-top {
+  z-index: 10;
+}
+
 #navbarSupportedContent {
   justify-content: flex-end;
   text-align: end;

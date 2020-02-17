@@ -20,6 +20,7 @@ import { GaleriePaysagesComponent } from './Galeries/galerie-paysages/galerie-pa
 import { GalerieAmphibiensComponent } from './Galeries/galerie-amphibiens/galerie-amphibiens.component';
 import { GalerieAllComponent } from './Galeries/galerie-all/galerie-all.component';
 import { Angular2ImageGalleryModule } from 'angular2-image-gallery';
+import { LoginComponent } from './Structure/login/login.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { Angular2ImageGalleryModule } from 'angular2-image-gallery';
     GalerieFloreComponent,
     GaleriePaysagesComponent,
     GalerieAmphibiensComponent,
-    GalerieAllComponent
+    GalerieAllComponent,
+    LoginComponent
   ],
   imports: [
     HttpClientModule,

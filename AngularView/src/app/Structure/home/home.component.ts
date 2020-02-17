@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import "../../../assets/js/script.js";
 
 @Component({
   selector: 'app-home',
