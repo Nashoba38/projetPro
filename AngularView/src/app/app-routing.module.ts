@@ -1,3 +1,4 @@
+import { LandingPageComponent } from './Structure/landing-page/landing-page.component';
 import { LoginComponent } from './Structure/login/login.component';
 import { GalerieAllComponent } from './Galeries/galerie-all/galerie-all.component';
 import { ArticlesComponent } from './Articles/articles/articles.component';
@@ -12,13 +13,14 @@ import { ListeEspecesComponent } from './Especes/liste-especes/liste-especes.com
 
 const routes: Routes = [
   { path: 'liste', component: ListeEspecesComponent },
-  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'discover', component: DiscoverComponent },
   { path: 'detailEspece/:id', component: DetailEspeceComponent },
   { path: 'EspecesByCat/2', component: ReptilesComponent },
   { path: 'articles', component: ArticlesComponent },
   { path: 'galerie', component: GalerieAllComponent },
   { path: 'register', component: LoginComponent },
+  { path: '', component: LandingPageComponent },
 ];
 
 @NgModule({

@@ -21,6 +21,7 @@ import { GalerieAmphibiensComponent } from './Galeries/galerie-amphibiens/galeri
 import { GalerieAllComponent } from './Galeries/galerie-all/galerie-all.component';
 import { Angular2ImageGalleryModule } from 'angular2-image-gallery';
 import { LoginComponent } from './Structure/login/login.component';
+import { LandingPageComponent } from './Structure/landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { LoginComponent } from './Structure/login/login.component';
     GaleriePaysagesComponent,
     GalerieAmphibiensComponent,
     GalerieAllComponent,
-    LoginComponent
+    LoginComponent,
+    LandingPageComponent
   ],
   imports: [
     HttpClientModule,
