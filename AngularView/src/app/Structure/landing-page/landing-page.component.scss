@@ -140,7 +140,7 @@ a {
   }
 
   &:hover ~ .overlay {
-    background-color: rgba(155, 0, 0, 0.5);
+    background-color: rgba(206, 250, 102, 0.5);
   }
   &:hover ~ .overlay.active {
     background-color: transparent;
@@ -162,7 +162,7 @@ a {
   width: 100%;
   height: 100%;
   z-index: 100;
-  background-color: rgba(155, 0, 0, 0);
+  background-color: rgba(247, 183, 64, 0.185);
   @include transition(1.5s);
   will-change: background-color;
 
@@ -229,7 +229,7 @@ a {
 	width: 100%;
 	height: 100%;
 	background: #000;
-	z-index: 30;
+	z-index: -10;
 }
 
 .loading-text {
