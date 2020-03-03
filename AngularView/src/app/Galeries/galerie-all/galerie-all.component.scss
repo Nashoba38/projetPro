@@ -2,16 +2,18 @@
   display: block;
 }
 
-.bouton {
+.bouton,
+.next,
+.previous {
   color: #000000 !important;
   text-transform: uppercase;
   text-decoration: none;
   background: #ffffff;
   padding: 5px 10px;
-  border: 4px solid rgb(223, 255, 106)!important;
+  border: 4px solid rgb(223, 255, 106) !important;
   display: inline-block;
   transition: all 0.4s ease 0s;
-  }
+}
 
 .bouton:hover {
   color: #000000 !important;
@@ -22,13 +24,60 @@
   border-radius: 50px;
 }
 
+.next:hover{
+  color: #000000 !important;
+  background: #f6b93b;
+  border-color: #f6b93b !important;
+  transition: all 0.4s ease 0s;
+  font-weight: bold;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.previous:hover {
+  color: #000000 !important;
+  background: #f6b93b;
+  border-color: #f6b93b !important;
+  transition: all 0.4s ease 0s;
+  font-weight: bold;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
 h1 {
   text-align: center;
   font-size: 50px;
 }
 
-.gallery
-{
-    display: inline-block;
-    margin-top: 20px;
+.gallery {
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.modal-header {
+  padding-bottom: 0 !important;
+  border-bottom: solid 1px black;
+}
+
+.modal-title,
+.close {
+  color: white;
+  text-align: center;
+}
+
+.modal-dialog {
+  max-width: 800px;
+}
+
+.modal-content {
+  background-color: #000000;
+}
+
+.modal-footer {
+  justify-content: space-between;
+
+
+  .close span{
+    color: rgb(223, 255, 106)!important;
+  }
 }

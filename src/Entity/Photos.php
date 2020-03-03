@@ -29,7 +29,7 @@ class Photos
     private $photo;
 
     /**
-     * @Vich\UploadableField(mapping="image", fileNameProperty="image")
+     * @Vich\UploadableField(mapping="photo", fileNameProperty="photo")
      * @var File
      */
     private $photoFile;
@@ -42,6 +42,8 @@ class Photos
      * @ORM\Column(type="string", length=255)
      */
     private $FrenchName;
+
+    
 
     public function getId(): ?int
     {

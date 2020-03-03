@@ -21,30 +21,13 @@ class PhotosRepository extends ServiceEntityRepository
 
     // /**
     //  * @return Photos[] Returns an array of Photos objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    public function findById(Id $id) 
     {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('p.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
+        return $this->createQueryBuilder('photo')
+           ->where('photo.id = :myid')
+           ->setParameter('myid', $id)
+           ->getQuery()
+           ->getResult()
         ;
     }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?Photos
-    {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }

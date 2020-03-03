@@ -25,6 +25,7 @@
     "fancybox": "^3.0.1",
     "hammerjs": "^2.0.8",
     "jquery": "^3.4.1",
+    "ngx-gallery": "^5.10.0",
     "rxjs": "~6.4.0",
     "simplelightbox": "^2.1.1",
     "tslib": "^1.10.0",

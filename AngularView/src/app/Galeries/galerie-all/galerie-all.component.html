@@ -63,14 +63,14 @@
     <div class="row mt-5">
       <div
         class="mb-2 col-12 col-sm-6 col-md-4 col-lg-3 gallery"
-        *ngFor="let photo of photos"
+        *ngFor="let espece of especes"
       >
-        <a data-toggle="modal" data-target="#exampleModal" href="http://127.0.0.1:8000/uploads/images/espece/{{ photo.Image }}">
+        <a data-toggle="modal" data-target="#exampleModal" href="http://127.0.0.1:8000/uploads/images/espece/{{ espece.Image }}">
           <img
           class="img-fluid"
           alt=""
           src="http://127.0.0.1:8000/uploads/images/espece/{{
-            photo.Image
+            espece.Image
           }}"
         />
         </a>
@@ -80,7 +80,7 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title">{{ photo.NomLatin }}</h5>
+                <h5 class="modal-title">{{ espece.NomLatin }} - {{ espece.NomFrancais }}</h5>
                 <button
                   type="button"
                   class="close"
@@ -95,20 +95,25 @@
                   class="img-fluid"
                   alt=""
                   src="http://127.0.0.1:8000/uploads/images/espece/{{
-                    photo.Image
+                    espece.Image
                   }}"
                 />
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-primary">
-                  Save changes
-                </button>
-                <button
+                  <button
                   type="button"
-                  class="btn btn-secondary"
+                  class="btn previous"
                   data-dismiss="modal"
                 >
-                  Close
+                  Précédent
+                </button>
+
+                <button
+                  type="button"
+                  class="btn next"
+                  data-dismiss="modal"
+                >
+                  Suivant
                 </button>
               </div>
             </div>

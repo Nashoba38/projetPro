@@ -5,12 +5,12 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use App\Entity\Especes;
+use App\Entity\Photos;
 
 class PhotosController extends AbstractController
 {
     /**
-     * @Route("/photos", name="photos")
+     * @Route("/api/photos", name="photos")
      */
     public function index()
     {

@@ -1,5 +1,7 @@
 <?php
 
+// Ce controleur gère les espèces triées selon leur catégorie (famille) pour le Front.
+
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;

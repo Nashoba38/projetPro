@@ -43,3 +43,9 @@ $(document).ready(function() {
     $(".loading").css("z-index", "1");
   }, 1500);
 });
+
+$(document).ready(function() {
+  setTimeout(function() {
+    $(".loading").css("visibility", "visible");
+  }, 500);
+});

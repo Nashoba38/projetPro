@@ -22,9 +22,22 @@ easy_admin:
         - assets/css/easyAdmin.css
 
   entities:
+    Photos:
+      class: App\Entity\Photos
+
+      list:
+        fields:
+          - { property: 'photo', type: 'image', base_path: '%app.path.photo%' }
+          - { property: 'FrenchName', label: 'Nom Français' }
+          - { property: 'LatinName', label: 'Nom Latin' }
+      form:
+        fields:
+          - { property: 'photoFile', type: 'file' }
+          - { property: 'FrenchName', label: 'Nom Français' }
+          - { property: 'LatinName', label: 'Nom Latin' }
+
     Especes:
       class: App\Entity\Especes
-
 
       list:
         fields:
@@ -79,17 +92,6 @@ easy_admin:
         fields:
           - { property: 'Name', label: 'Pays' }
 
-    Photos:
-      class: App\Entity\Photos
-      list:
-        fields:
-          - { property: 'photo', type: 'image', base_path: '%app.path.image%' }
-          - { property: 'FrenchName', label: 'Nom Français' }
-          - { property: 'LatinName', label: 'Nom Latin' }
-      form:
-        fields:
-          - { property: 'photoFile', type: 'file' }
-          - { property: 'FrenchName', label: 'Nom Français' }
-          - { property: 'LatinName', label: 'Nom Latin' }
+    
 
     

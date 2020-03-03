@@ -18,8 +18,7 @@ import { GalerieInvertebresComponent } from './Galeries/galerie-invertebres/gale
 import { GalerieFloreComponent } from './Galeries/galerie-flore/galerie-flore.component';
 import { GaleriePaysagesComponent } from './Galeries/galerie-paysages/galerie-paysages.component';
 import { GalerieAmphibiensComponent } from './Galeries/galerie-amphibiens/galerie-amphibiens.component';
-import { GalerieAllComponent } from './Galeries/galerie-all/galerie-all.component';
-import { Angular2ImageGalleryModule } from 'angular2-image-gallery';
+import { GalerieAllComponent } from './Galeries/galerie-all/galerie-all.component';;
 import { LoginComponent } from './Structure/login/login.component';
 import { LandingPageComponent } from './Structure/landing-page/landing-page.component';
 
@@ -48,8 +47,7 @@ import { LandingPageComponent } from './Structure/landing-page/landing-page.comp
   imports: [
     HttpClientModule,
     BrowserModule,
-    AppRoutingModule,
-    Angular2ImageGalleryModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { EspecesService } from '../../Especes/especes.service';
 import '../../../assets/js/script.js';
+import { Location } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-galerie-all',
@@ -9,16 +11,27 @@ import '../../../assets/js/script.js';
 })
 export class GalerieAllComponent implements OnInit {
 
-  photos = [];
+  specie = null;
+  especes = [];
 
-  constructor(private especesService: EspecesService) { }
+  constructor(private especesService: EspecesService,
+    private route: ActivatedRoute,
+    private location: Location) { }
 
   ngOnInit() {
-    this.getPhotos();
+    this.getEspece();
+    this.getEspeces();
+
   }
 
-  getPhotos(): void {
-    this.especesService.getPhotos().subscribe(data => ((this.photos = data)));
+  getEspece(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.especesService.getEspece(id).subscribe(specie => (this.specie = specie));
   }
 
+  getEspeces(): void {
+    this.especesService.getEspeces().subscribe(espece => ((this.especes = espece)));
+  }
 }
+
+

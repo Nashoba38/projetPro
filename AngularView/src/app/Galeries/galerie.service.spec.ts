@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { GalerieService } from './galerie.service';
+import { GalerieService } from './galerie-reptiles/galerie.service';
 
 describe('GalerieService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

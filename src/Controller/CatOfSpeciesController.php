@@ -1,5 +1,8 @@
 <?php
 
+// Ce controleur gère la liaison entre les espèces et les catégories, 
+//c'est ici qu'on gère quel animal va dans quelle catégorie en base de donnée.
+
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
