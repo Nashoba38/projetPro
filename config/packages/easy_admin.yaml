@@ -2,19 +2,19 @@ easy_admin:
   site_name: 'NaturaClic Admin'
 
   edit:
-        actions:
-            delete:
-                name: delete
-                type: method
-                label: Supprimer
-                css_class: 'btn text-danger'
-                icon: trash-o
-            list:
-                name: list
-                type: method
-                label: Retour à la liste
-                css_class: 'btn btn-link pr-0'
-                icon: list
+    actions:
+      delete:
+          name: delete
+          type: method
+          label: Supprimer
+          css_class: 'btn text-danger'
+          icon: trash-o
+      list:
+            name: list
+            type: method
+            label: Retour à la liste
+            css_class: 'btn btn-link pr-0'
+            icon: list
 
   design: 
     assets:
@@ -22,6 +22,57 @@ easy_admin:
         - assets/css/easyAdmin.css
 
   entities:
+    
+    Especes:
+      class: App\Entity\Especes
+      
+      list:
+        fields:
+          - { property: 'image', type: 'image', base_path: '%app.path.image%' }
+          - { property: 'NomFrancais', label: 'Nom Vernaculaire'}
+          - { property: 'NomLatin', label: 'Nom Latin'}
+          
+      form:
+        fields:
+          - { property: 'imageFile', type: 'file' }
+          - { property: 'NomFrancais', label: 'Nom Vernaculaire'}
+          - { property: 'NomLatin', label: 'Nom Latin'}
+          - { property: 'Description', label: 'Description'}
+          - { property: 'Longevite', label: "Longevite de l'animal"}
+          - { property: 'Alimentation', label: 'Régime alimentaire'}
+          - { property: 'Repartition', label: 'Répartition'}
+          - { property: 'Habitat', label: 'Habitat'}
+          - { property: 'Moeurs', label: 'Moeurs / Généralités'}
+          - { property: 'Reproduction', label: 'Reproduction / Floraison'}
+          - { property: 'Regne', label: 'Règne'}
+          - { property: 'Embranchement', label: "Embranchement"}
+          - { property: 'Classe', label: 'Classe'}
+          - { property: 'Ordre', label: 'Ordre'}
+          - { property: 'Famille', label: 'Famille'}
+          - { property: 'StatutConservation', label: 'Statut de Conservation'}
+          - { property: 'category', label: 'Catégorie'}
+          - { property: 'pays', label: 'Pays', type: 'entity', type_options: { multiple: 'true', by_reference: 'false' }}
+              
+    Category:
+      class: App\Entity\Category
+      list:
+        fields:
+          - { property: 'Category', label: 'Nombre'}
+          - { property: 'Name', label: 'Famille' }
+      form:
+        fields:
+          - { property: 'Name', label: 'Famille' }
+              
+    Pays:
+      class: App\Entity\Pays
+      list:
+        fields:
+          - { property: 'Name', label: 'Pays' }
+      form:
+        fields:
+          - { property: 'Name', label: 'Pays' }
+                              
+                                  
     Photos:
       class: App\Entity\Photos
 
@@ -35,63 +86,5 @@ easy_admin:
           - { property: 'photoFile', type: 'file' }
           - { property: 'FrenchName', label: 'Nom Français' }
           - { property: 'LatinName', label: 'Nom Latin' }
-
-    Especes:
-      class: App\Entity\Especes
-
-      list:
-        fields:
-          - { property: 'image', type: 'image', base_path: '%app.path.image%' }
-          - { property: 'NomFrancais', label: 'Nom Vernaculaire'}
-          - { property: 'NomLatin', label: 'Nom Latin'}
-
-      form:
-        fields:
-          - { property: 'imageFile', type: 'file' }
-          - { property: 'NomFrancais', label: 'Nom Vernaculaire'}
-          - { property: 'NomLatin', label: 'Nom Latin'}
-          - { property: 'Description', label: 'Description'}
-          - { property: 'Longevite', label: "Longevite de l'animal"}
-          - { property: 'Alimentation', label: 'Régime alimentaire'}
-          - { property: 'Repartition', label: 'Répartition'}
-          - { property: 'Habitat', label: 'Habitat'}
-          - { property: 'Moeurs', label: 'Moeurs / Généralités'}
-          - { property: 'Reproduction', label: 'Reproduction / Floraison'}
-          - { property: 'category', label: 'Catégorie'}
-          - { property: 'sousCategory', label: 'Sous-Catégorie'}
-          - { property: 'pays', label: 'Pays', type: 'entity', type_options: { multiple: 'true', by_reference: 'false' }}
-
-
-
-    Category:
-      class: App\Entity\Category
-      list:
-        fields:
-          - { property: 'Category', label: 'Nombre'}
-          - { property: 'Name', label: 'Famille' }
-      form:
-        fields:
-          - { property: 'Name', label: 'Famille' }
-
-    SousCategory:
-      class: App\Entity\SousCategory
-      list:
-        fields:
-          - { property: 'SousCategory', label: 'Nombre'}
-          - { property: 'Name', label: 'Sous-Famille' }
-      form:
-        fields:
-          - { property: 'Name', label: 'Sous-Famille' }
-
-    Pays:
-      class: App\Entity\Pays
-      list:
-        fields:
-          - { property: 'Name', label: 'Pays' }
-      form:
-        fields:
-          - { property: 'Name', label: 'Pays' }
-
-    
-
-    
+                                  
+                                  

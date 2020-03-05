@@ -33,6 +33,13 @@ class EspecesController extends AbstractController
             $habitat = $espece->getHabitat();
             $Longevite = $espece->getLongevite();
             $reproduction = $espece->getReproduction();
+            $regne = $espece->getRegne();
+            $embranchement = $espece->getEmbranchement();
+            $classe->$espece->getClasse();
+            $ordre->$espece->getOrdre();
+            $famille->$espece->getFamille();
+            $statutConservation->$espece->getStatutConservation();
+
 
             $especeArray = [
                 "id" => $id,
@@ -47,6 +54,12 @@ class EspecesController extends AbstractController
                 "Habitat" => $habitat,
                 "Longevite" => $Longevite,
                 "Reproduction" => $reproduction,
+                "Regne" => $regne,
+                "Embranchement" => $embranchement,
+                "Classe" => $classe,
+                "Ordre" => $ordre,
+                "Famille" => $famille,
+                "StatutConservation" => $statutConservation,
 
             ];
             $especesArray[] = $especeArray; //équivaut push en JS
@@ -75,7 +88,12 @@ class EspecesController extends AbstractController
         $Moeurs = $espece->getMoeurs();
         $Longevite = $espece->getLongevite();
         $Reproduction = $espece->getReproduction();
-
+        $regne = $espece->getRegne();
+        $embranchement = $espece->getEmbranchement();
+        $classe = $espece->getClasse();
+        $ordre = $espece->getOrdre();
+        $famille = $espece->getFamille();
+        $statutConservation = $espece->getStatutConservation();
         $especeId = [
             "id" => $id,
             "NomFrancais" => $NomFrancais,
@@ -88,11 +106,14 @@ class EspecesController extends AbstractController
             "Habitat" => $Habitat,
             "Longevite" => $Longevite,
             "Reproduction" => $Reproduction,
+            "Regne" => $regne,
+            "Embranchement" => $embranchement,
+            "Classe" => $classe,
+            "Ordre" => $ordre,
+            "Famille" => $famille,
+            "StatutConservation" => $statutConservation,
 
         ];
         return new JsonResponse($especeId);
     }
-
-    
-
 }

@@ -72,11 +72,6 @@ class Especes
     private $category;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\SousCategory", inversedBy="SousCategory")
-     */
-    private $sousCategory;
-
-    /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Pays", inversedBy="Pays", cascade={"persist","remove"})
      */
     private $pays;
@@ -98,6 +93,36 @@ class Especes
      * @var \DateTime
      */
     private $updatedAt;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $Regne;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $Embranchement;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $Classe;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $Ordre;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $Famille;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $StatutConservation;
 
 
 
@@ -243,34 +268,100 @@ class Especes
 
         return $this;
     }
-
+    
     public function getCategory(): ?Category
     {
         return $this->category;
     }
-
+    
     public function setCategory(?Category $category): self
     {
         $this->category = $category;
+        
+        return $this;
+    }
+
+    public function getRegne(): ?string
+    {
+        return $this->Regne;
+    }
+
+    public function setRegne(string $Regne): self
+    {
+        $this->Regne = $Regne;
 
         return $this;
     }
 
-    public function getSousCategory(): ?SousCategory
+    public function getEmbranchement(): ?string
     {
-        return $this->sousCategory;
+        return $this->Embranchement;
     }
 
-    public function setSousCategory(?SousCategory $sousCategory): self
+    public function setEmbranchement(string $Embranchement): self
     {
-        $this->sousCategory = $sousCategory;
+        $this->Embranchement = $Embranchement;
 
         return $this;
     }
 
+
+    public function getClasse(): ?string
+    {
+        return $this->Classe;
+    }
+
+    public function setClasse(string $Classe): self
+    {
+        $this->Classe = $Classe;
+
+        return $this;
+    }
+
+    public function getOrdre(): ?string
+    {
+        return $this->Ordre;
+    }
+
+    public function setOrdre(string $Ordre): self
+    {
+        $this->Ordre = $Ordre;
+
+        return $this;
+    }
+
+    public function getFamille(): ?string
+    {
+        return $this->Famille;
+    }
+
+    public function setFamille(string $Famille): self
+    {
+        $this->Famille = $Famille;
+
+        return $this;
+    }
+    
+    public function getStatutConservation(): ?string
+    {
+        return $this->StatutConservation;
+    }
+    
+    public function setStatutConservation(?string $StatutConservation): self
+    {
+        $this->StatutConservation = $StatutConservation;
+        
+        return $this;
+    }
+    
+    public function __toString() {
+        return $this->NomFrancais;
+    }
+    
     /**
      * @return Collection|Pays[]
      */
+
     public function getPays(): Collection
     {
         return $this->pays;
@@ -296,8 +387,6 @@ class Especes
         return $this;
     }
 
-    public function __toString() {
-        return $this->NomFrancais;
-    }
+    
 }
 

@@ -49,3 +49,13 @@ $(document).ready(function() {
     $(".loading").css("visibility", "visible");
   }, 500);
 });
+
+$(window).scroll(function() {
+  var x=$(window).innerWidth();
+  var y=$(window).scrollTop();
+    if(y > 180 && x > 768){
+      $(".social").addClass("animated fadeOutLeft");
+    } else{
+      $(".social").removeClass("animated fadeOutLeft");
+    }
+});

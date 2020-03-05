@@ -1,8 +1,62 @@
+// @media (min-width: 1200px) {
+//   .container {
+//     max-width: 1400px;
+//   }
+// }
+
+@media (max-width: 768px) {
+  .content {
+    .insert {
+      .colonneGauche {
+        width: 100% !important;
+      }
+      .colonneCentre {
+        width: 100% !important;
+      }
+      .colonneDroite {
+        width: 100% !important;
+        border-left: unset!important;
+      }
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  .titreBox {
+    margin-top: 100px !important;
+
+    .noms,
+    .photo {
+      width: 100% !important;
+    }
+
+    h2 {
+      margin-bottom: 15px !important;
+    }
+  }
+}
+
 .titreBox {
   text-align: center;
   margin-top: 8%;
   margin-bottom: 2%;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
 
+  .noms {
+    width: 45%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+  }
+
+  .photo {
+    width: 45%;
+  }
 
   h2 {
     font-size: 4em;
@@ -16,29 +70,16 @@
   }
 }
 
-.photoBox {
-  background-color: black;
 
-  img {
-    width: 50%;
-    height: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 50px;
-    margin-top: 100px;
-  }
-}
 
-#boutonRetour {
+.wrapper {
 
-  .wrapper {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  nav {
+    float: right;
   }
 
   .btn {
-    position:sticky;
+    position: sticky;
     display: inline-block;
     letter-spacing: 1px;
     text-align: center;
@@ -46,14 +87,11 @@
     overflow: hidden;
     z-index: 1;
     cursor: pointer;
+    padding: 1px 3px;
 
     &:focus {
       outline: none;
     }
-  }
-
-  .btn--primary {
-    color: rgb(211, 245, 116);
   }
 
   .btn--border {
@@ -99,14 +137,30 @@
   }
 }
 
+
+
 .content {
   .insert {
     background-color: rgb(230, 230, 230);
+    display: flex;
+    justify-content: space-between;
 
-    img {
-      width: 200px;
-      height: 210px;
+    .colonneGauche {
+      width: 25%;
+      padding: 10px;
     }
+
+    .colonneCentre {
+      width: 50%;
+      padding: 10px;
+    }
+
+    .colonneDroite {
+      width: 25%;
+      padding: 10px;
+      border-left: solid 1px darkgrey;
+    }
+
   }
 }
 
@@ -116,7 +170,18 @@ i {
   padding-right: 5px;
 }
 
+.rightContent {
+  justify-content: space-between;
+  display: flex;
+  flex-flow: wrap;
+}
+
 .row {
-  margin-left: 0!important;
-  margin-right: 0!important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+
+.photo img {
+  width: 90%;
 }

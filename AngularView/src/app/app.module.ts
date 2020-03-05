@@ -4,7 +4,6 @@ import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListeEspecesComponent } from './Especes/liste-especes/liste-especes.component';
-import { FooterComponent } from './Structure/footer/footer.component';
 import { MenuComponent } from './Structure/menu/menu.component';
 import { HomeComponent } from './Structure/home/home.component';
 import { DiscoverComponent } from './discover/discover.component';
@@ -26,7 +25,6 @@ import { LandingPageComponent } from './Structure/landing-page/landing-page.comp
   declarations: [
     AppComponent,
     ListeEspecesComponent,
-    FooterComponent,
     MenuComponent,
     HomeComponent,
     DiscoverComponent,

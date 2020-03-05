@@ -11,4 +11,10 @@ export class Especes {
   Moeurs: Text;
   Habitat: Text;
   Image: File;
+  Regne: String;
+  Embranchement: String;
+  Classe: String;
+  Ordre: String;
+  Famille: String;
+  StatutConservation: String;
 }
