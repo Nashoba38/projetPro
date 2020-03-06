@@ -20,6 +20,8 @@ import { GalerieAmphibiensComponent } from './Galeries/galerie-amphibiens/galeri
 import { GalerieAllComponent } from './Galeries/galerie-all/galerie-all.component';;
 import { LoginComponent } from './Structure/login/login.component';
 import { LandingPageComponent } from './Structure/landing-page/landing-page.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { LandingPageComponent } from './Structure/landing-page/landing-page.comp
   imports: [
     HttpClientModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

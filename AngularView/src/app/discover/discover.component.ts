@@ -1,11 +1,17 @@
 import { CategoriesService } from '../Genres/categories.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @Component({
   selector: 'app-discover',
   templateUrl: './discover.component.html',
   styleUrls: ['./discover.component.scss']
 })
+
+@NgModule({
+  imports: [MatTabsModule]
+})
+
 export class DiscoverComponent implements OnInit {
 
   reptiles = [];
