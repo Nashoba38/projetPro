@@ -19,12 +19,21 @@
 
 
 .card {
-  border: 1px solid black;
+  border: 1px solid rgb(167, 167, 167);
   background-color: rgba(255, 255, 255, 0.267);
   width: 25%;
   min-width: min-content;
   text-align: center;
   margin: 15px 10px;
+
+  .card-body a {
+    display: flex;
+
+    img {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
 }
 
 h1,
@@ -47,7 +56,7 @@ h6 {
   font-size: large;
   color: black;
   text-align: center;
-  border: 1px solid black;
+  border: 1px solid rgb(167, 167, 167);
   padding-top: 3px;
   padding-bottom: 3px;
   background-color: rgb(205, 243, 70);
@@ -66,14 +75,6 @@ li a {
   font-size: large;
 }
 
-.card-header {
-  background-color: rgb(223, 255, 106);
-}
-
-.background-card {
-  background-color: rgba(89, 92, 43, 0.301);
-}
-
 .btn-link {
   font-weight: 900;
   color: black;
@@ -87,7 +88,7 @@ li a {
 }
 
 .btn {
-  padding-left: 0 !important;
+  padding: 0 !important;
 }
 
 #menu {
@@ -199,6 +200,13 @@ li a {
 #sudamerique-card-bg:hover {
   background-color: rgba(199, 255, 134, 0.678);
 }
+
+.card-header {
+  padding: 5px !important;
+  background-color: rgba(255, 235, 205, 0);
+  text-align: center;
+}
+
 
 
 //Affichage liste

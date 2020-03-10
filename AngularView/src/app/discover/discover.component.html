@@ -21,6 +21,7 @@
     <ng-template mat-tab-label>
       Par Classification :
     </ng-template>
+
     <div id="reptile-card" class="card">
       <div class="card-header">Reptiles</div>
       <div id="reptile-card-bg" class="card-body">
@@ -34,23 +35,99 @@
       <div id="mammifere-card-bg" class="card-body">
         <a [routerLink]="['/marocHome']" id="mammiferes" class="btn btn-outline-black waves-effect filter "
           data-rel="all"><img class="hvr-pulse-grow" src="./assets/images/mammiferes.png" alt="" width="auto"
-            height="160px" style="margin-top: 10px;" /></a>
+            height="160px" /></a>
       </div>
     </div>
     <div id="oiseau-card" class="card">
       <div class="card-header">Oiseaux</div>
       <div id="oiseau-card-bg" class="card-body">
         <a id="oiseaux" class="btn btn-outline-black waves-effect filter" data-rel="all"><img class="hvr-pulse-grow"
-            src="./assets/images/aigle.png" alt="" width="150px" height="auto" style="margin-top: 50px;" /></a>
+            src="./assets/images/aigle.png" alt="" width="150px" height="auto" /></a>
       </div>
     </div>
+    <div id="amphibien-card" class="card">
+      <div class="card-header">Amphibiens</div>
+      <div id="amphibien-card-bg" class="card-body">
+        <a id="amphibiens" class="btn btn-outline-black waves-effect filter" data-rel="all"><img class="hvr-pulse-grow"
+            src="./assets/images/amphibiens.png" alt="" width="140px" height="auto" /></a>
+      </div>
+    </div>
+    <div id="paysage-card" class="card">
+      <div class="card-header">Paysages</div>
+      <div id="paysage-card-bg" class="card-body">
+        <a id="paysages" class="btn btn-outline-black waves-effect filter" data-rel="all"><img class="hvr-pulse-grow"
+            src="./assets/images/paysages.png" alt="" width="160px" height="auto" /></a>
+      </div>
+    </div>
+    <div id="flore-card" class="card">
+      <div class="card-header">Flore</div>
+      <div id="flore-card-bg" class="card-body">
+        <a id="flore" class="btn btn-outline-black waves-effect filter" data-rel="all"><img class="hvr-pulse-grow"
+            src="./assets/images/flore.png" alt="" width="auto" height="140px" /></a>
+      </div>
+    </div>
+
   </mat-tab>
 
-  <mat-tab>
+  <mat-tab class="contenant">
     <ng-template mat-tab-label>
       Par Localisation :
     </ng-template>
-    Content 2
+    <div id="europe-card" class="card text-black text-center mb-3 mx-2" style="width: 280px; height: 280px;">
+      <div class="card-header">Europe</div>
+      <div id="europe-card-bg" class="card-body">
+        <button type="button" id="europe" class="btn btn-outline-black waves-effect filter" style="display: contents;"
+          data-rel="all">
+          <img class="hvr-pulse-grow" src="./assets/images/europe.svg" alt="" width="200px" height="auto"
+            style="margin-top: 20px;" />
+        </button>
+      </div>
+    </div>
+    <div id="afrique-card" class="card text-black text-center mb-3 mx-2" style="width: 280px; height: 280px;">
+      <div class="card-header">Afrique</div>
+      <div id="afrique-card-bg" class="card-body">
+        <a [routerLink]="['/afrique']" id="europe" class="btn btn-outline-black waves-effect filter"
+          style="display: contents;" data-rel="all"><img class="hvr-pulse-grow" src="./assets/images/afrique.svg" alt=""
+            width="180px" height="auto" /></a>
+      </div>
+    </div>
+    <div class="card text-black text-center mb-3 mx-2" style="width: 280px; height: 280px;">
+      <div class="card-header">Asie</div>
+      <div class="card-body">
+        <button disabled type="button" id="europe" class="btn btn-outline-black waves-effect filter"
+          style="display: contents;" data-rel="all">
+          <img src="./assets/images/asie.svg" alt="" width="200px" height="auto" style="margin-top: 20px;" />
+        </button>
+      </div>
+    </div>
+    <div id="sudamerique-card" class="card text-black text-center mb-3 mx-2" style="width: 280px; height: 280px;">
+      <div class="card-header">Amérique du Nord et Centrale</div>
+      <div id="sudamerique-card-bg" class="card-body">
+        <button type="button" id="europe" class="btn btn-outline-black waves-effect filter" style="display: contents;"
+          data-rel="all">
+          <img class="hvr-pulse-grow" src="./assets/images/ameriqueNord.svg" alt="" width="200px" height="auto"
+            style="margin-top: 35px;" />
+        </button>
+      </div>
+    </div>
+    <div class="card text-black text-center mb-3 mx-2" style="width: 280px; height: 280px;">
+      <div class="card-header">Amérique du Sud</div>
+      <div class="card-body">
+        <button disabled type="button" id="europe" class="btn btn-outline-black waves-effect filter"
+          style="display: contents;" data-rel="all">
+          <img src="./assets/images/ameriqueSud.svg" alt="" width="130px" height="auto" />
+        </button>
+      </div>
+    </div>
+    <div class="card text-black text-center mb-3 mx-2" style="width: 280px; height: 280px;">
+      <div class="card-header">Océanie</div>
+      <div class="card-body">
+        <button disabled type="button" id="europe" class="btn btn-outline-black waves-effect filter"
+          style="display: contents;" data-rel="all">
+          <img src="./assets/images/oceanie.svg" alt="" width="200px" height="auto" style="margin-top: 20px;" />
+        </button>
+      </div>
+    </div>
   </mat-tab>
 
   <mat-tab>
@@ -75,68 +152,149 @@
 <div class="container">
   <div class="accordion" id="accordionExample">
     <div class="card">
-      <div class="card-header" id="headingOne">
-        <h2 class="mb-0">
-          <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne">
-            <i class="far fa-hand-point-right mx-4"></i> Par Classification :
-          </button>
-        </h2>
-      </div>
 
-      <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-        <div class="background-card card-body">
-          <div class="row justify-content-center">
-            <div id="reptile-card" class="card text-black text-center mb-3 mx-2" style="width: 280px; height: 280px;">
-              <div class="card-header">Reptiles</div>
-              <div id="reptile-card-bg" class="card-body">
-                <a routerLink="/EspecesByCat/2" id="reptiles" class="btn btn-outline-black waves-effect filter"
-                  style="display: contents;" data-rel="all"><img class="hvr-pulse-grow"
-                    src="./assets/images/reptiles.png" alt="" width="auto" height="180px" /></a>
+      <div class="card">
+        <div class="card-header" id="headingTwo">
+          <h2 class="mb-0">
+            <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo">
+              <i class="far fa-hand-point-right mx-4"></i> Par Localisation :
+            </button>
+          </h2>
+        </div>
+
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+          <div class="background-card card-body">
+            <div class="row justify-content-center">
+              <div id="europe-card" class="card text-black text-center mb-3 mx-2" style="width: 280px; height: 280px;">
+                <div class="card-header">Europe</div>
+                <div id="europe-card-bg" class="card-body">
+                  <button type="button" id="europe" class="btn btn-outline-black waves-effect filter"
+                    style="display: contents;" data-rel="all">
+                    <img class="hvr-pulse-grow" src="./assets/images/europe.svg" alt="" width="200px" height="auto"
+                      style="margin-top: 20px;" />
+                  </button>
+                </div>
+              </div>
+              <div id="afrique-card" class="card text-black text-center mb-3 mx-2" style="width: 280px; height: 280px;">
+                <div class="card-header">Afrique</div>
+                <div id="afrique-card-bg" class="card-body">
+                  <a [routerLink]="['/afrique']" id="europe" class="btn btn-outline-black waves-effect filter"
+                    style="display: contents;" data-rel="all"><img class="hvr-pulse-grow"
+                      src="./assets/images/afrique.svg" alt="" width="180px" height="auto" /></a>
+                </div>
+              </div>
+              <div class="card text-black text-center mb-3 mx-2" style="width: 280px; height: 280px;">
+                <div class="card-header">Asie</div>
+                <div class="card-body">
+                  <button disabled type="button" id="europe" class="btn btn-outline-black waves-effect filter"
+                    style="display: contents;" data-rel="all">
+                    <img src="./assets/images/asie.svg" alt="" width="200px" height="auto" style="margin-top: 20px;" />
+                  </button>
+                </div>
               </div>
             </div>
-            <div id="mammifere-card" class="card text-black text-center mb-3 mx-2"
-              style="width: 280px; height: 280px; height: 280px;">
-              <div class="card-header">Mammifères</div>
-              <div id="mammifere-card-bg" class="card-body">
-                <a [routerLink]="['/marocHome']" id="mammiferes" class="btn btn-outline-black waves-effect filter "
-                  style="display: contents;" data-rel="all"><img class="hvr-pulse-grow"
-                    src="./assets/images/mammiferes.png" alt="" width="auto" height="160px"
-                    style="margin-top: 10px;" /></a>
+
+            <div class="row justify-content-center">
+              <div id="sudamerique-card" class="card text-black text-center mb-3 mx-2"
+                style="width: 280px; height: 280px;">
+                <div class="card-header">Amérique du Nord et Centrale</div>
+                <div id="sudamerique-card-bg" class="card-body">
+                  <button type="button" id="europe" class="btn btn-outline-black waves-effect filter"
+                    style="display: contents;" data-rel="all">
+                    <img class="hvr-pulse-grow" src="./assets/images/ameriqueNord.svg" alt="" width="200px"
+                      height="auto" style="margin-top: 35px;" />
+                  </button>
+                </div>
               </div>
-            </div>
-            <div id="oiseau-card" class="card text-black text-center mb-3 mx-2" style="width: 280px; height: 280px;">
-              <div class="card-header">Oiseaux</div>
-              <div id="oiseau-card-bg" class="card-body">
-                <a id="oiseaux" class="btn btn-outline-black waves-effect filter" style="display: contents;"
-                  data-rel="all"><img class="hvr-pulse-grow" src="./assets/images/aigle.png" alt="" width="150px"
-                    height="auto" style="margin-top: 50px;" /></a>
+              <div class="card text-black text-center mb-3 mx-2" style="width: 280px; height: 280px;">
+                <div class="card-header">Amérique du Sud</div>
+                <div class="card-body">
+                  <button disabled type="button" id="europe" class="btn btn-outline-black waves-effect filter"
+                    style="display: contents;" data-rel="all">
+                    <img src="./assets/images/ameriqueSud.svg" alt="" width="130px" height="auto" />
+                  </button>
+                </div>
+              </div>
+              <div class="card text-black text-center mb-3 mx-2" style="width: 280px; height: 280px;">
+                <div class="card-header">Océanie</div>
+                <div class="card-body">
+                  <button disabled type="button" id="europe" class="btn btn-outline-black waves-effect filter"
+                    style="display: contents;" data-rel="all">
+                    <img src="./assets/images/oceanie.svg" alt="" width="200px" height="auto"
+                      style="margin-top: 20px;" />
+                  </button>
+                </div>
               </div>
             </div>
           </div>
+        </div>
+      </div>
 
-          <div class="row justify-content-center">
-            <div id="amphibien-card" class="card text-black text-center mb-3 mx-2" style="width: 280px; height: 280px;">
-              <div class="card-header">Amphibiens</div>
-              <div id="amphibien-card-bg" class="card-body">
-                <a id="amphibiens" class="btn btn-outline-black waves-effect filter" style="display: contents;"
-                  data-rel="all"><img class="hvr-pulse-grow" src="./assets/images/amphibiens.png" alt="" width="140px"
-                    height="auto" style="margin-top: 30px;" /></a>
+      <div class="card">
+        <div class="card-header" id="headingThree">
+          <h2 class="mb-0">
+            <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree">
+              <i class="far fa-hand-point-right mx-4"></i> Par Nom Vernaculaire:
+            </button>
+          </h2>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+          <div class="liste">
+            <div class="row">
+              <div class="col-12">
+                <h4>
+                  Liste des espèces classées par Familles et ordre alphabétique.
+                </h4>
               </div>
-            </div>
-            <div id="paysage-card" class="card text-black text-center mb-3 mx-2" style="width: 280px; height: 280px;">
-              <div class="card-header">Paysages</div>
-              <div id="paysage-card-bg" class="card-body">
-                <a id="paysages" class="btn btn-outline-black waves-effect filter" style="display: contents;"
-                  data-rel="all"><img class="hvr-pulse-grow" src="./assets/images/paysages.png" alt="" width="160px"
-                    height="auto" style="margin-top: 60px;" /></a>
+              <br />
+              <div class="col-sm-12 col-md-6 col-lg-4">
+                <h6>Reptiles</h6>
+                <p class="listeEspeces" *ngFor="let reptile of reptiles">
+                  <a routerLink="/detailEspece/{{ reptile.id }}" routerLinkActive="active" class="btn btn-link"><i
+                      class="fas fa-angle-right pr-2"></i><strong id="nameChoice">{{ reptile.NomFrancais }}</strong>
+                  </a>
+                </p>
               </div>
-            </div>
-            <div id="flore-card" class="card text-black text-center mb-3 mx-2" style="width: 280px; height: 280px;">
-              <div class="card-header">Flore</div>
-              <div id="flore-card-bg" class="card-body">
-                <a id="flore" class="btn btn-outline-black waves-effect filter" style="display: contents;"
-                  data-rel="all"><img class="hvr-pulse-grow" src="./assets/images/flore.png" alt="" width="auto"
-                    height="140px" style="margin-top: 30px;" /></a>
+              <div class="col-sm-12 col-md-6 col-lg-4">
+                <h6>Oiseaux</h6>
+                <p class="listeEspeces" *ngFor="let oiseau of oiseaux">
+                  <a routerLink="/detailEspece/{{ oiseau.id }}" routerLinkActive="active" class="btn btn-link"><i
+                      class="fas fa-angle-right pr-2"></i><strong id="nameChoice">{{ oiseau.NomFrancais }}</strong>
+                  </a>
+                </p>
+              </div>
+              <div class="col-sm-12 col-md-6 col-lg-4">
+                <h6>Mammifères</h6>
+                <p class="listeEspeces" *ngFor="let mammifere of mammiferes">
+                  <a routerLink="/detailEspece/{{ mammifere.id }}" routerLinkActive="active" class="btn btn-link"><i
+                      class="fas fa-angle-right pr-2"></i><strong id="nameChoice">{{ mammifere.NomFrancais }}</strong>
+                  </a>
+                </p>
+              </div>
+
+              <div class="col-sm-12 col-md-6 col-lg-4">
+                <h6>Invertebrés</h6>
+                <p class="listeEspeces" *ngFor="let invertebre of invertebres">
+                  <a routerLink="/detailEspece/{{ invertebre.id }}" routerLinkActive="active" class="btn btn-link"><i
+                      class="fas fa-angle-right pr-2"></i><strong id="nameChoice">{{ invertebre.NomFrancais }}</strong>
+                  </a>
+                </p>
+              </div>
+              <div class="col-sm-12 col-md-6 col-lg-4">
+                <h6>Flore</h6>
+                <p class="listeEspeces" *ngFor="let flore of flores">
+                  <a routerLink="/detailEspece/{{ flore.id }}" routerLinkActive="active" class="btn btn-link"><i
+                      class="fas fa-angle-right pr-2"></i><strong id="nameChoice">{{ flore.NomFrancais }}</strong>
+                  </a>
+                </p>
+              </div>
+              <div class="col-sm-12 col-md-6 col-lg-4">
+                <h6>Amphibiens</h6>
+                <p class="listeEspeces" *ngFor="let amphibien of amphibiens">
+                  <a routerLink="/detailEspece/{{ amphibien.id }}" routerLinkActive="active" class="btn btn-link"><i
+                      class="fas fa-angle-right pr-2"></i><strong id="nameChoice">{{ amphibien.NomFrancais }}</strong>
+                  </a>
+                </p>
               </div>
             </div>
           </div>
@@ -145,90 +303,14 @@
     </div>
 
     <div class="card">
-      <div class="card-header" id="headingTwo">
+      <div class="card-header" id="headingFour">
         <h2 class="mb-0">
-          <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo">
-            <i class="far fa-hand-point-right mx-4"></i> Par Localisation :
+          <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour">
+            <i class="far fa-hand-point-right mx-4"></i> Par Nom Latin :
           </button>
         </h2>
       </div>
-
-      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-        <div class="background-card card-body">
-          <div class="row justify-content-center">
-            <div id="europe-card" class="card text-black text-center mb-3 mx-2" style="width: 280px; height: 280px;">
-              <div class="card-header">Europe</div>
-              <div id="europe-card-bg" class="card-body">
-                <button type="button" id="europe" class="btn btn-outline-black waves-effect filter"
-                  style="display: contents;" data-rel="all">
-                  <img class="hvr-pulse-grow" src="./assets/images/europe.svg" alt="" width="200px" height="auto"
-                    style="margin-top: 20px;" />
-                </button>
-              </div>
-            </div>
-            <div id="afrique-card" class="card text-black text-center mb-3 mx-2" style="width: 280px; height: 280px;">
-              <div class="card-header">Afrique</div>
-              <div id="afrique-card-bg" class="card-body">
-                <a [routerLink]="['/afrique']" id="europe" class="btn btn-outline-black waves-effect filter"
-                  style="display: contents;" data-rel="all"><img class="hvr-pulse-grow"
-                    src="./assets/images/afrique.svg" alt="" width="180px" height="auto" /></a>
-              </div>
-            </div>
-            <div class="card text-black text-center mb-3 mx-2" style="width: 280px; height: 280px;">
-              <div class="card-header">Asie</div>
-              <div class="card-body">
-                <button disabled type="button" id="europe" class="btn btn-outline-black waves-effect filter"
-                  style="display: contents;" data-rel="all">
-                  <img src="./assets/images/asie.svg" alt="" width="200px" height="auto" style="margin-top: 20px;" />
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="row justify-content-center">
-            <div id="sudamerique-card" class="card text-black text-center mb-3 mx-2"
-              style="width: 280px; height: 280px;">
-              <div class="card-header">Amérique du Nord et Centrale</div>
-              <div id="sudamerique-card-bg" class="card-body">
-                <button type="button" id="europe" class="btn btn-outline-black waves-effect filter"
-                  style="display: contents;" data-rel="all">
-                  <img class="hvr-pulse-grow" src="./assets/images/ameriqueNord.svg" alt="" width="200px" height="auto"
-                    style="margin-top: 35px;" />
-                </button>
-              </div>
-            </div>
-            <div class="card text-black text-center mb-3 mx-2" style="width: 280px; height: 280px;">
-              <div class="card-header">Amérique du Sud</div>
-              <div class="card-body">
-                <button disabled type="button" id="europe" class="btn btn-outline-black waves-effect filter"
-                  style="display: contents;" data-rel="all">
-                  <img src="./assets/images/ameriqueSud.svg" alt="" width="130px" height="auto" />
-                </button>
-              </div>
-            </div>
-            <div class="card text-black text-center mb-3 mx-2" style="width: 280px; height: 280px;">
-              <div class="card-header">Océanie</div>
-              <div class="card-body">
-                <button disabled type="button" id="europe" class="btn btn-outline-black waves-effect filter"
-                  style="display: contents;" data-rel="all">
-                  <img src="./assets/images/oceanie.svg" alt="" width="200px" height="auto" style="margin-top: 20px;" />
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-header" id="headingThree">
-        <h2 class="mb-0">
-          <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree">
-            <i class="far fa-hand-point-right mx-4"></i> Par Nom Vernaculaire:
-          </button>
-        </h2>
-      </div>
-      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+      <div id="collapseFour" class="collapse pb-5" aria-labelledby="headingFour" data-parent="#accordionExample">
         <div class="liste">
           <div class="row">
             <div class="col-12">
@@ -241,7 +323,7 @@
               <h6>Reptiles</h6>
               <p class="listeEspeces" *ngFor="let reptile of reptiles">
                 <a routerLink="/detailEspece/{{ reptile.id }}" routerLinkActive="active" class="btn btn-link"><i
-                    class="fas fa-angle-right pr-2"></i><strong id="nameChoice">{{ reptile.NomFrancais }}</strong>
+                    class="fas fa-angle-right pr-2"></i><i id="nameChoice">{{ reptile.NomLatin }}</i>
                 </a>
               </p>
             </div>
@@ -249,7 +331,7 @@
               <h6>Oiseaux</h6>
               <p class="listeEspeces" *ngFor="let oiseau of oiseaux">
                 <a routerLink="/detailEspece/{{ oiseau.id }}" routerLinkActive="active" class="btn btn-link"><i
-                    class="fas fa-angle-right pr-2"></i><strong id="nameChoice">{{ oiseau.NomFrancais }}</strong>
+                    class="fas fa-angle-right pr-2"></i><i id="nameChoice">{{ oiseau.NomLatin }}</i>
                 </a>
               </p>
             </div>
@@ -257,7 +339,7 @@
               <h6>Mammifères</h6>
               <p class="listeEspeces" *ngFor="let mammifere of mammiferes">
                 <a routerLink="/detailEspece/{{ mammifere.id }}" routerLinkActive="active" class="btn btn-link"><i
-                    class="fas fa-angle-right pr-2"></i><strong id="nameChoice">{{ mammifere.NomFrancais }}</strong>
+                    class="fas fa-angle-right pr-2"></i><i id="nameChoice">{{ mammifere.NomLatin }}</i>
                 </a>
               </p>
             </div>
@@ -266,7 +348,7 @@
               <h6>Invertebrés</h6>
               <p class="listeEspeces" *ngFor="let invertebre of invertebres">
                 <a routerLink="/detailEspece/{{ invertebre.id }}" routerLinkActive="active" class="btn btn-link"><i
-                    class="fas fa-angle-right pr-2"></i><strong id="nameChoice">{{ invertebre.NomFrancais }}</strong>
+                    class="fas fa-angle-right pr-2"></i><i id="nameChoice">{{ invertebre.NomLatin }}</i>
                 </a>
               </p>
             </div>
@@ -274,7 +356,7 @@
               <h6>Flore</h6>
               <p class="listeEspeces" *ngFor="let flore of flores">
                 <a routerLink="/detailEspece/{{ flore.id }}" routerLinkActive="active" class="btn btn-link"><i
-                    class="fas fa-angle-right pr-2"></i><strong id="nameChoice">{{ flore.NomFrancais }}</strong>
+                    class="fas fa-angle-right pr-2"></i><i id="nameChoice">{{ flore.NomLatin }}</i>
                 </a>
               </p>
             </div>
@@ -282,7 +364,7 @@
               <h6>Amphibiens</h6>
               <p class="listeEspeces" *ngFor="let amphibien of amphibiens">
                 <a routerLink="/detailEspece/{{ amphibien.id }}" routerLinkActive="active" class="btn btn-link"><i
-                    class="fas fa-angle-right pr-2"></i><strong id="nameChoice">{{ amphibien.NomFrancais }}</strong>
+                    class="fas fa-angle-right pr-2"></i><i id="nameChoice">{{ amphibien.NomLatin }}</i>
                 </a>
               </p>
             </div>
@@ -291,75 +373,3 @@
       </div>
     </div>
   </div>
-
-  <div class="card">
-    <div class="card-header" id="headingFour">
-      <h2 class="mb-0">
-        <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour">
-          <i class="far fa-hand-point-right mx-4"></i> Par Nom Latin :
-        </button>
-      </h2>
-    </div>
-    <div id="collapseFour" class="collapse pb-5" aria-labelledby="headingFour" data-parent="#accordionExample">
-      <div class="liste">
-        <div class="row">
-          <div class="col-12">
-            <h4>
-              Liste des espèces classées par Familles et ordre alphabétique.
-            </h4>
-          </div>
-          <br />
-          <div class="col-sm-12 col-md-6 col-lg-4">
-            <h6>Reptiles</h6>
-            <p class="listeEspeces" *ngFor="let reptile of reptiles">
-              <a routerLink="/detailEspece/{{ reptile.id }}" routerLinkActive="active" class="btn btn-link"><i
-                  class="fas fa-angle-right pr-2"></i><i id="nameChoice">{{ reptile.NomLatin }}</i>
-              </a>
-            </p>
-          </div>
-          <div class="col-sm-12 col-md-6 col-lg-4">
-            <h6>Oiseaux</h6>
-            <p class="listeEspeces" *ngFor="let oiseau of oiseaux">
-              <a routerLink="/detailEspece/{{ oiseau.id }}" routerLinkActive="active" class="btn btn-link"><i
-                  class="fas fa-angle-right pr-2"></i><i id="nameChoice">{{ oiseau.NomLatin }}</i>
-              </a>
-            </p>
-          </div>
-          <div class="col-sm-12 col-md-6 col-lg-4">
-            <h6>Mammifères</h6>
-            <p class="listeEspeces" *ngFor="let mammifere of mammiferes">
-              <a routerLink="/detailEspece/{{ mammifere.id }}" routerLinkActive="active" class="btn btn-link"><i
-                  class="fas fa-angle-right pr-2"></i><i id="nameChoice">{{ mammifere.NomLatin }}</i>
-              </a>
-            </p>
-          </div>
-
-          <div class="col-sm-12 col-md-6 col-lg-4">
-            <h6>Invertebrés</h6>
-            <p class="listeEspeces" *ngFor="let invertebre of invertebres">
-              <a routerLink="/detailEspece/{{ invertebre.id }}" routerLinkActive="active" class="btn btn-link"><i
-                  class="fas fa-angle-right pr-2"></i><i id="nameChoice">{{ invertebre.NomLatin }}</i>
-              </a>
-            </p>
-          </div>
-          <div class="col-sm-12 col-md-6 col-lg-4">
-            <h6>Flore</h6>
-            <p class="listeEspeces" *ngFor="let flore of flores">
-              <a routerLink="/detailEspece/{{ flore.id }}" routerLinkActive="active" class="btn btn-link"><i
-                  class="fas fa-angle-right pr-2"></i><i id="nameChoice">{{ flore.NomLatin }}</i>
-              </a>
-            </p>
-          </div>
-          <div class="col-sm-12 col-md-6 col-lg-4">
-            <h6>Amphibiens</h6>
-            <p class="listeEspeces" *ngFor="let amphibien of amphibiens">
-              <a routerLink="/detailEspece/{{ amphibien.id }}" routerLinkActive="active" class="btn btn-link"><i
-                  class="fas fa-angle-right pr-2"></i><i id="nameChoice">{{ amphibien.NomLatin }}</i>
-              </a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>

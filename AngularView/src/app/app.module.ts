@@ -22,6 +22,7 @@ import { LoginComponent } from './Structure/login/login.component';
 import { LandingPageComponent } from './Structure/landing-page/landing-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -42,14 +43,16 @@ import { MatTabsModule } from '@angular/material/tabs';
     GalerieAmphibiensComponent,
     GalerieAllComponent,
     LoginComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatTabsModule
+    MatTabsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
