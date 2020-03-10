@@ -72,3 +72,12 @@ h5 {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-tab-body-content {
+  height: 100%;
+  overflow: auto;
+  display: flex!important;
+  flex-flow: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
