@@ -64,7 +64,6 @@ class EspecesController extends AbstractController
             ];
             $especesArray[] = $especeArray; //équivaut push en JS
         }
-        
         return new JsonResponse($especesArray);
     }
 

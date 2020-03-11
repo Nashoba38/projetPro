@@ -4,11 +4,12 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: 'en'
+    locale: 'fr'
     
     #vich
     app.path.image: /uploads/images/espece
     app.path.photo: /uploads/images/photos
+    app.path.articleImages: /uploads/images/articleImages
     
     
 services:

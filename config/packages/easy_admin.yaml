@@ -20,6 +20,9 @@ easy_admin:
     assets:
       css:
         - assets/css/easyAdmin.css
+    form_theme:
+      - '@EasyAdmin/form/bootstrap_4.html.twig'
+      - '@FOSCKEditor/Form/ckeditor_widget.html.twig'     
 
   entities:
     
@@ -83,8 +86,31 @@ easy_admin:
           - { property: 'LatinName', label: 'Nom Latin' }
       form:
         fields:
-          - { property: 'photoFile', type: 'file' }
+          - { property: 'photoFile', type: 'file'}
           - { property: 'FrenchName', label: 'Nom Français' }
           - { property: 'LatinName', label: 'Nom Latin' }
                                   
                                   
+    Article:      
+      class: App\Entity\Article
+
+      list:
+        fields:
+          - { property: 'titre', label: 'Titre' }
+          - { property: 'date', label: 'Date de création' }
+          - { property: 'image1', label: 'Image associée', type: 'image', base_path: '%app.path.articleImages%' }
+      form:
+        fields:    
+          - { property: 'titre', label: 'Titre' }
+          - { property: 'date', label: 'Date de création' }
+          - { property: 'paragraphe1', label: 'Paragraphe N°1' }
+          - { property: 'paragraphe2', label: 'Paragraphe N°2' }
+          - { property: 'paragraphe3', label: 'Paragraphe N°3' }
+          - { property: 'paragraphe4', label: 'Paragraphe N°4' }
+          - { property: 'paragraphe5', label: 'Paragraphe N°5' }
+          - { property: 'artImg1', label: 'Photo N°1', type: 'file' }
+          - { property: 'artImg2', label: 'Photo N°2', type: 'file' }
+          - { property: 'artImg3', label: 'Photo N°3', type: 'file' }
+          - { property: 'artImg4', label: 'Photo N°4', type: 'file' }
+          - { property: 'artImg5', label: 'Photo N°5', type: 'file' }
+

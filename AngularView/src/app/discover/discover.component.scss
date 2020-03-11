@@ -1,3 +1,14 @@
+@media (max-width:700px) {
+  .liste .especesliste {
+    width: 45%!important;
+  }
+}
+@media (max-width:550px) {
+  .liste .especesliste {
+    width: 90%!important;
+  }
+}
+
 .titre {
   text-align: center;
   color: white;
@@ -24,10 +35,15 @@
   width: 25%;
   min-width: min-content;
   text-align: center;
-  margin: 15px 10px;
+  margin: 20px 10px;
 
-  .card-body a {
+  .card-body {
     display: flex;
+
+    a {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
 
     img {
       margin-left: auto;
@@ -47,6 +63,8 @@ h6,
 
 h4 {
   color: black;
+  margin-top: 20px;
+  padding: 5px 20px;
 }
 
 h6 {
@@ -187,6 +205,8 @@ li a {
 #afrique-card-bg,
 #sudamerique-card-bg {
   background-color: rgba(223, 255, 106, 0.384);
+  display: flex;
+  justify-content: center;
 }
 
 #reptile-card-bg:hover,
@@ -213,7 +233,18 @@ li a {
 
 .liste {
   padding: 10px;
+  margin: 10px;
+  width: 95%;
   background-color: white;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center!important;
+
+
+  .especesliste {
+    width: 30%;
+    margin: 5px 5px;
+  }
 }
 
 .liste .row {

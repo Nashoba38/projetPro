@@ -183,6 +183,16 @@ class Especes
 
         return $this;
     }
+    public function getImage()
+    {
+        return $this->image;
+    }
+    
+    public function setImage($image)
+    {
+        $this->image = $image;
+    }
+
 
     public function getImageFile()
     {
@@ -199,15 +209,6 @@ class Especes
         }
     }
 
-    public function setImage($image)
-    {
-        $this->image = $image;
-    }
-
-    public function getImage()
-    {
-        return $this->image;
-    }
 
     public function getReproduction(): ?string
     {
