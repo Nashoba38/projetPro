@@ -2,12 +2,6 @@
   <div class="titre">
     <h1>Choisissez votre façon de découvrir la faune et la flore.</h1>
   </div>
-  <div class="wrapper">
-    <nav class="rightContent">
-      <a [routerLink]="['/Home']" class="retour btn--border btn--primary btn--animated">
-        <i class="far fa-arrow-alt-circle-left hvr-icon"></i> Retour</a>
-    </nav>
-  </div>
 </div>
 
 <mat-tab-group mat-align-tabs="center" class="choixTri">
@@ -18,7 +12,7 @@
     <div id="reptile-card" class="card">
       <div class="card-header">Reptiles</div>
       <div id="reptile-card-bg" class="card-body">
-        <a routerLink="/EspecesByCat/2" id="reptiles" class="btn btn-outline-black waves-effect filter"
+        <a routerLink="/discover/EspecesByCat/2" id="reptiles" class="btn btn-outline-black waves-effect filter"
           data-rel="all"><img class="hvr-pulse-grow" src="./assets/images/reptiles.png" alt="" width="auto"
             height="180px" /></a>
       </div>
@@ -46,10 +40,10 @@
       </div>
     </div>
     <div id="paysage-card" class="card">
-      <div class="card-header">Paysages</div>
+      <div class="card-header">invertébrés</div>
       <div id="paysage-card-bg" class="card-body">
         <a id="paysages" class="btn btn-outline-black waves-effect filter" data-rel="all"><img class="hvr-pulse-grow"
-            src="./assets/images/paysages.png" alt="" width="160px" height="auto" /></a>
+            src="./assets/images/invertebres.png" alt="" width="130px" height="auto" /></a>
       </div>
     </div>
     <div id="flore-card" class="card">

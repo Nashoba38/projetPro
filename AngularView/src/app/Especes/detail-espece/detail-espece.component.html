@@ -8,6 +8,7 @@
       title="{{espece.NomFrancais}}">
   </div>
 </div>
+
 <div class="wrapper">
   <nav class="rightContent">
     <a [routerLink]="['/discover']" class="btn btn--border btn--primary btn--animated mx-2"><i
@@ -35,7 +36,6 @@
         <p *ngIf="espece">{{ espece.Reproduction }}</p>
       </div>
     </div>
-
     <div class="colonneCentre">
       <div>
         <h6><i class="fas fa-paw pt-2"> </i><strong> Description : </strong></h6>
@@ -46,7 +46,6 @@
         <p *ngIf="espece">{{ espece.Moeurs }}</p>
       </div>
     </div>
-
     <div class="colonneDroite">
       <div>
         <h6 class="rightContent pt-2" *ngIf="espece"><strong> Règne : </strong><i>{{espece.Regne}}</i></h6>

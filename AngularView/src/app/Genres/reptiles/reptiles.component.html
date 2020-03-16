@@ -14,10 +14,11 @@
 
 
 <!-- Partie photo -->
+
 <div class="container page-top">
   <div class="row">
     <div class="col-lg-3 col-md-4 col-xs-6 thumb" *ngFor="let reptile of reptiles">
-      <a data-fancybox="gallery" class="fancybox" href="http://127.0.0.1:8000/uploads/images/espece/{{reptile.Photo}}">
+      <a routerLink="/detailEspece/{{ reptile.id }}" routerLinkActive="active">
         <img src="http://127.0.0.1:8000/uploads/images/espece/{{reptile.Photo}}" class="zoom img-fluid"  alt="{{reptile.NomFrancais}}">
       </a>
     </div>

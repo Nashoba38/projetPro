@@ -1,5 +1,10 @@
-// Mediaqueries
+// CSS global
+i {
+  padding-left: 5px;
+  padding-right: 5px;
+}
 
+// Mediaqueries
 @media (max-width: 900px) {
   .content {
     .insert {
@@ -169,8 +174,5 @@
 // FIN Parti où il y a les 3 colonnes
 
 
-i {
-  padding-left: 5px;
-  padding-right: 5px;
-}
+
 

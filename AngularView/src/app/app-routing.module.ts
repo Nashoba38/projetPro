@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'discover', component: DiscoverComponent },
   { path: 'detailEspece/:id', component: DetailEspeceComponent },
-  { path: 'EspecesByCat/2', component: ReptilesComponent },
+  { path: 'discover/EspecesByCat/2', component: ReptilesComponent },
   { path: 'articles', component: ArticlesComponent },
   { path: 'galerie', component: GalerieAllComponent },
   { path: 'register', component: LoginComponent },

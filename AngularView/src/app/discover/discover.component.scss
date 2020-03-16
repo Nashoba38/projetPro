@@ -1,41 +1,101 @@
-@media (max-width:700px) {
-  .liste .especesliste {
-    width: 45%!important;
-  }
-}
+//Media queries
 @media (max-width:550px) {
+  .choixTri {
+    width: 90% !important;
+  }
+
   .liste .especesliste {
-    width: 90%!important;
+    width: 90% !important;
   }
 }
 
-.titre {
-  text-align: center;
-  color: white;
+@media (max-width:700px) {
+  .liste .especesliste {
+    width: 45% !important;
+  }
 }
+
+//CSS contenu global
+p {
+  margin-bottom: 0em !important;
+}
+
+h4 {
+  color: black;
+  margin-top: 20px;
+  padding: 5px 20px;
+  font-family: 'Rajdhani', serif;
+}
+
+.btn {
+  padding: 0 !important;
+}
+
+#reptiles,
+#mammiferes,
+#oiseaux,
+#amphibiens,
+#paysages,
+#flore {
+  cursor: pointer;
+}
+
+.underline {
+  font-size: larger;
+}
+
+//Container du titre de la page
+.topContent {
+  margin-top: 180px;
+  margin-bottom: 80px;
+
+  .titre {
+    margin: 10% 10% 5% 10%;
+    text-align: center;
+    color: white;
+
+    h1 {
+      font-family: 'Rajdhani', serif;
+    }
+  }
+}
+
+//Container tabs avec les choix de "comment découvrir la faune et la flore"
 
 .choixTri {
   background-color: rgba(255, 255, 255, 0.76);
   width: 80%;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 5%;
 
   .contenant {
     height: 100%;
     overflow: auto;
     display: flex !important;
     justify-content: space-around !important;
+
+
   }
 }
 
-
+//CSS des cards
 .card {
   border: 1px solid rgb(167, 167, 167);
   background-color: rgba(255, 255, 255, 0.267);
   width: 25%;
   min-width: min-content;
   text-align: center;
-  margin: 20px 10px;
+  margin: 25px 10px !important;
+
+  .card-header {
+    font-family: 'Rajdhani', serif;
+    padding: 5px !important;
+    background-color: rgba(255, 235, 205, 0);
+    text-align: center;
+    height: 35px;
+  }
+
 
   .card-body {
     display: flex;
@@ -52,82 +112,56 @@
   }
 }
 
-h1,
-h2,
-h3,
-h4,
-h6,
-.card-header {
-  font-family: 'Rajdhani', serif;
-}
+//Affichage liste
 
-h4 {
-  color: black;
-  margin-top: 20px;
-  padding: 5px 20px;
-}
+.liste {
+  padding: 10px;
+  margin: 10px;
+  width: 95%;
+  background-color: white;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center !important;
 
-h6 {
-  margin-top: 10px;
-  font-weight: bolder;
-  text-transform: uppercase;
-  font-size: large;
-  color: black;
-  text-align: center;
-  border: 1px solid rgb(167, 167, 167);
-  padding-top: 3px;
-  padding-bottom: 3px;
-  background-color: rgb(205, 243, 70);
-}
+  .especesliste {
+    width: 30%;
+    margin: 15px 10px;
 
-.return {
-  font-family: 'Alegreya SC', serif;
-  color: white;
-}
+    h6 {
+      margin-top: 10px;
+      font-weight: bolder;
+      text-transform: uppercase;
+      font-size: large;
+      color: black;
+      text-align: center;
+      border: 1px solid rgb(167, 167, 167);
+      padding-top: 3px;
+      padding-bottom: 3px;
+      background-color: rgb(205, 243, 70);
+      font-family: 'Rajdhani', serif;
+    }
 
-.return:hover {
-  color: rgb(223, 255, 106);
-}
+    .listeEspeces {
+      text-align: center;
 
-li a {
-  font-size: large;
-}
 
-.btn-link {
-  font-weight: 900;
-  color: black;
-  text-decoration: none;
-}
+      .btn-link {
+        font-weight: 900;
+        color: black;
+        text-decoration: none;
+      }
 
-.btn-link:hover {
-  font-weight: bold;
-  text-decoration: underline;
-  color: black;
-}
-
-.btn {
-  padding: 0 !important;
-}
-
-#menu {
-  background-color: black;
+      .btn-link:hover {
+        font-weight: bold;
+        text-decoration: underline;
+        color: black;
+      }
+    }
+  }
 }
 
 
-.underline {
-  font-size: larger;
-}
-
-#reptiles,
-#mammiferes,
-#oiseaux,
-#amphibiens,
-#paysages,
-#flore {
-  cursor: pointer;
-}
-
-
+// Style hover et exceptions visuelles
 .nav-item .underline:hover,
 .nav-item .underline:focus,
 .nav-item .underline:active {
@@ -219,43 +253,4 @@ li a {
 #afrique-card-bg:hover,
 #sudamerique-card-bg:hover {
   background-color: rgba(199, 255, 134, 0.678);
-}
-
-.card-header {
-  padding: 5px !important;
-  background-color: rgba(255, 235, 205, 0);
-  text-align: center;
-}
-
-
-
-//Affichage liste
-
-.liste {
-  padding: 10px;
-  margin: 10px;
-  width: 95%;
-  background-color: white;
-  display: flex;
-  flex-flow: wrap;
-  justify-content: center!important;
-
-
-  .especesliste {
-    width: 30%;
-    margin: 5px 5px;
-  }
-}
-
-.liste .row {
-  margin-top: 0px !important;
-  margin-bottom: 0px !important;
-}
-
-.listeEspeces {
-  text-align: center;
-}
-
-p {
-  margin-bottom: 0em !important;
 }
