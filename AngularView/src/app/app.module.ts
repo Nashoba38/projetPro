@@ -23,6 +23,8 @@ import { LandingPageComponent } from './Structure/landing-page/landing-page.comp
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
+import { FormsModule } from '@angular/forms';
+import { LightboxModule } from 'ngx-lightbox';
 
 
 @NgModule({
@@ -53,7 +55,9 @@ import { MatCardModule } from '@angular/material/card';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatTabsModule,
-    MatCardModule
+    MatCardModule,
+    FormsModule,
+    LightboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
