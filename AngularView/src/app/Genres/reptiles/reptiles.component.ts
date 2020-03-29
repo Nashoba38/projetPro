@@ -1,7 +1,6 @@
 import { CategoriesService } from '../categories.service';
 import { EspecesService } from '../../Especes/especes.service';
 import { Component, OnInit } from '@angular/core';
-import { Lightbox } from 'ngx-lightbox';
 
 @Component({
   selector: 'app-reptiles',
@@ -15,22 +14,14 @@ export class ReptilesComponent implements OnInit {
 
   constructor(
     private especesService: EspecesService,
-    private categoriesService: CategoriesService,
-    private _lightbox: Lightbox) { 
-      for (let i = 1; i <= this.reptiles.length; i++) {
-        const src ='http://127.0.0.1:8000/uploads/images/espece/'+this.reptiles;
-        const caption = 'Image ' + i + ' caption here';
-        const album = {
-          src: src,
-          caption: caption
-        };
-        this.photos.push(album);
-      }
-    }
+    private categoriesService: CategoriesService
+    ) { }
 
   ngOnInit() {
     this.getEspeces();
     this.getReptiles();
+
+  console.log(this.reptiles);
   }
 
   getEspeces(): void {
@@ -41,6 +32,7 @@ export class ReptilesComponent implements OnInit {
     this.categoriesService.getReptiles().subscribe(data => ((this.reptiles = data)));
   }
 
+<<<<<<< HEAD
   open(index: number): void {
     // open lightbox
     this._lightbox.open(this.photos, index);
@@ -50,4 +42,18 @@ export class ReptilesComponent implements OnInit {
     // close lightbox programmatically
     this._lightbox.close();
   }
+=======
+  backClicked(): void {
+    this._location.back();
+  }
+
+  open(index: number):void {
+    this._lightbox.open(this.reptiles, index);
+  }
+
+  close() :void {
+    this._lightbox.close();
+  }
+
+>>>>>>> b3d94d1d6b940c8dd9bef1ca6e8d775b4bce83bb
 }

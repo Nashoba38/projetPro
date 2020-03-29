@@ -107,7 +107,7 @@ class Especes
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Classe;
+    private $ClasseTaxo;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -307,14 +307,14 @@ class Especes
     }
 
 
-    public function getClasse(): ?string
+    public function getClasseTaxo(): ?string
     {
-        return $this->Classe;
+        return $this->ClasseTaxo;
     }
 
-    public function setClasse(string $Classe): self
+    public function setClasseTaxo(string $ClasseTaxo): self
     {
-        $this->Classe = $Classe;
+        $this->ClasseTaxo = $ClasseTaxo;
 
         return $this;
     }
@@ -355,8 +355,8 @@ class Especes
         return $this;
     }
     
-    public function __toString() {
-        return $this->NomFrancais;
+    public function _toString() {
+        return $this->NomLatin;
     }
     
     /**

@@ -35,10 +35,10 @@ class EspecesController extends AbstractController
             $reproduction = $espece->getReproduction();
             $regne = $espece->getRegne();
             $embranchement = $espece->getEmbranchement();
-            $classe->$espece->getClasse();
-            $ordre->$espece->getOrdre();
-            $famille->$espece->getFamille();
-            $statutConservation->$espece->getStatutConservation();
+            $classeTaxo=$espece->getClasseTaxo();
+            $ordre=$espece->getOrdre();
+            $famille=$espece->getFamille();
+            $statutConservation=$espece->getStatutConservation();
 
 
             $especeArray = [
@@ -56,7 +56,7 @@ class EspecesController extends AbstractController
                 "Reproduction" => $reproduction,
                 "Regne" => $regne,
                 "Embranchement" => $embranchement,
-                "Classe" => $classe,
+                "Classe" => $classeTaxo,
                 "Ordre" => $ordre,
                 "Famille" => $famille,
                 "StatutConservation" => $statutConservation,
@@ -89,7 +89,7 @@ class EspecesController extends AbstractController
         $Reproduction = $espece->getReproduction();
         $regne = $espece->getRegne();
         $embranchement = $espece->getEmbranchement();
-        $classe = $espece->getClasse();
+        $classeTaxo = $espece->getClasseTaxo();
         $ordre = $espece->getOrdre();
         $famille = $espece->getFamille();
         $statutConservation = $espece->getStatutConservation();
@@ -107,7 +107,7 @@ class EspecesController extends AbstractController
             "Reproduction" => $Reproduction,
             "Regne" => $regne,
             "Embranchement" => $embranchement,
-            "Classe" => $classe,
+            "Classe" => $classeTaxo,
             "Ordre" => $ordre,
             "Famille" => $famille,
             "StatutConservation" => $statutConservation,
