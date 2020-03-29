@@ -15,6 +15,10 @@
 
 <!-- Partie photo -->
 
+<div *ngFor="let reptile of reptiles; let i=index">
+  <img [src]="reptile.src" (click)="open(i)" />
+</div>
+
 <div class="container page-top">
   <div class="row">
     <div class="col-lg-3 col-md-4 col-xs-6 thumb" *ngFor="let reptile of reptiles">

@@ -2,9 +2,7 @@
   display: block;
 }
 
-.bouton,
-.next,
-.previous {
+.bouton {
   color: #000000 !important;
   text-transform: uppercase;
   text-decoration: none;
@@ -24,26 +22,6 @@
   border-radius: 50px;
 }
 
-.next:hover{
-  color: #000000 !important;
-  background: #f6b93b;
-  border-color: #f6b93b !important;
-  transition: all 0.4s ease 0s;
-  font-weight: bold;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
-}
-
-.previous:hover {
-  color: #000000 !important;
-  background: #f6b93b;
-  border-color: #f6b93b !important;
-  transition: all 0.4s ease 0s;
-  font-weight: bold;
-  border-top-left-radius: 50px;
-  border-bottom-left-radius: 50px;
-}
-
 h1 {
   text-align: center;
   font-size: 50px;
@@ -52,32 +30,87 @@ h1 {
 .gallery {
   display: inline-block;
   margin-top: 20px;
+
+  .img-fluid {
+    cursor: pointer;
+  }
+
 }
 
-.modal-header {
-  padding-bottom: 0 !important;
-  border-bottom: solid 1px black;
-}
+.modalImage {
+  z-index: 2000;
+  background-color: rgba(0, 0, 0, 0.938);
+  left: 0;
+  top: 0;
+  position: fixed;
+  /* Stay in place */
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  display: flex;
 
-.modal-title,
-.close {
-  color: white;
-  text-align: center;
-}
+  .close {
+    position: absolute;
+    right: 1%;
+    font-size: xx-large;
+    font-weight: bolder;
+    color: white;
+  }
 
-.modal-dialog {
-  max-width: 800px;
-}
+  .img {
+    position: relative;
+    background-color: #ffffffa9;
+    margin: 5% auto 0 auto;
+    height: 75%;
+    width: auto;
+  }
 
-.modal-content {
-  background-color: #000000;
-}
+  .previous {
+    position: absolute;
+    left: 5%;
+    color: rgb(114, 114, 114);
+    font-size: 60px;
+    top: 40%;
+    cursor: pointer;
 
-.modal-footer {
-  justify-content: space-between;
+    &:hover {
+      color: white;
+    }
+  }
 
+  .next {
+    position: absolute;
+    right: 5%;
+    color: rgb(114, 114, 114);
+    font-size: 60px;
+    top: 40%;
+    cursor: pointer;
 
-  .close span{
-    color: rgb(223, 255, 106)!important;
+    &:hover {
+      color: white;
+    }
+  }
+
+  .presentation {
+    width: 100%;
+    position: absolute;
+    top: 85%;
+    .linkName {
+      display: block;
+      color: grey;
+      font-weight: bold;
+      text-align: center;
+      width: 63%;
+      padding: 4px 20px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: larger;
+
+      &:hover {
+      
+        color: white!important;
+      }
+    }
   }
 }

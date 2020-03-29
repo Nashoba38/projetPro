@@ -55,7 +55,7 @@ $(window).scroll(function() {
   var y=$(window).scrollTop();
     if(y > 180 && x > 768){
       $(".social").addClass("animated fadeOutRight");
-    } else{
+    } else {
       $(".social").removeClass("animated fadeOutRight");
     }
 });

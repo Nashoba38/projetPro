@@ -8,119 +8,40 @@
       </h4>
       <br />
       <div class="button_cont row filters" align="center">
-        <a
-          class="bouton m-2 col-6 col-sm-4 col-md-2"
-          href="#"
-          rel="nofollow noopener"
-          >Amphibiens</a
-        >
-        <a
-          class="bouton m-2 col-6 col-sm-4 col-md-2"
-          href="#"
-          rel="nofollow noopener"
-          >Flore</a
-        >
-        <a
-          class="bouton m-2 col-6 col-sm-4 col-md-2"
-          href="#"
-          rel="nofollow noopener"
-          >Invertébrés</a
-        >
-        <a
-          class="bouton m-2 col-6 col-sm-4 col-md-2"
-          href="#"
-          rel="nofollow noopener"
-          >Mammifères</a
-        >
-        <a
-          class="bouton m-2 col-6 col-sm-4 col-md-2"
-          href="#"
-          rel="nofollow noopener"
-          >Paysages</a
-        >
-        <a
-          class="bouton m-2 col-6 col-sm-4 col-md-2"
-          href="#"
-          rel="nofollow noopener"
-          >Oiseaux</a
-        >
-        <a
-          class="bouton m-2 col-6 col-sm-4 col-md-2"
-          href="#"
-          rel="nofollow noopener"
-          >Reptiles</a
-        >
-        <a
-          class="bouton m-2 col-6 col-sm-4 col-md-2"
-          href="#"
-          rel="nofollow noopener"
-          >Tout voir</a
-        >
+        <a class="bouton m-2 col-6 col-sm-4 col-md-2" href="#" rel="nofollow noopener">Amphibiens</a>
+        <a class="bouton m-2 col-6 col-sm-4 col-md-2" href="#" rel="nofollow noopener">Flore</a>
+        <a class="bouton m-2 col-6 col-sm-4 col-md-2" href="#" rel="nofollow noopener">Invertébrés</a>
+        <a class="bouton m-2 col-6 col-sm-4 col-md-2" href="#" rel="nofollow noopener">Mammifères</a>
+        <a class="bouton m-2 col-6 col-sm-4 col-md-2" href="#" rel="nofollow noopener">Paysages</a>
+        <a class="bouton m-2 col-6 col-sm-4 col-md-2" href="#" rel="nofollow noopener">Oiseaux</a>
+        <a class="bouton m-2 col-6 col-sm-4 col-md-2" href="#" rel="nofollow noopener">Reptiles</a>
+        <a class="bouton m-2 col-6 col-sm-4 col-md-2" href="#" rel="nofollow noopener">Tout voir</a>
       </div>
     </div>
   </div>
   <div class="list-group gallery mt-5">
     <div class="row mt-5">
-      <div
-        class="mb-2 col-12 col-sm-6 col-md-4 col-lg-3 gallery"
-        *ngFor="let espece of especes"
-      >
-        <a data-toggle="modal" data-target="#exampleModal" href="http://127.0.0.1:8000/uploads/images/espece/{{ espece.Image }}">
-          <img
-          class="img-fluid"
-          alt=""
-          src="http://127.0.0.1:8000/uploads/images/espece/{{
+      <div class="mb-2 col-12 col-sm-6 col-md-4 col-lg-3 gallery" *ngFor="let espece of especes; let i=index;">
+
+        <img class="img-fluid" alt="" (click)="openModal(i)" src="http://127.0.0.1:8000/uploads/images/espece/{{
             espece.Image
-          }}"
-        />
-        </a>
+          }}" />
 
-        <!-- Boite modale -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title">{{ espece.NomLatin }} - {{ espece.NomFrancais }}</h5>
-                <button
-                  type="button"
-                  class="close"
-                  data-dismiss="modal"
-                  aria-label="Close"
-                >
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <img
-                  class="img-fluid"
-                  alt=""
-                  src="http://127.0.0.1:8000/uploads/images/espece/{{
-                    espece.Image
-                  }}"
-                />
-              </div>
-              <div class="modal-footer">
-                  <button
-                  type="button"
-                  class="btn previous"
-                  data-dismiss="modal"
-                >
-                  Précédent
-                </button>
-
-                <button
-                  type="button"
-                  class="btn next"
-                  data-dismiss="modal"
-                >
-                  Suivant
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Boite modale -->
       </div>
     </div>
+  </div>
+</div>
+<div class="modalImage" *ngIf="isModalOpen">
+  <div class="close">
+    <button type="button" class="close" (click)="closeModal()">&times;</button>
+  </div>
+  <img class="img" alt="" src="http://127.0.0.1:8000/uploads/images/espece/{{
+      modal.Image
+    }}" />
+  <div class="previous" *ngIf="currentIndex > 0" (click)="precedent()"><i class="fas fa-chevron-left"></i></div>
+  <div class="next" *ngIf="currentIndex <= especes.length-2" (click)="suivant()"><i class="fas fa-chevron-right"></i>
+  </div>
+  <div class="presentation">
+    <a class="linkName" routerLink="/detailEspece/{{ modal.id }}"> {{ modal.NomFrancais }} - {{ modal.NomLatin }}</a>
   </div>
 </div>
