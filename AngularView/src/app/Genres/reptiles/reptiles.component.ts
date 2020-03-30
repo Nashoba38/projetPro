@@ -32,28 +32,4 @@ export class ReptilesComponent implements OnInit {
     this.categoriesService.getReptiles().subscribe(data => ((this.reptiles = data)));
   }
 
-<<<<<<< HEAD
-  open(index: number): void {
-    // open lightbox
-    this._lightbox.open(this.photos, index);
-  }
- 
-  close(): void {
-    // close lightbox programmatically
-    this._lightbox.close();
-  }
-=======
-  backClicked(): void {
-    this._location.back();
-  }
-
-  open(index: number):void {
-    this._lightbox.open(this.reptiles, index);
-  }
-
-  close() :void {
-    this._lightbox.close();
-  }
-
->>>>>>> b3d94d1d6b940c8dd9bef1ca6e8d775b4bce83bb
 }
