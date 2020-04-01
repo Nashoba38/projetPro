@@ -49,7 +49,7 @@ easy_admin:
           - { property: 'Reproduction', label: 'Reproduction / Floraison'}
           - { property: 'Regne', label: 'Règne'}
           - { property: 'Embranchement', label: "Embranchement"}
-          - { property: 'Classe', label: 'Classe'}
+          - { property: 'ClasseTaxo', label: 'Classe'}
           - { property: 'Ordre', label: 'Ordre'}
           - { property: 'Famille', label: 'Famille'}
           - { property: 'StatutConservation', label: 'Statut de Conservation'}
