@@ -141,38 +141,49 @@ i {
 }
 //FIN Bouton retour
 
-// Parti où il y a les 3 colonnes
-.content {
-  .insert {
-    background-color: rgb(230, 230, 230);
-    display: flex;
-    justify-content: space-between;
+//Container tabs avec les choix de "comment découvrir la faune et la flore"
 
-    .colonneGauche {
-      width: 25%;
-      padding: 10px;
-    }
+.choixTri {
+  background-color: rgba(255, 255, 255, 0.76);
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5%;
 
-    .colonneCentre {
-      width: 50%;
-      padding: 10px;
-    }
+  .contenant {
+    height: 100%;
+    overflow: auto;
+    display: flex !important;
+    justify-content: space-around !important;
 
-    .colonneDroite {
-      width: 25%;
-      padding: 10px;
-      border-left: solid 1px darkgrey;
-
-      .rightContent {
-        justify-content: space-between;
-        display: flex;
-        flex-flow: wrap;
-      }
+    .contenu {
+      margin: 30px;
     }
   }
 }
-// FIN Parti où il y a les 3 colonnes
 
+.containerTexte {
+  padding: 10px;
+  margin: 10px;
+  width: 95%;
+  background-color: rgba(255, 255, 255, 0.582);
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center !important;
 
+  .contenu {
+    width: 80%;
+    margin: 15px 10px;
+    text-align: center;
+  }
+}
 
+.containerClassification {
+  padding: 20px;
+  justify-content: center;
+  transform: none;
+  align-content: center;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.582);
+}
 

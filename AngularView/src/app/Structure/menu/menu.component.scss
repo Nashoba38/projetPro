@@ -33,7 +33,7 @@ $mobile-small: 300px;
 
 //Barre de menu
 .navbar {
-  background-color: rgb(223, 255, 106) !important;
+  background-color: rgb(241, 255, 176) !important;
   height: 50px;
   z-index: 10;
 
@@ -47,7 +47,7 @@ $mobile-small: 300px;
   }
 
   .navbar-collapse {
-    background-color: rgb(223, 255, 106) !important;
+    background-color: rgb(241, 255, 176) !important;
     justify-content: flex-end;
     text-align: end;
 
@@ -59,11 +59,11 @@ $mobile-small: 300px;
       min-width: 0;
       border: none;
       left: 10px;
-      background-color: rgb(223, 255, 106) !important;
+      background-color: rgb(241, 255, 176) !important;
 
       .dropdown-item {
         &:hover {
-          background-color: rgb(223, 255, 106) !important;
+          background-color: rgb(241, 255, 176) !important;
         }
       }
     }
@@ -91,7 +91,7 @@ $mobile-small: 300px;
       &:after,
       &:before {
         backface-visibility: hidden;
-        border: 1px solid rgba(rgb(0, 0, 0), 0);
+        border-bottom: 1px solid rgba(rgb(0, 0, 0), 0);
         bottom: 0px;
         content: " ";
         display: block;
@@ -148,7 +148,7 @@ $mobile-small: 300px;
 
       a {
         transition: 0.2s all ease-in;
-        color: rgb(211, 245, 116);
+        color: rgb(241, 255, 176);
         margin-left: 20px;
 
         @media only screen and (max-width: $tablet) {

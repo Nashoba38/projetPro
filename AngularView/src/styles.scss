@@ -30,6 +30,7 @@ body {
   background-image:url("/assets/images/wood.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-size: cover;
   overflow-x: hidden;
 
 h1 {
@@ -81,5 +82,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   flex-flow: row;
   flex-wrap: wrap;
   justify-content: center;
-  
 }
+
+
+

@@ -16,37 +16,56 @@
   </nav>
 </div>
 
-<div class="content container">
-  <div class="insert row p-3">
-    <div class="colonneGauche">
-      <div>
-        <h6><i class="fas fa-tree pt-2"> </i><strong> Habitat : </strong></h6>
+
+<mat-tab-group mat-align-tabs="center" class="choixTri">
+  <mat-tab class="contenant">
+    <ng-template mat-tab-label>
+      Description
+    </ng-template>
+    <div class="containerTexte">
+      <p class="contenu" *ngIf="espece">{{ espece.Description }}</p>
+    </div>
+  </mat-tab>
+  <mat-tab class="contenant">
+    <ng-template mat-tab-label>
+      Habitat / Répartition
+    </ng-template>
+    <div class="containerTexte">
+      <div class="contenu">
         <p *ngIf="espece">{{espece.Habitat}}</p>
-      </div>
-      <div>
-        <h6><i class="fas fa-globe-africa"> </i><strong>Distribution : </strong></h6>
         <p *ngIf="espece">{{espece.Repartition}}</p>
       </div>
-      <div>
-        <h6><i class="fas fa-utensils"> </i><strong> Alimentation : </strong></h6>
-        <p *ngIf="espece">{{espece.Alimentation}}</p>
-      </div>
-      <div>
-        <h6><i class="fas fa-venus-mars"> </i><strong> Reproduction / floraison: </strong></h6>
-        <p *ngIf="espece">{{ espece.Reproduction }}</p>
-      </div>
     </div>
-    <div class="colonneCentre">
-      <div>
-        <h6><i class="fas fa-paw pt-2"> </i><strong> Description : </strong></h6>
-        <p *ngIf="espece">{{ espece.Description }}</p>
-      </div>
-      <div>
-        <h6><i class="fas fa-feather-alt"> </i><strong> Moeurs / généralités : </strong></h6>
-        <p *ngIf="espece">{{ espece.Moeurs }}</p>
-      </div>
+  </mat-tab>
+  <mat-tab class="contenant">
+    <ng-template mat-tab-label>
+      Comportement
+    </ng-template>
+    <div class="containerTexte">
+      <p class="contenu" *ngIf="espece">{{ espece.Moeurs }}</p>
     </div>
-    <div class="colonneDroite">
+  </mat-tab>
+  <mat-tab class="contenant">
+    <ng-template mat-tab-label>
+      Alimentation
+    </ng-template>
+    <div class="containerTexte">
+      <p class="contenu" *ngIf="espece">{{ espece.Alimentation }}</p>
+    </div>
+  </mat-tab>
+  <mat-tab class="contenant">
+    <ng-template mat-tab-label>
+      Reproduction
+    </ng-template>
+    <div class="containerTexte">
+      <p class="contenu" *ngIf="espece">{{ espece.Reproduction }}</p>
+    </div>
+  </mat-tab>
+  <mat-tab class="contenant">
+    <ng-template mat-tab-label>
+      Classification / Protection
+    </ng-template>
+    <div class="containerClassification">
       <div>
         <h6 class="rightContent pt-2" *ngIf="espece"><strong> Règne : </strong><i>{{espece.Regne}}</i></h6>
       </div>
@@ -67,7 +86,7 @@
         <h6><strong> Statut de Conservation : </strong></h6>
         <p *ngIf="espece">{{ espece.StatutConservation }}</p>
       </div>
-      <br>
     </div>
-  </div>
-</div>
+    </mat-tab>
+  </mat-tab-group>
+  
