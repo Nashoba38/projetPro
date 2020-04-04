@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Especes;
 use App\Entity\Category;
+use App\Entity\SousCategory;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 
@@ -32,6 +33,16 @@ class EspecesRepository extends ServiceEntityRepository
         ;
     }
 
+    public function findBySousCategory(SousCategory $sousCategory) 
+    {
+        return $this->createQueryBuilder('e')
+           ->where('e.sousCategory = :mysouscategory')
+           ->setParameter('mysouscategory', $sousCategory)
+           ->getQuery()
+           ->getResult()
+        ;
+    }
+
     public function findAllOrderedByName()
     {
         return $this->getEntityManager()
@@ -50,6 +61,16 @@ class EspecesRepository extends ServiceEntityRepository
                     ->getQuery()
                     ->getResult();
     }
+
+    // public function ophidiens() {
+    //     return $this->createQueryBuilder('o')
+    //                 ->join('o.sous_category_id', 'sc')
+    //                 ->andWhere('sc = sousCategory')
+    //                 ->andWhere('sc.id = :id')
+    //                 ->setParameter('id', 1)
+    //                 ->getQuery()
+    //                 ->getResult();
+    // }
 
    public function makeList() {
        $especes = $this->getDoctrine()

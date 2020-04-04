@@ -1,5 +1,5 @@
 import { CategoriesService } from '../categories.service';
-import { EspecesService } from '../../Especes/especes.service';
+import { SousCategoriesService } from '../sous-categories.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,26 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReptilesComponent implements OnInit {
 
-  photos = [];
   reptiles = [];
+  ophidiens = [];
 
   constructor(
-    private especesService: EspecesService,
-    private categoriesService: CategoriesService
+    private CategoriesService: CategoriesService,
+    private SousCategoriesService: SousCategoriesService
     ) { }
 
   ngOnInit() {
-    this.getEspeces();
     this.getReptiles();
-
-  console.log(this.reptiles);
-  }
-
-  getEspeces(): void {
-    this.especesService.getEspeces().subscribe(data => ((this.photos = data)));
+    this.getOphidiens();
   }
 
   getReptiles(): void {
-    this.categoriesService.getReptiles().subscribe(data => ((this.reptiles = data)));
+    this.CategoriesService.getReptiles().subscribe(data => ((this.reptiles = data)));
+  }
+  getOphidiens(): void {
+    this.SousCategoriesService.getOphidiens().subscribe(data => ((this.ophidiens = data)));
   }
 }

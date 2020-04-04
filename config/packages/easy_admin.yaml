@@ -54,6 +54,7 @@ easy_admin:
           - { property: 'Famille', label: 'Famille'}
           - { property: 'StatutConservation', label: 'Statut de Conservation'}
           - { property: 'category', label: 'Catégorie'}
+          - { property: 'sousCategory', label: 'Sous-Catégorie'}
           - { property: 'pays', label: 'Pays', type: 'entity', type_options: { multiple: 'true', by_reference: 'false' }}
               
     Category:
@@ -66,6 +67,16 @@ easy_admin:
         fields:
           - { property: 'Name', label: 'Famille' }
               
+    SousCategory:
+      class: App\Entity\SousCategory
+      list:
+        fields:
+          - { property: 'SousCategory', label: 'Nombre'}
+          - { property: 'Name', label: 'Sous-Famille' }
+      form:
+        fields:
+          - { property: 'Name', label: 'Sous-Famille' }
+
     Pays:
       class: App\Entity\Pays
       list:

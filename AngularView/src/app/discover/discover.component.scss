@@ -162,12 +162,6 @@ h4 {
 
 
 // Style hover et exceptions visuelles
-.nav-item .underline:hover,
-.nav-item .underline:focus,
-.nav-item .underline:active {
-  color: rgb(223, 255, 106);
-}
-
 
 @-webkit-keyframes hvr-pulse-grow {
   to {
@@ -238,7 +232,7 @@ h4 {
 #europe-card-bg,
 #afrique-card-bg,
 #sudamerique-card-bg {
-  background-color: rgba(223, 255, 106, 0.384);
+  background-color: rgb(255, 255, 255);
   display: flex;
   justify-content: center;
 }

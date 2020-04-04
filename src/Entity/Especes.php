@@ -72,6 +72,10 @@ class Especes
     private $category;
 
     /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\SousCategory", inversedBy="SousCategory")
+     */
+    private $sousCategory;
+    /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Pays", inversedBy="Pays", cascade={"persist","remove"})
      */
     private $pays;
@@ -278,6 +282,18 @@ class Especes
     public function setCategory(?Category $category): self
     {
         $this->category = $category;
+        
+        return $this;
+    }
+
+    public function getSousCategory(): ?SousCategory
+    {
+        return $this->sousCategory;
+    }
+    
+    public function setSousCategory(?SousCategory $sousCategory): self
+    {
+        $this->sousCategory = $sousCategory;
         
         return $this;
     }

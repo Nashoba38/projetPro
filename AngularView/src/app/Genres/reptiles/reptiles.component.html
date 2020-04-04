@@ -8,29 +8,16 @@
 <div class="titre">
   <h1>Liste des Reptiles</h1>
 </div>
+
 <div class="liste">
-  <p class="listeReptiles" *ngFor="let reptile of reptiles ">
-    <a routerLink="/detailEspece/{{reptile.id}}" routerLinkActive="active" class="btn btn-link">-
-      <strong>{{reptile.NomFrancais}}</strong> -
-      <i>{{reptile.NomLatin}}</i></a>
-  </p>
-</div>
-
-<!-- Partie photo -->
-
-<div *ngFor="let reptile of reptiles; let i=index">
-  <img [src]="reptile.src" (click)="open(i)" />
-</div>
-
-<div class="container page-top">
-  <div class="row">
-    <div class="col-lg-3 col-md-4 col-xs-6 thumb" *ngFor="let reptile of reptiles">
-      <a routerLink="/detailEspece/{{ reptile.id }}" routerLinkActive="active">
-        <img src="http://127.0.0.1:8000/uploads/images/espece/{{reptile.Photo}}" class="zoom img-fluid"  alt="{{reptile.NomFrancais}}">
-      </a>
+  <div class="ophidiens">
+    <h5>Serpents / Ophidiens</h5>
+    <p class="listeReptiles" *ngFor="let ophidien of ophidiens ">
+      <a routerLink="/detailEspece/{{ophidien.id}}" routerLinkActive="active" class="btn btn-link">-
+        <strong>{{ ophidien.NomFrancais }}</strong> -
+        <i>{{ ophidien.NomLatin }}</i></a>
+      </p>
     </div>
-  </div>
 </div>
-
 
 <script type="text/javascript" src="../assets/js/script.js"></script>
