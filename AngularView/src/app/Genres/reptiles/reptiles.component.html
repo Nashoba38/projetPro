@@ -1,10 +1,3 @@
-<div class="wrapper">
-  <nav class="rightContent">
-    <a class="btn btn--border btn--primary btn--animated">
-      <i class="far fa-arrow-alt-circle-left hvr-icon"></i> Retour</a>
-  </nav>
-</div>
-
 <div class="titre">
   <h1>Liste des Reptiles</h1>
 </div>
@@ -12,12 +5,22 @@
 <div class="liste">
   <div class="ophidiens">
     <h5>Serpents / Ophidiens</h5>
-    <p class="listeReptiles" *ngFor="let ophidien of ophidiens ">
+    <p class="listeReptiles" *ngFor="let ophidien of ophidiens">
       <a routerLink="/detailEspece/{{ophidien.id}}" routerLinkActive="active" class="btn btn-link">-
         <strong>{{ ophidien.NomFrancais }}</strong> -
-        <i>{{ ophidien.NomLatin }}</i></a>
-      </p>
-    </div>
+        <i>{{ ophidien.NomLatin }}</i>
+      </a>
+    </p>
+  </div>
+  <div class="sauriens">
+    <h5>Lézards / Sauriens</h5>
+    <p class="listeReptiles" *ngFor="let saurien of sauriens">
+      <a routerLink="/detailEspece/{{saurien.id}}" routerLinkActive="active" class="btn btn-link">-
+        <strong>{{ saurien.NomFrancais }}</strong> -
+        <i>{{ saurien.NomLatin }}</i>
+      </a>
+    </p>
+  </div>
 </div>
 
 <script type="text/javascript" src="../assets/js/script.js"></script>

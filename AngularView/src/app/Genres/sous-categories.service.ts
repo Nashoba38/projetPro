@@ -14,4 +14,8 @@ export class SousCategoriesService {
     const ophidiens = this.http.get<SousCategories[]>('http://localhost:8000/api/EspecesBySousCat/1');
     return ophidiens;
   }
+  getSauriens(): Observable<SousCategories[]> {
+    const sauriens = this.http.get<SousCategories[]>('http://localhost:8000/api/EspecesBySousCat/2');
+    return sauriens;
+  }
 }

@@ -11,6 +11,7 @@ export class ReptilesComponent implements OnInit {
 
   reptiles = [];
   ophidiens = [];
+  sauriens = [];
 
   constructor(
     private CategoriesService: CategoriesService,
@@ -20,6 +21,7 @@ export class ReptilesComponent implements OnInit {
   ngOnInit() {
     this.getReptiles();
     this.getOphidiens();
+    this.getSauriens();
   }
 
   getReptiles(): void {
@@ -27,5 +29,8 @@ export class ReptilesComponent implements OnInit {
   }
   getOphidiens(): void {
     this.SousCategoriesService.getOphidiens().subscribe(data => ((this.ophidiens = data)));
+  }
+  getSauriens(): void {
+    this.SousCategoriesService.getSauriens().subscribe(data => ((this.sauriens = data)));
   }
 }
