@@ -24,6 +24,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
 import { LightboxModule } from 'ngx-lightbox';
+import { AmphibiensComponent } from './Genres/amphibiens/amphibiens.component';
+import { MammiferesComponent } from './Genres/mammiferes/mammiferes.component';
+import { OiseauxComponent } from './Genres/oiseaux/oiseaux.component';
 
 
 @NgModule({
@@ -46,6 +49,9 @@ import { LightboxModule } from 'ngx-lightbox';
     GalerieAllComponent,
     LoginComponent,
     LandingPageComponent,
+    AmphibiensComponent,
+    MammiferesComponent,
+    OiseauxComponent,
     
   ],
   imports: [

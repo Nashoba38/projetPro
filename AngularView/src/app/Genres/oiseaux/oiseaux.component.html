@@ -1,0 +1,78 @@
+<div class="titre">
+  <h1>Liste des Oiseaux</h1>
+</div>
+
+<div class="liste">
+  <div class="passereaux">
+    <h5>Passereaux</h5>
+    <p class="listePassereaux" *ngFor="let passereau of passereaux">
+      <a routerLink="/detailEspece/{{passereau.id}}" routerLinkActive="active" class="btn btn-link">-
+        <strong>{{ passereau.NomFrancais }}</strong> -
+        <i>{{ passereau.NomLatin }}</i>
+      </a>
+    </p>
+  </div>
+  <div class="rapaces">
+    <h5>Rapaces</h5>
+    <p class="listeRapaces" *ngFor="let rapace of rapaces">
+      <a routerLink="/detailEspece/{{rapace.id}}" routerLinkActive="active" class="btn btn-link">-
+        <strong>{{ rapace.NomFrancais }}</strong> -
+        <i>{{ rapace.NomLatin }}</i>
+      </a>
+    </p>
+  </div>
+  <div class="oiseauxMarins">
+    <h5>Oiseaux marins</h5>
+    <p class="listeOiseauxMarins" *ngFor="let oiseauMarin of oiseauxMarins">
+      <a routerLink="/detailEspece/{{oiseauMarin.id}}" routerLinkActive="active" class="btn btn-link">-
+        <strong>{{ oiseauMarin.NomFrancais }}</strong> -
+        <i>{{ oiseauMarin.NomLatin }}</i>
+      </a>
+    </p>
+  </div>
+  <div class="palmipedes">
+    <h5>Palmipèdes</h5>
+    <p class="listePalmipedes" *ngFor="let palmipede of palmipedes">
+      <a routerLink="/detailEspece/{{palmipede.id}}" routerLinkActive="active" class="btn btn-link">-
+        <strong>{{ palmipede.NomFrancais }}</strong> -
+        <i>{{ palmipede.NomLatin }}</i>
+      </a>
+    </p>
+  </div>
+  <div class="grandEchassiers">
+    <h5>Grands Echassiers</h5>
+    <p class="listeGrandEchassiers" *ngFor="let grandEchassier of grandEchassiers">
+      <a routerLink="/detailEspece/{{grandEchassier.id}}" routerLinkActive="active" class="btn btn-link">-
+        <strong>{{ grandEchassier.NomFrancais }}</strong> -
+        <i>{{ grandEchassier.NomLatin }}</i>
+      </a>
+    </p>
+  </div>
+  <div class="petitEchassiers">
+    <h5>Petits Echassiers</h5>
+    <p class="listePetitEchassiers" *ngFor="let petitEchassier of petitEchassiers">
+      <a routerLink="/detailEspece/{{petitEchassier.id}}" routerLinkActive="active" class="btn btn-link">-
+        <strong>{{ petitEchassier.NomFrancais }}</strong> -
+        <i>{{ petitEchassier.NomLatin }}</i>
+      </a>
+    </p>
+  </div>
+  <div class="galliformes">
+    <h5>Galliformes</h5>
+    <p class="listeGalliformes" *ngFor="let galliforme of galliformes">
+      <a routerLink="/detailEspece/{{galliforme.id}}" routerLinkActive="active" class="btn btn-link">-
+        <strong>{{ galliforme.NomFrancais }}</strong> -
+        <i>{{ galliforme.NomLatin }}</i>
+      </a>
+    </p>
+  </div>
+  <div class="autresOiseaux">
+    <h5>Autres Oiseaux</h5>
+    <p class="listeAutresOiseaux" *ngFor="let autreOiseau of autresOiseaux">
+      <a routerLink="/detailEspece/{{autreOiseau.id}}" routerLinkActive="active" class="btn btn-link">-
+        <strong>{{ autreOiseau.NomFrancais }}</strong> -
+        <i>{{ autreOiseau.NomLatin }}</i>
+      </a>
+    </p>
+  </div>
+</div>

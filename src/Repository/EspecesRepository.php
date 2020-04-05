@@ -52,25 +52,6 @@ class EspecesRepository extends ServiceEntityRepository
             ->getResult();
             }
 
-    public function mammiferes() {
-        return $this->createQueryBuilder('m')
-                    ->join('m.category_id', 'c')
-                    ->andWhere('c = category')
-                    ->andWhere('c.id = :id')
-                    ->setParameter('id', 1)
-                    ->getQuery()
-                    ->getResult();
-    }
-
-    // public function ophidiens() {
-    //     return $this->createQueryBuilder('o')
-    //                 ->join('o.sous_category_id', 'sc')
-    //                 ->andWhere('sc = sousCategory')
-    //                 ->andWhere('sc.id = :id')
-    //                 ->setParameter('id', 1)
-    //                 ->getQuery()
-    //                 ->getResult();
-    // }
 
    public function makeList() {
        $especes = $this->getDoctrine()

@@ -1,0 +1,26 @@
+<div class="titre">
+    <h1>Liste des Amphibiens</h1>
+  </div>
+  
+  <div class="liste">
+    <div class="anoures">
+      <h5>Anoures</h5>
+      <p class="listeAmphibiens" *ngFor="let anoure of anoures">
+        <a routerLink="/detailEspece/{{anoure.id}}" routerLinkActive="active" class="btn btn-link">-
+          <strong>{{ anoure.NomFrancais }}</strong> -
+          <i>{{ anoure.NomLatin }}</i>
+        </a>
+      </p>
+    </div>
+    <div class="urodeles">
+      <h5>Urodèles</h5>
+      <p class="listeAmphibiens" *ngFor="let urodele of urodeles">
+        <a routerLink="/detailEspece/{{urodele.id}}" routerLinkActive="active" class="btn btn-link">-
+          <strong>{{ urodele.NomFrancais }}</strong> -
+          <i>{{ urodele.NomLatin }}</i>
+        </a>
+      </p>
+    </div>
+  </div>
+  
+  
