@@ -12,9 +12,9 @@ passereaux = [];
 rapaces = [];
 oiseauxMarins = [];
 palmipedes = [];
-grandEchassiers = [];
-petitEchassiers = [];
+echassiers = [];
 galliformes = [];
+piciformes = [];
 autresOiseaux = [];
 
   constructor(
@@ -26,9 +26,9 @@ autresOiseaux = [];
     this.getRapaces();
     this.getOiseauxMarins();
     this.getPalmipedes();
-    this.getGrandEchassiers();
-    this.getPetitEchassiers();
+    this.getEchassiers();
     this.getGalliformes();
+    this.getPiciformes();
     this.getAutresOiseaux();
   }
 
@@ -39,19 +39,19 @@ autresOiseaux = [];
     this.SousCategoriesService.getRapaces().subscribe(data => ((this.rapaces = data)));
   }
   getOiseauxMarins(): void {
-    this.SousCategoriesService.getPassereaux().subscribe(data => ((this.oiseauxMarins = data)));
+    this.SousCategoriesService.getOiseauxMarins().subscribe(data => ((this.oiseauxMarins = data)));
   }
   getPalmipedes(): void {
     this.SousCategoriesService.getPalmipedes().subscribe(data => ((this.palmipedes = data)));
   }
-  getGrandEchassiers(): void {
-    this.SousCategoriesService.getGrandEchassiers().subscribe(data => ((this.grandEchassiers = data)));
-  }
-  getPetitEchassiers(): void {
-    this.SousCategoriesService.getPetitEchassiers().subscribe(data => ((this.petitEchassiers = data)));
+  getEchassiers(): void {
+    this.SousCategoriesService.getEchassiers().subscribe(data => ((this.echassiers = data)));
   }
   getGalliformes(): void {
     this.SousCategoriesService.getGalliformes().subscribe(data => ((this.galliformes = data)));
+  }
+  getPiciformes(): void {
+    this.SousCategoriesService.getPiciformes().subscribe(data => ((this.piciformes = data)));
   }
   getAutresOiseaux(): void {
     this.SousCategoriesService.getAutresOiseaux().subscribe(data => ((this.autresOiseaux = data)));

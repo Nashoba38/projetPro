@@ -27,6 +27,8 @@ import { LightboxModule } from 'ngx-lightbox';
 import { AmphibiensComponent } from './Genres/amphibiens/amphibiens.component';
 import { MammiferesComponent } from './Genres/mammiferes/mammiferes.component';
 import { OiseauxComponent } from './Genres/oiseaux/oiseaux.component';
+import { VegetauxComponent } from './Genres/vegetaux/vegetaux.component';
+import { InvertebresComponent } from './Genres/invertebres/invertebres.component';
 
 
 @NgModule({
@@ -52,6 +54,8 @@ import { OiseauxComponent } from './Genres/oiseaux/oiseaux.component';
     AmphibiensComponent,
     MammiferesComponent,
     OiseauxComponent,
+    VegetauxComponent,
+    InvertebresComponent,
     
   ],
   imports: [

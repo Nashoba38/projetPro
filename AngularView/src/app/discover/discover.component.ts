@@ -21,6 +21,13 @@ export class DiscoverComponent implements OnInit {
   flores = [];
   invertebres = [];
 
+  reptilesLatin = [];
+  amphibiensLatin = [];
+  oiseauxLatin = [];
+  mammiferesLatin = [];
+  floresLatin = [];
+  invertebresLatin = [];
+
   constructor(
     private categoriesService: CategoriesService) { }
 
@@ -31,6 +38,13 @@ export class DiscoverComponent implements OnInit {
     this.getMammiferes();
     this.getFlores();
     this.getInvertebres();
+
+    this.getReptilesLatin();
+    this.getAmphibiensLatin();
+    this.getOiseauxLatin();
+    this.getMammiferesLatin();
+    this.getFloresLatin();
+    this.getInvertebresLatin();
   }
 
   getReptiles(): void {
@@ -50,5 +64,25 @@ export class DiscoverComponent implements OnInit {
   }
   getInvertebres(): void {
     this.categoriesService.getInvertebres().subscribe(data => ((this.invertebres = data)));
+  }
+
+  // Version noms latins
+  getReptilesLatin(): void {
+    this.categoriesService.getReptilesLatin().subscribe(data => ((this.reptilesLatin = data)));
+  }
+  getAmphibiensLatin(): void {
+    this.categoriesService.getAmphibiensLatin().subscribe(data => ((this.amphibiensLatin = data)));
+  }
+  getOiseauxLatin(): void {
+    this.categoriesService.getOiseauxLatin().subscribe(data => ((this.oiseauxLatin = data)));
+  }
+  getMammiferesLatin(): void {
+    this.categoriesService.getMammiferesLatin().subscribe(data => ((this.mammiferesLatin = data)));
+  }
+  getFloresLatin(): void {
+    this.categoriesService.getFloresLatin().subscribe(data => ((this.floresLatin = data)));
+  }
+  getInvertebresLatin(): void {
+    this.categoriesService.getInvertebresLatin().subscribe(data => ((this.invertebresLatin = data)));
   }
 }

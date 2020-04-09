@@ -1,0 +1,79 @@
+<div class="titre">
+    <h1>Liste des Invertébrés</h1>
+  </div>
+  
+  <div class="liste">
+    <div *ngIf="arachnides.length !== 0" class="arachnides">
+      <h5>Arachnides</h5>
+      <p class="listeArachnides" *ngFor="let arachnide of arachnides">
+        <a routerLink="/detailEspece/{{arachnide.id}}" routerLinkActive="active" class="btn btn-link">-
+          <strong>{{ arachnide.NomFrancais }}</strong> -
+          <i>{{ arachnide.NomLatin }}</i>
+        </a>
+      </p>
+    </div>
+    <div *ngIf="coleopteres.length !== 0" class="coleopteres">
+      <h5>Coléoptères</h5>
+      <p class="listeColeopteres" *ngFor="let coleoptere of coleopteres">
+        <a routerLink="/detailEspece/{{coleoptere.id}}" routerLinkActive="active" class="btn btn-link">-
+          <strong>{{ coleoptere.NomFrancais }}</strong> -
+          <i>{{ coleoptere.NomLatin }}</i>
+        </a>
+      </p>
+    </div>
+    <div *ngIf="lepidopteres.length !== 0" class="lepidopteres">
+      <h5>lépidoptères</h5>
+      <p class="listeLepidopteres" *ngFor="let lepidoptere of lepidopteres">
+        <a routerLink="/detailEspece/{{lepidoptere.id}}" routerLinkActive="active" class="btn btn-link">-
+          <strong>{{ lepidoptere.NomFrancais }}</strong> -
+          <i>{{ lepidoptere.NomLatin }}</i>
+        </a>
+      </p>
+    </div>
+    <div *ngIf="orthopteres.length !== 0" class="orthopteres">
+      <h5>Orthoptères</h5>
+      <p class="listeOrthopteres" *ngFor="let orthoptere of orthopteres">
+        <a routerLink="/detailEspece/{{orthoptere.id}}" routerLinkActive="active" class="btn btn-link">-
+          <strong>{{ orthoptere.NomFrancais }}</strong> -
+          <i>{{ orthoptere.NomLatin }}</i>
+        </a>
+      </p>
+    </div>
+    <div *ngIf="mantopteres.length !== 0" class="mantopteres">
+      <h5>Mantoptères</h5>
+      <p class="listeMantopteres" *ngFor="let mantoptere of mantopteres">
+        <a routerLink="/detailEspece/{{mantoptere.id}}" routerLinkActive="active" class="btn btn-link">-
+          <strong>{{ mantoptere.NomFrancais }}</strong> -
+          <i>{{ mantoptere.NomLatin }}</i>
+        </a>
+      </p>
+    </div>
+    <div *ngIf="odonates.length !== 0" class="odonates">
+      <h5>Odonates</h5>
+      <p class="listeOdonates" *ngFor="let odonate of odonates">
+        <a routerLink="/detailEspece/{{odonate.id}}" routerLinkActive="active" class="btn btn-link">-
+          <strong>{{ odonate.NomFrancais }}</strong> -
+          <i>{{ odonate.NomLatin }}</i>
+        </a>
+      </p>
+    </div>
+    <div *ngIf="hymenopteres.length !== 0" class="hymenopteres">
+      <h5>Hyménoptères</h5>
+      <p class="listeHymenopteres" *ngFor="let hymenoptere of hymenopteres">
+        <a routerLink="/detailEspece/{{hymenoptere.id}}" routerLinkActive="active" class="btn btn-link">-
+          <strong>{{ hymenoptere.NomFrancais }}</strong> -
+          <i>{{ hymenoptere.NomLatin }}</i>
+        </a>
+      </p>
+    </div>
+    <div *ngIf="nevropteres.length !== 0" class="nevropteres">
+        <h5>Névroptères</h5>
+        <p class="listeNevropteres" *ngFor="let nevroptere of nevropteres">
+          <a routerLink="/detailEspece/{{nevroptere.id}}" routerLinkActive="active" class="btn btn-link">-
+            <strong>{{ nevroptere.NomFrancais }}</strong> -
+            <i>{{ nevroptere.NomLatin }}</i>
+          </a>
+        </p>
+      </div>
+  </div>
+  

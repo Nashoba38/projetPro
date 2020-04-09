@@ -32,4 +32,25 @@ class CategoryController extends AbstractController
         }
         return new JsonResponse($especes);
     }
+
+    /**
+     * @Route("/api/EspecesByLatinCat/{id}", name="especesByLatinCat")
+     */
+    public function latinCategories(Category $category)
+    {
+        $especesLatinRepository = $this->getDoctrine()->getRepository(Especes::class);
+        $especesLatinEntities = $especesLatinRepository->findByLatinNameCategory($category);
+
+        $latinEspeces = [];
+        foreach($especesLatinEntities as $especeLatin)
+        {
+            $latinEspeces[] = [
+                'id' => $especeLatin->getId(),
+                'NomFrancais' => $especeLatin->getNomFrancais(),
+                'NomLatin' => $especeLatin->getNomLatin(),
+                'Photo' => $especeLatin->getImage(),
+            ];   
+        }
+        return new JsonResponse($latinEspeces);
+    }
 }

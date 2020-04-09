@@ -1,1 +1,69 @@
-<p>mammiferes works!</p>
+<div class="titre">
+  <h1>Liste des Mammifères</h1>
+</div>
+
+<div class="liste">
+  <div *ngIf="carnivores.length !== 0" class="carnivores">
+    <h5>Carnivores</h5>
+    <p class="listeCarnivores" *ngFor="let carnivore of carnivores">
+      <a routerLink="/detailEspece/{{carnivore.id}}" routerLinkActive="active" class="btn btn-link">-
+        <strong>{{ carnivore.NomFrancais }}</strong> -
+        <i>{{ carnivore.NomLatin }}</i>
+      </a>
+    </p>
+  </div>
+  <div *ngIf="mammiferesMarins.length !== 0" class="mammiferesMarins">
+    <h5>Mammifères marins</h5>
+    <p class="listeMammiferesMarins" *ngFor="let mammiferesMarin of mammiferesMarins">
+      <a routerLink="/detailEspece/{{mammiferesMarin.id}}" routerLinkActive="active" class="btn btn-link">-
+        <strong>{{ mammiferesMarin.NomFrancais }}</strong> -
+        <i>{{ mammiferesMarin.NomLatin }}</i>
+      </a>
+    </p>
+  </div>
+  <div *ngIf="lagomorphes.length !== 0" class="lagomorphes">
+    <h5>Lagomorphes</h5>
+    <p class="listeLagomorphes" *ngFor="let lagomorphe of lagomorphes">
+      <a routerLink="/detailEspece/{{lagomorphe.id}}" routerLinkActive="active" class="btn btn-link">-
+        <strong>{{ lagomorphe.NomFrancais }}</strong> -
+        <i>{{ lagomorphe.NomLatin }}</i>
+      </a>
+    </p>
+  </div>
+  <div *ngIf="insectivores.length !== 0" class="insectivores">
+    <h5>Insectivores</h5>
+    <p class="listeInsectivores" *ngFor="let insectivore of insectivores">
+      <a routerLink="/detailEspece/{{insectivore.id}}" routerLinkActive="active" class="btn btn-link">-
+        <strong>{{ insectivore.NomFrancais }}</strong> -
+        <i>{{ insectivore.NomLatin }}</i>
+      </a>
+    </p>
+  </div>
+  <div *ngIf="primates.length !== 0" class="primates">
+    <h5>Primates</h5>
+    <p class="listePrimates" *ngFor="let primate of primates">
+      <a routerLink="/detailEspece/{{primate.id}}" routerLinkActive="active" class="btn btn-link">-
+        <strong>{{ primate.NomFrancais }}</strong> -
+        <i>{{ primate.NomLatin }}</i>
+      </a>
+    </p>
+  </div>
+  <div *ngIf="rongeurs.length !== 0" class="rongeurs">
+    <h5>Rongeurs</h5>
+    <p class="listeRongeurs" *ngFor="let rongeur of rongeurs">
+      <a routerLink="/detailEspece/{{rongeur.id}}" routerLinkActive="active" class="btn btn-link">-
+        <strong>{{ rongeur.NomFrancais }}</strong> -
+        <i>{{ rongeur.NomLatin }}</i>
+      </a>
+    </p>
+  </div>
+  <div *ngIf="ongules.length !== 0" class="ongules">
+    <h5>Ongulés</h5>
+    <p class="listeOngules" *ngFor="let ongule of ongules">
+      <a routerLink="/detailEspece/{{ongule.id}}" routerLinkActive="active" class="btn btn-link">-
+        <strong>{{ ongule.NomFrancais }}</strong> -
+        <i>{{ ongule.NomLatin }}</i>
+      </a>
+    </p>
+  </div>
+</div>

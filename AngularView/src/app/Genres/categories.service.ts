@@ -34,4 +34,30 @@ export class CategoriesService {
     const invertebres = this.http.get<Categories[]>('http://localhost:8000/api/EspecesByCat/6');
     return invertebres;
   }
+
+  // Version latin
+  getReptilesLatin(): Observable<Categories[]> {
+    const reptilesLatin = this.http.get<Categories[]>('http://localhost:8000/api/EspecesByLatinCat/2');
+    return reptilesLatin;
+  }
+  getOiseauxLatin(): Observable<Categories[]> {
+    const oiseauxLatin = this.http.get<Categories[]>('http://localhost:8000/api/EspecesByLatinCat/3');
+    return oiseauxLatin;
+  }
+  getMammiferesLatin(): Observable<Categories[]> {
+    const mammiferesLatin = this.http.get<Categories[]>('http://localhost:8000/api/EspecesByLatinCat/1');
+    return mammiferesLatin;
+  }
+  getFloresLatin(): Observable<Categories[]> {
+    const floresLatin = this.http.get<Categories[]>('http://localhost:8000/api/EspecesByLatinCat/5');
+    return floresLatin;
+  }
+  getAmphibiensLatin(): Observable<Categories[]> {
+    const amphibiensLatin = this.http.get<Categories[]>('http://localhost:8000/api/EspecesByLatinCat/4');
+    return amphibiensLatin;
+  }
+  getInvertebresLatin(): Observable<Categories[]> {
+    const invertebresLatin = this.http.get<Categories[]>('http://localhost:8000/api/EspecesByLatinCat/6');
+    return invertebresLatin;
+  }
 }

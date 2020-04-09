@@ -1,0 +1,43 @@
+<div class="titre">
+    <h1>Liste des Végétaux</h1>
+  </div>
+  
+  <div class="liste">
+    <div *ngIf="arbres.length !== 0" class="arbres">
+      <h5>Arbres</h5>
+      <p class="listeArbres" *ngFor="let arbre of arbres">
+        <a routerLink="/detailEspece/{{arbre.id}}" routerLinkActive="active" class="btn btn-link">-
+          <strong>{{ arbre.NomFrancais }}</strong> -
+          <i>{{ arbre.NomLatin }}</i>
+        </a>
+      </p>
+    </div>
+    <div *ngIf="orchidees.length !== 0" class="mammiferesMarins">
+      <h5>Orchidées</h5>
+      <p class="listeOrchidees" *ngFor="let orchidee of orchidees">
+        <a routerLink="/detailEspece/{{orchidee.id}}" routerLinkActive="active" class="btn btn-link">-
+          <strong>{{ orchidee.NomFrancais }}</strong> -
+          <i>{{ orchidee.NomLatin }}</i>
+        </a>
+      </p>
+    </div>
+    <div *ngIf="fleurs.length !== 0" class="fleurs">
+      <h5>Fleurs</h5>
+      <p class="listeFleurs" *ngFor="let fleur of fleurs">
+        <a routerLink="/detailEspece/{{fleur.id}}" routerLinkActive="active" class="btn btn-link">-
+          <strong>{{ fleur.NomFrancais }}</strong> -
+          <i>{{ fleur.NomLatin }}</i>
+        </a>
+      </p>
+    </div>
+    <div *ngIf="autresVegetaux.length !== 0" class="autresVegetaux">
+      <h5>Autres végétaux</h5>
+      <p class="listeAutresVegetaux" *ngFor="let autreVegetal of autresVegetaux">
+        <a routerLink="/detailEspece/{{autreVegetal.id}}" routerLinkActive="active" class="btn btn-link">-
+          <strong>{{ autreVegetal.NomFrancais }}</strong> -
+          <i>{{ autreVegetal.NomLatin }}</i>
+        </a>
+      </p>
+    </div>
+  </div>
+  

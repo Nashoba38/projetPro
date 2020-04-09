@@ -28,6 +28,18 @@ class EspecesRepository extends ServiceEntityRepository
         return $this->createQueryBuilder('espece')
            ->where('espece.category = :mycategory')
            ->setParameter('mycategory', $category)
+           ->orderBy('espece.NomFrancais', 'ASC')
+           ->getQuery()
+           ->getResult()
+        ;
+    }
+
+    public function findByLatinNameCategory(Category $category) 
+    {
+        return $this->createQueryBuilder('especeLatin')
+           ->where('especeLatin.category = :mycategory')
+           ->setParameter('mycategory', $category)
+           ->orderBy('especeLatin.NomLatin', 'ASC')
            ->getQuery()
            ->getResult()
         ;
@@ -38,6 +50,7 @@ class EspecesRepository extends ServiceEntityRepository
         return $this->createQueryBuilder('e')
            ->where('e.sousCategory = :mysouscategory')
            ->setParameter('mysouscategory', $sousCategory)
+           ->orderBy('e.NomFrancais', 'ASC')
            ->getQuery()
            ->getResult()
         ;
@@ -47,7 +60,7 @@ class EspecesRepository extends ServiceEntityRepository
     {
         return $this->getEntityManager()
             ->createQuery(
-                'SELECT e FROM especes e ORDER BY e.name ASC'
+                'SELECT e FROM especes e ORDER BY e.NomFrancais ASC'
             )
             ->getResult();
             }
