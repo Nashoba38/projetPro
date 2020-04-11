@@ -71,7 +71,7 @@
         <h6>Reptiles</h6>
         <p class="listeEspeces" *ngFor="let reptile of reptiles">
           <a routerLink="/detailEspece/{{ reptile.id }}" routerLinkActive="active" class="btn btn-link"><i
-              class="fas fa-angle-right pr-2"></i><strong id="nameChoice">{{ reptile.NomFrancais }}</strong>
+              class="fas fa-angle-right pr-2"></i><span>{{ reptile.NomFrancais }}</span>
           </a>
         </p>
       </div>
@@ -79,7 +79,7 @@
         <h6>Oiseaux</h6>
         <p class="listeEspeces" *ngFor="let oiseau of oiseaux">
           <a routerLink="/detailEspece/{{ oiseau.id }}" routerLinkActive="active" class="btn btn-link"><i
-              class="fas fa-angle-right pr-2"></i><strong id="nameChoice">{{ oiseau.NomFrancais }}</strong>
+              class="fas fa-angle-right pr-2"></i><span>{{ oiseau.NomFrancais }}</span>
           </a>
         </p>
       </div>
@@ -87,7 +87,7 @@
         <h6>Mammifères</h6>
         <p class="listeEspeces" *ngFor="let mammifere of mammiferes">
           <a routerLink="/detailEspece/{{ mammifere.id }}" routerLinkActive="active" class="btn btn-link"><i
-              class="fas fa-angle-right pr-2"></i><strong id="nameChoice">{{ mammifere.NomFrancais }}</strong>
+              class="fas fa-angle-right pr-2"></i><span>{{ mammifere.NomFrancais }}</span>
           </a>
         </p>
       </div>
@@ -95,7 +95,7 @@
         <h6>Invertebrés</h6>
         <p class="listeEspeces" *ngFor="let invertebre of invertebres">
           <a routerLink="/detailEspece/{{ invertebre.id }}" routerLinkActive="active" class="btn btn-link"><i
-              class="fas fa-angle-right pr-2"></i><strong id="nameChoice">{{ invertebre.NomFrancais }}</strong>
+              class="fas fa-angle-right pr-2"></i><span>{{ invertebre.NomFrancais }}</span>
           </a>
         </p>
       </div>
@@ -103,7 +103,7 @@
         <h6>Flore</h6>
         <p class="listeEspeces" *ngFor="let flore of flores">
           <a routerLink="/detailEspece/{{ flore.id }}" routerLinkActive="active" class="btn btn-link"><i
-              class="fas fa-angle-right pr-2"></i><strong id="nameChoice">{{ flore.NomFrancais }}</strong>
+              class="fas fa-angle-right pr-2"></i><span>{{ flore.NomFrancais }}</span>
           </a>
         </p>
       </div>
@@ -111,7 +111,7 @@
         <h6>Amphibiens</h6>
         <p class="listeEspeces" *ngFor="let amphibien of amphibiens">
           <a routerLink="/detailEspece/{{ amphibien.id }}" routerLinkActive="active" class="btn btn-link"><i
-              class="fas fa-angle-right pr-2"></i><strong id="nameChoice">{{ amphibien.NomFrancais }}</strong>
+              class="fas fa-angle-right pr-2"></i><span>{{ amphibien.NomFrancais }}</span>
           </a>
         </p>
       </div>
@@ -132,7 +132,7 @@
         <h6>Reptilia</h6>
         <p class="listeEspeces" *ngFor="let reptileLatin of reptilesLatin">
           <a routerLink="/detailEspece/{{ reptileLatin.id }}" routerLinkActive="active" class="btn btn-link"><i
-              class="fas fa-angle-right pr-2"></i><i id="nameChoice">{{ reptileLatin.NomLatin }}</i>
+              class="fas fa-angle-right pr-2"></i><span>{{ reptileLatin.NomLatin }}</span>
           </a>
         </p>
       </div>
@@ -140,7 +140,7 @@
         <h6>Aves</h6>
         <p class="listeEspeces" *ngFor="let oiseauLatin of oiseauxLatin">
           <a routerLink="/detailEspece/{{ oiseauLatin.id }}" routerLinkActive="active" class="btn btn-link"><i
-              class="fas fa-angle-right pr-2"></i><i id="nameChoice">{{ oiseauLatin.NomLatin }}</i>
+              class="fas fa-angle-right pr-2"></i><span>{{ oiseauLatin.NomLatin }}</span>
           </a>
         </p>
       </div>
@@ -148,7 +148,7 @@
         <h6>Mammalia</h6>
         <p class="listeEspeces" *ngFor="let mammifereLatin of mammiferesLatin">
           <a routerLink="/detailEspece/{{ mammifereLatin.id }}" routerLinkActive="active" class="btn btn-link"><i
-              class="fas fa-angle-right pr-2"></i><i id="nameChoice">{{ mammifereLatin.NomLatin }}</i>
+              class="fas fa-angle-right pr-2"></i><span>{{ mammifereLatin.NomLatin }}</span>
           </a>
         </p>
       </div>
@@ -156,7 +156,7 @@
         <h6>Invertebrata</h6>
         <p class="listeEspeces" *ngFor="let invertebreLatin of invertebresLatin">
           <a routerLink="/detailEspece/{{ invertebreLatin.id }}" routerLinkActive="active" class="btn btn-link"><i
-              class="fas fa-angle-right pr-2"></i><i id="nameChoice">{{ invertebreLatin.NomLatin }}</i>
+              class="fas fa-angle-right pr-2"></i><span>{{ invertebreLatin.NomLatin }}</span>
           </a>
         </p>
       </div>
@@ -164,7 +164,7 @@
         <h6>Plantae</h6>
         <p class="listeEspeces" *ngFor="let floreLatin of floresLatin">
           <a routerLink="/detailEspece/{{ floreLatin.id }}" routerLinkActive="active" class="btn btn-link"><i
-              class="fas fa-angle-right pr-2"></i><i id="nameChoice">{{ floreLatin.NomLatin }}</i>
+              class="fas fa-angle-right pr-2"></i><span>{{ floreLatin.NomLatin }}</span>
           </a>
         </p>
       </div>
@@ -172,7 +172,7 @@
         <h6>Amphibia</h6>
         <p class="listeEspeces" *ngFor="let amphibienLatin of amphibiensLatin">
           <a routerLink="/detailEspece/{{ amphibienLatin.id }}" routerLinkActive="active" class="btn btn-link"><i
-              class="fas fa-angle-right pr-2"></i><i id="nameChoice">{{ amphibienLatin.NomLatin }}</i>
+              class="fas fa-angle-right pr-2"></i><span>{{ amphibienLatin.NomLatin }}</span>
           </a>
         </p>
       </div>
