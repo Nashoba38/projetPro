@@ -40,13 +40,13 @@ easy_admin:
           - { property: 'imageFile', type: 'file' }
           - { property: 'NomFrancais', label: 'Nom Vernaculaire'}
           - { property: 'NomLatin', label: 'Nom Latin'}
-          - { property: 'Description', label: 'Description'}
-          - { property: 'Longevite', label: "Longevite de l'animal"}
-          - { property: 'Alimentation', label: 'Régime alimentaire'}
-          - { property: 'Repartition', label: 'Répartition'}
-          - { property: 'Habitat', label: 'Habitat'}
-          - { property: 'Moeurs', label: 'Moeurs / Généralités'}
-          - { property: 'Reproduction', label: 'Reproduction / Floraison'}
+          - { property: 'Description', label: 'Description' , type: 'fos_ckeditor' }
+          - { property: 'Longevite', label: "Longevite de l'animal" , type: 'fos_ckeditor' }
+          - { property: 'Alimentation', label: 'Régime alimentaire' , type: 'fos_ckeditor' }
+          - { property: 'Repartition', label: 'Répartition' , type: 'fos_ckeditor' }
+          - { property: 'Habitat', label: 'Habitat' , type: 'fos_ckeditor' }
+          - { property: 'Moeurs', label: 'Moeurs / Généralités' , type: 'fos_ckeditor' }
+          - { property: 'Reproduction', label: 'Reproduction / Floraison' , type: 'fos_ckeditor' }
           - { property: 'Regne', label: 'Règne'}
           - { property: 'Embranchement', label: "Embranchement"}
           - { property: 'ClasseTaxo', label: 'Classe'}
@@ -114,11 +114,11 @@ easy_admin:
         fields:    
           - { property: 'titre', label: 'Titre' }
           - { property: 'date', label: 'Date de création' }
-          - { property: 'paragraphe1', label: 'Paragraphe N°1' }
-          - { property: 'paragraphe2', label: 'Paragraphe N°2' }
-          - { property: 'paragraphe3', label: 'Paragraphe N°3' }
-          - { property: 'paragraphe4', label: 'Paragraphe N°4' }
-          - { property: 'paragraphe5', label: 'Paragraphe N°5' }
+          - { property: 'paragraphe1', label: 'Paragraphe N°1' , type: 'fos_ckeditor'}
+          - { property: 'paragraphe2', label: 'Paragraphe N°2' , type: 'fos_ckeditor'}
+          - { property: 'paragraphe3', label: 'Paragraphe N°3' , type: 'fos_ckeditor'}
+          - { property: 'paragraphe4', label: 'Paragraphe N°4' , type: 'fos_ckeditor'}
+          - { property: 'paragraphe5', label: 'Paragraphe N°5' , type: 'fos_ckeditor'}
           - { property: 'artImg1', label: 'Photo N°1', type: 'file' }
           - { property: 'artImg2', label: 'Photo N°2', type: 'file' }
           - { property: 'artImg3', label: 'Photo N°3', type: 'file' }

@@ -15,7 +15,7 @@
       Description
     </ng-template>
     <div class="containerTexte">
-      <p class="contenu" *ngIf="espece">{{ espece.Description }}</p>
+      <p class="contenu" *ngIf="espece" [innerHTML]="espece.Description"></p>
     </div>
   </mat-tab>
   <mat-tab class="contenant">
@@ -24,8 +24,8 @@
     </ng-template>
     <div class="containerTexte">
       <div class="contenu">
-        <p *ngIf="espece">{{espece.Habitat}}</p>
-        <p *ngIf="espece">{{espece.Repartition}}</p>
+        <p *ngIf="espece" [innerHTML]="espece.Habitat"></p>
+        <p *ngIf="espece" [innerHTML]="espece.Repartition"></p>
       </div>
     </div>
   </mat-tab>
@@ -34,7 +34,7 @@
       Comportement
     </ng-template>
     <div class="containerTexte">
-      <p class="contenu" *ngIf="espece">{{ espece.Moeurs }}</p>
+      <p class="contenu" *ngIf="espece" [innerHTML]="espece.Moeurs"></p>
     </div>
   </mat-tab>
   <mat-tab class="contenant">
@@ -42,7 +42,7 @@
       Alimentation
     </ng-template>
     <div class="containerTexte">
-      <p class="contenu" *ngIf="espece">{{ espece.Alimentation }}</p>
+      <p class="contenu" *ngIf="espece" [innerHTML]="espece.Alimentation"></p>
     </div>
   </mat-tab>
   <mat-tab class="contenant">
@@ -50,7 +50,7 @@
       Reproduction
     </ng-template>
     <div class="containerTexte">
-      <p class="contenu" *ngIf="espece">{{ espece.Reproduction }}</p>
+      <p class="contenu" *ngIf="espece" [innerHTML]="espece.Reproduction"></p>
     </div>
   </mat-tab>
   <mat-tab class="contenant">
