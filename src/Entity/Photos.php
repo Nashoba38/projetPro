@@ -21,7 +21,21 @@ class Photos
      */
     private $id;
 
-    
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $nom;
+
+     /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="Category")
+     */
+    private $category;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Pays", inversedBy="Pays", cascade={"persist","remove"})
+     */
+    private $pays;
+
     /**
      * @ORM\Column(type="string", length=255)
      * @var string
@@ -33,31 +47,56 @@ class Photos
      * @var File
      */
     private $photoFile;
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $LatinName;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="App\Entity\Especes", inversedBy="photos")
      */
-    private $FrenchName;
+    private $espece;
 
-    
+    public function __construct()
+    {
+        $this->pays = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function setPhoto($photo)
+    public function getNom(): ?string
     {
-        $this->photo = $photo;
+        return $this->nom;
     }
 
-    public function getPhoto()
+    public function setNom(string $nom): self
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+    
+    public function setCategory(?Category $category): self
+    {
+        $this->category = $category;
+        
+        return $this;
+    }
+
+    public function getPhoto(): ?string
     {
         return $this->photo;
+    }
+
+    public function setPhoto(string $photo): self
+    {
+        $this->photo = $photo;
+
+        return $this;
     }
 
     public function getPhotoFile()
@@ -65,40 +104,53 @@ class Photos
         return $this->photoFile;
     }
 
-    public function setPhotoFile(file $photo)
+    public function setPhotoFile(File $photo)
     {
         $this->photoFile = $photo;
+    }
 
-        if ($photo) {
-            // if 'updatedAt' is not defined in your entity, use another property
-            $this->updatedAt = new \DateTime('now');
+    public function getEspece(): ?Especes
+    {
+        return $this->espece;
+    }
+
+    public function setEspece(?Especes $espece): self
+    {
+        $this->espece = $espece;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Pays[]
+     */
+
+    public function getPays(): Collection
+    {
+        return $this->pays;
+    }
+
+    public function addPays(Pays $pays): self
+    {
+        if (!$this->pays->contains($pays)) {
+            $this->pays[] = $pays;
+            $pays->addPays($this);
         }
-    }
-
-    public function getLatinName(): ?string
-    {
-        return $this->LatinName;
-    }
-
-    public function setLatinName(string $LatinName): self
-    {
-        $this->LatinName = $LatinName;
 
         return $this;
     }
 
-    public function getFrenchName(): ?string
+    public function removePays(Pays $pays): self
     {
-        return $this->FrenchName;
-    }
-
-    public function setFrenchName(string $FrenchName): self
-    {
-        $this->FrenchName = $FrenchName;
+        if ($this->pays->contains($pays)) {
+            $this->pays->removeElement($pays);
+            $pays->removePays($this);
+        }
 
         return $this;
     }
+
     public function __toString() {
-        return $this->FrenchName;
+        return $this->nom;
     }
 }

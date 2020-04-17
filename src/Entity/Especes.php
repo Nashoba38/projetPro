@@ -128,11 +128,17 @@ class Especes
      */
     private $StatutConservation;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Photos", mappedBy="espece")
+     */
+    private $photos;
+
 
 
     public function __construct()
     {
         $this->pays = new ArrayCollection();
+        $this->photos = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -371,9 +377,7 @@ class Especes
         return $this;
     }
     
-    public function _toString() {
-        return $this->NomLatin;
-    }
+   
     
     /**
      * @return Collection|Pays[]
@@ -404,6 +408,39 @@ class Especes
         return $this;
     }
 
-    
+    /**
+     * @return Collection|Photos[]
+     */
+    public function getPhotos(): Collection
+    {
+        return $this->photos;
+    }
+
+    public function addPhoto(Photos $photo): self
+    {
+        if (!$this->photos->contains($photo)) {
+            $this->photos[] = $photo;
+            $photo->setEspece($this);
+        }
+
+        return $this;
+    }
+
+    public function removePhoto(Photos $photo): self
+    {
+        if ($this->photos->contains($photo)) {
+            $this->photos->removeElement($photo);
+            // set the owning side to null (unless already changed)
+            if ($photo->getEspece() === $this) {
+                $photo->setEspece(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function __toString() {
+        return $this->NomLatin;
+    }
 }
 

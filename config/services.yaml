@@ -8,7 +8,7 @@ parameters:
     
     #vich
     app.path.image: /uploads/images/espece
-    app.path.photo: /uploads/images/photos
+    app.path.photo: /uploads/images/galerie
     app.path.articleImages: /uploads/images/articleImages
     
     

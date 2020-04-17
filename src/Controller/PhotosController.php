@@ -10,29 +10,22 @@ use App\Entity\Photos;
 class PhotosController extends AbstractController
 {
     /**
-     * @Route("/api/photos", name="photos")
+     * @Route("/api/galerieAll", name="fullGalerie")
      */
-    public function index()
+    public function fullGalerie()
     {
-        $photosArray = [];
-        $photos = $this->getDoctrine()->getRepository(Photos::Class);
-        $photosEntities = $photos->findAll();
+        $photosRepository = $this->getDoctrine()->getRepository(Photos::class);
+        $photosEntities = $photosRepository->findAllGalerie();
 
-        for ($i=0; $i < count($photosEntities); $i++) {
-            $photoSample = $photosEntities[$i];
-            $id = $photoSample->getId();
-            $photo = $photoSample->getPhoto();
-            $latinName = $photoSample->getLatinName();
-            $frenchName = $photoSample->getFrenchName();
-
-            $photosArray = [
-                "id" => $id,
-                "photo" => $photo,
-                "LatinName" => $latinName,
-                "FrenchName" => $frenchName,
-            ];
-            $photosArray[] = $photoArray;
+        $photos = [];
+        foreach($photosEntities as $photo)
+        {
+            $photos[] = [
+                'id' => $photo->getId(),
+                'nom' => $photo->getNom(),
+                'photo' => $photo->getPhoto(),
+            ];   
         }
-        return new JsonResponse($photosArray);
+        return new JsonResponse($photos);
     }
 }

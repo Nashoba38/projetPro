@@ -85,22 +85,20 @@ easy_admin:
       form:
         fields:
           - { property: 'Name', label: 'Pays' }
-                              
-                                  
+            
     Photos:
       class: App\Entity\Photos
-
-      list:
-        fields:
-          - { property: 'photo', type: 'image', base_path: '%app.path.photo%' }
-          - { property: 'FrenchName', label: 'Nom Français' }
-          - { property: 'LatinName', label: 'Nom Latin' }
+      list: 
+        fields: 
+          - { property: 'photo', label: 'Photo', type: 'image', base_path: '%app.path.photo%' }
+          - { property: 'nom', label: 'Nom'}
       form:
         fields:
-          - { property: 'photoFile', type: 'file'}
-          - { property: 'FrenchName', label: 'Nom Français' }
-          - { property: 'LatinName', label: 'Nom Latin' }
-                                  
+          - { property: 'photoFile', type: 'file', label: 'Photo : ' }
+          - { property: 'nom', label: 'Nom latin en minuscule : '}
+          - { property: 'category', label: 'Catégorie : '}
+          - { property: 'espece', label: 'Espèce à lier : '}
+          - { property: 'pays', label: 'Pays', type: 'entity', type_options: { multiple: 'true', by_reference: 'false' }}
                                   
     Article:      
       class: App\Entity\Article
