@@ -34,6 +34,7 @@ easy_admin:
           - { property: 'image', type: 'image', base_path: '%app.path.image%' }
           - { property: 'NomFrancais', label: 'Nom Vernaculaire'}
           - { property: 'NomLatin', label: 'Nom Latin'}
+          - { property: 'category', label: 'Catégorie'}
           
       form:
         fields:
@@ -92,10 +93,12 @@ easy_admin:
         fields: 
           - { property: 'photo', label: 'Photo', type: 'image', base_path: '%app.path.photo%' }
           - { property: 'nom', label: 'Nom'}
+          - { property: 'category', label: 'Catégorie'}
       form:
         fields:
           - { property: 'photoFile', type: 'file', label: 'Photo : ' }
-          - { property: 'nom', label: 'Nom latin en minuscule : '}
+          - { property: 'nom', label: 'Nom vernaculaire : '}
+          - { property: 'nomLatin', label: 'Nom latin : '}
           - { property: 'category', label: 'Catégorie : '}
           - { property: 'espece', label: 'Espèce à lier : '}
           - { property: 'pays', label: 'Pays', type: 'entity', type_options: { multiple: 'true', by_reference: 'false' }}

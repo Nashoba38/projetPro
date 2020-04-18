@@ -14,18 +14,11 @@ export class EspecesService {
     const especes = this.http.get<Especes[]>('http://localhost:8000/api/EspecesDetails');
     return especes;
   }
-  getPhotos(): Observable<Especes[]> {
-    const photos = this.http.get<Especes[]>('http://localhost:8000/api/EspecesDetails');
-    return photos;
-  }
+
 
   getEspece(id: number): Observable<Especes[]> {
     const especeById = this.http.get<Especes[]>('http://localhost:8000/api/EspecesDetails/'+id);
     return especeById;
   }
 
-  // getEspecebyCat(category: number): Observable<Especes[]> {
-  //   const especeByCat = this.http.get<Especes[]>('http://localhost:8000/api/EspecesByCategory'+category);
-  //   return especeByCat;
-  // }
 }

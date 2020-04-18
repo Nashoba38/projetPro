@@ -26,6 +26,11 @@ class Photos
      */
     private $nom;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $nomLatin;
+
      /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="Category")
      */
@@ -74,6 +79,19 @@ class Photos
 
         return $this;
     }
+    
+    public function getNomLatin(): ?string
+    {
+        return $this->nomLatin;
+    }
+
+    public function setNomLatin(string $nomLatin): self
+    {
+        $this->nomLatin = $nomLatin;
+
+        return $this;
+    }
+
 
     public function getCategory(): ?Category
     {

@@ -23,7 +23,9 @@ class PhotosController extends AbstractController
             $photos[] = [
                 'id' => $photo->getId(),
                 'nom' => $photo->getNom(),
+                'nomLatin' => $photo->getNomLatin(),
                 'photo' => $photo->getPhoto(),
+                'pays' => $photo->getPays(),
             ];   
         }
         return new JsonResponse($photos);

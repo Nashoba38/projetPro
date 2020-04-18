@@ -1,30 +1,45 @@
-<div class="container mt-5">
-  <div class="row mt-5">
-    <div class="col-12 mt-5">
-      <h1 class="mb-3">Galerie photo</h1>
-      <h4>
-        Ici vous trouverez toutes mes photos, soit en vrac, soit classées par
-        genre, pays, styles, ...
-      </h4>
-      <br />
-      <div class="button_cont row filters" align="center">
-        <a class="bouton m-2 col-6 col-sm-4 col-md-2" href="#" rel="nofollow noopener">Amphibiens</a>
-        <a class="bouton m-2 col-6 col-sm-4 col-md-2" href="#" rel="nofollow noopener">Flore</a>
-        <a class="bouton m-2 col-6 col-sm-4 col-md-2" href="#" rel="nofollow noopener">Invertébrés</a>
-        <a class="bouton m-2 col-6 col-sm-4 col-md-2" href="#" rel="nofollow noopener">Mammifères</a>
-        <a class="bouton m-2 col-6 col-sm-4 col-md-2" href="#" rel="nofollow noopener">Paysages</a>
-        <a class="bouton m-2 col-6 col-sm-4 col-md-2" href="#" rel="nofollow noopener">Oiseaux</a>
-        <a class="bouton m-2 col-6 col-sm-4 col-md-2" href="#" rel="nofollow noopener">Reptiles</a>
-        <a class="bouton m-2 col-6 col-sm-4 col-md-2" href="#" rel="nofollow noopener">Tout voir</a>
-      </div>
-    </div>
+<div class="container">
+  <div class="topPage">
+    <h1 class="titre">Galerie photo</h1>
+    <h4>
+      Ici vous trouverez toutes mes photos, soit en vrac, soit classées par
+      genre, pays, styles, ...
+    </h4>
   </div>
-  <div class="list-group gallery mt-5">
-    <div class="mb-2 col-12 col-sm-6 col-md-4 col-lg-3 gallery" *ngFor="let espece of especes; let i=index;">
-      <img class="img-fluid" alt="" (click)="openModal(i)" src="http://127.0.0.1:8000/uploads/images/espece/{{
-            espece.Image
+</div>
+
+<div class="filtres">
+  <div class="categ">
+    <p>Catégories : </p>
+    <section class="categCheckBox">
+      <mat-checkbox class="choices" [(ngModel)]="amphiChecked">Amphibiens</mat-checkbox>
+      <mat-checkbox class="choices" [(ngModel)]="floreChecked">Flore</mat-checkbox>
+      <mat-checkbox class="choices" [(ngModel)]="inverteChecked">Invertébrés</mat-checkbox>
+      <mat-checkbox class="choices" [(ngModel)]="mammiChecked">Mammifères</mat-checkbox>
+      <mat-checkbox class="choices" [(ngModel)]="oiseauChecked">Oiseaux</mat-checkbox>
+      <mat-checkbox class="choices" [(ngModel)]="paysaChecked">Paysages</mat-checkbox>
+      <mat-checkbox class="choices" [(ngModel)]="reptiChecked">Reptiles</mat-checkbox>
+    </section>
+  </div>
+  <div class="pays">
+    <p>Pays : </p>
+    <section class="paysCheckBox">
+      <mat-checkbox class="choices" [(ngModel)]="franceChecked">France</mat-checkbox>
+      <mat-checkbox class="choices" [(ngModel)]="marocChecked">Maroc</mat-checkbox>
+      <mat-checkbox class="choices" [(ngModel)]="costaChecked">Costa-Rica</mat-checkbox>
+      <mat-checkbox class="choices" [(ngModel)]="madaChecked">Madagascar</mat-checkbox>
+    </section>
+  </div>
+  <div class="search">
+    <input class="searchField" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="search">
+  </div>
+</div>
+
+<div class="gallery">
+  <div class="square" *ngFor="let photo of photos; let i=index;">
+    <img id="photo" alt="" (click)="openModal(i)" src="http://127.0.0.1:8000/uploads/images/galerie/{{
+            photo.photo
           }}" />
-    </div>
   </div>
 </div>
 
@@ -32,13 +47,13 @@
   <div class="close">
     <button type="button" class="close" (click)="closeModal()">&times;</button>
   </div>
-  <img class="img" alt="" src="http://127.0.0.1:8000/uploads/images/espece/{{
-      modal.Image
+  <img class="img" alt="" src="http://127.0.0.1:8000/uploads/images/galerie/{{
+      modal.photo
     }}" />
   <div class="previous" *ngIf="currentIndex > 0" (click)="precedent()"><i class="fas fa-chevron-left"></i></div>
-  <div class="next" *ngIf="currentIndex <= especes.length-2" (click)="suivant()"><i class="fas fa-chevron-right"></i>
+  <div class="next" *ngIf="currentIndex <= photos.length-2" (click)="suivant()"><i class="fas fa-chevron-right"></i>
   </div>
   <div class="presentation">
-    <a class="linkName" routerLink="/detailEspece/{{ modal.id }}"> {{ modal.NomFrancais }} - {{ modal.NomLatin }}</a>
+    <p class="linkName"> {{ modal.nom }} - {{ modal.nomLatin}}</p>
   </div>
 </div>

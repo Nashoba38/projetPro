@@ -1,36 +1,88 @@
-.filters {
-  display: block;
+.filtres {
+  display: flex;
+  background-color: rgb(230, 230, 230);
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-around;
+
+  .categ,
+  .pays {
+    padding: 10px 20px;
+    display: flex;
+
+
+
+    p,
+    .searchField {
+      padding-right: 20px;
+      align-self: center;
+    }
+
+    .categCheckBox,
+    .paysCheckBox {
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+
+      .choices {
+        padding-right: 10px;
+      }
+    }
+  }
+
+  .search {
+    display: flex;
+    padding-top: 10px;
+    padding-right: 20px;
+
+    .searchField {
+      padding-right: 20px;
+      align-self: center;
+    }
+  }
 }
 
-.bouton {
-  color: #000000 !important;
-  text-transform: uppercase;
-  text-decoration: none;
-  background: #ffffff;
-  padding: 3px 6px;
-  display: inline-block;
-  transition: all 0.4s ease 0s;
+.topPage {
+  margin-top: 8%;
+
+  h1 {
+    text-align: center;
+    font-size: 50px;
+  }
+
+  .titre {
+    margin-bottom: 50px;
+  }
 }
 
-.bouton:hover {
-  color: #000000 !important;
-  background: #f6b93b;
-  border-color: #f6b93b !important;
-  transition: all 0.4s ease 0s;
-  font-weight: bold;
-  border-radius: 50px;
-}
-
-h1 {
-  text-align: center;
-  font-size: 50px;
-}
 
 .gallery {
-  display: inline-block;
   margin-top: 20px;
+  display: flex;
+  padding-left: 20px;
+  padding-right: 20px;
+  flex-wrap: wrap;
+  justify-content: space-around;
 
-  .img-fluid {
+  .square {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    margin-top: 20px;
+  }
+
+  img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 100%;
+    width: auto;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
     cursor: pointer;
   }
 
@@ -95,6 +147,7 @@ h1 {
     width: 100%;
     position: absolute;
     top: 85%;
+
     .linkName {
       display: block;
       color: grey;
@@ -107,8 +160,8 @@ h1 {
       font-size: larger;
 
       &:hover {
-      
-        color: white!important;
+
+        color: white !important;
       }
     }
   }

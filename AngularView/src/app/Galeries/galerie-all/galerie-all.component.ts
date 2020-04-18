@@ -1,8 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { EspecesService } from '../../Especes/especes.service';
 import '../../../assets/js/script.js';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { GaleriesService } from '../galeries.service';
+import { FormsModule } from '@angular/forms';
+import { Especes } from 'src/app/Especes/especes.js';
+import { Categories } from 'src/app/Genres/categories';
+import { EspecesService } from 'src/app/Especes/especes.service.js';
+import { CategoriesService } from 'src/app/Genres/categories.service';
+import { DetailEspeceComponent } from 'src/app/Especes/detail-espece/detail-espece.component.js';
+import {Pipe, PipeTransform} from '@angular/core';
 
 @Component({
   selector: 'app-galerie-all',
@@ -11,31 +18,52 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class GalerieAllComponent implements OnInit {
 
+  categories = [];
   especes = [];
+  photos = [];
   isModalOpen = false;
   modal = undefined;
   currentIndex: number;
   last = false;
+  amphiChecked = false;
+  floreChecked = false;
+  inverteChecked = false;
+  mammiChecked = false;
+  oiseauChecked = false;
+  paysaChecked = false;
+  reptiChecked = false;
 
+  franceChecked = false;
+  marocChecked = false;
+  costaChecked = false;
+  madaChecked = false;
+  
+  searchText;
 
-  constructor(private especesService: EspecesService,
+  constructor(
+    private galeriesService: GaleriesService,
+    private categoriesService: CategoriesService,
+    private especesService: EspecesService,
     private route: ActivatedRoute,
     private location: Location) { }
 
   ngOnInit() {
+    this.getPhotos();
     this.getEspeces();
-
+    
   }
 
-  async getEspeces() {
-    this.especesService.getEspeces().subscribe(espece => ((this.especes = espece)));
+  getPhotos() {
+    this.galeriesService.getPhotos().subscribe(photo => ((this.photos = photo)));
+  }
+  getEspeces(): void {
+    this.especesService.getEspeces().subscribe(data => ((this.especes = data)));
   }
 
   openModal(i) {
-    this.modal = this.especes[i];
+    this.modal = this.photos[i];
     this.currentIndex = i;
     this.isModalOpen = true;
-
   }
 
   closeModal() {
@@ -45,26 +73,14 @@ export class GalerieAllComponent implements OnInit {
   precedent() {
     const btnPrevious = document.getElementsByClassName('previous');
     this.currentIndex--;
-    this.modal = this.especes[this.currentIndex]
+    this.modal = this.photos[this.currentIndex]
   }
 
   suivant() {
     const btnNext = document.getElementsByClassName('next');
     this.currentIndex++;
-    this.modal = this.especes[this.currentIndex];
-    
-
-    // console.log(this.modal);
-    // console.log(this.especes.length);
+    this.modal = this.photos[this.currentIndex];
   }
-
-
-  // imageModale() {
-  //   this.especes.forEach(element => {
-  //     this.especes.find()
-  //   });
-  //     //commandes
-  // }
 }
 
 
