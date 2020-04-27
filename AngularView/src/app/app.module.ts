@@ -25,6 +25,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { AmphibiensComponent } from './Genres/amphibiens/amphibiens.component';
@@ -32,6 +33,7 @@ import { MammiferesComponent } from './Genres/mammiferes/mammiferes.component';
 import { OiseauxComponent } from './Genres/oiseaux/oiseaux.component';
 import { VegetauxComponent } from './Genres/vegetaux/vegetaux.component';
 import { InvertebresComponent } from './Genres/invertebres/invertebres.component';
+
 
 
 @NgModule({
@@ -59,7 +61,6 @@ import { InvertebresComponent } from './Genres/invertebres/invertebres.component
     OiseauxComponent,
     VegetauxComponent,
     InvertebresComponent
-
   ],
   imports: [
     HttpClientModule,
@@ -72,7 +73,8 @@ import { InvertebresComponent } from './Genres/invertebres/invertebres.component
     MatFormFieldModule,
     ReactiveFormsModule,
     MatCheckboxModule,
-    FormsModule
+    FormsModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

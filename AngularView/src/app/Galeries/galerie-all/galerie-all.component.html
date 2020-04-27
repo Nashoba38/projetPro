@@ -12,35 +12,55 @@
   <div class="categ">
     <p>Catégories : </p>
     <section class="categCheckBox">
-      <mat-checkbox class="choices" [(ngModel)]="amphiChecked">Amphibiens</mat-checkbox>
-      <mat-checkbox class="choices" [(ngModel)]="floreChecked">Flore</mat-checkbox>
-      <mat-checkbox class="choices" [(ngModel)]="inverteChecked">Invertébrés</mat-checkbox>
-      <mat-checkbox class="choices" [(ngModel)]="mammiChecked">Mammifères</mat-checkbox>
-      <mat-checkbox class="choices" [(ngModel)]="oiseauChecked">Oiseaux</mat-checkbox>
-      <mat-checkbox class="choices" [(ngModel)]="paysaChecked">Paysages</mat-checkbox>
-      <mat-checkbox class="choices" [(ngModel)]="reptiChecked">Reptiles</mat-checkbox>
+      <mat-checkbox class="choices" (change)="getCheckedValue(4)" [(ngModel)]="amphiChecked">Amphibiens</mat-checkbox>
+      <mat-checkbox class="choices" (change)="getCheckedValue(5)" [(ngModel)]="floreChecked">Flore</mat-checkbox>
+      <mat-checkbox class="choices" (change)="getCheckedValue(6)" [(ngModel)]="inverteChecked">Invertébrés
+      </mat-checkbox>
+      <mat-checkbox class="choices" (change)="getCheckedValue(1)" [(ngModel)]="mammiChecked">Mammifères</mat-checkbox>
+      <mat-checkbox class="choices" (change)="getCheckedValue(3)" [(ngModel)]="oiseauChecked">Oiseaux</mat-checkbox>
+      <mat-checkbox class="choices" (change)="getCheckedValue(7)" [(ngModel)]="paysaChecked">Paysages</mat-checkbox>
+      <mat-checkbox class="choices" (change)="getCheckedValue(2)" [(ngModel)]="reptiChecked">Reptiles</mat-checkbox>
+      <mat-checkbox class="choices" (change)="getCheckedValue()" [(ngModel)]="allCatChecked">Tout voir</mat-checkbox>
     </section>
   </div>
   <div class="pays">
     <p>Pays : </p>
     <section class="paysCheckBox">
-      <mat-checkbox class="choices" [(ngModel)]="franceChecked">France</mat-checkbox>
-      <mat-checkbox class="choices" [(ngModel)]="marocChecked">Maroc</mat-checkbox>
-      <mat-checkbox class="choices" [(ngModel)]="costaChecked">Costa-Rica</mat-checkbox>
-      <mat-checkbox class="choices" [(ngModel)]="madaChecked">Madagascar</mat-checkbox>
+      <mat-checkbox class="choices" (change)="getCheckedValue(null,1)" [(ngModel)]="franceChecked">France</mat-checkbox>
+      <mat-checkbox class="choices" (change)="getCheckedValue(null,2)" [(ngModel)]="marocChecked">Maroc</mat-checkbox>
+      <mat-checkbox class="choices" (change)="getCheckedValue(null,3)" [(ngModel)]="costaChecked">Costa-Rica
+      </mat-checkbox>
+      <mat-checkbox class="choices" (change)="getCheckedValue(null,4)" [(ngModel)]="madaChecked">Madagascar
+      </mat-checkbox>
+      <mat-checkbox class="choices" (change)="getCheckedValue()" [(ngModel)]="allPaysChecked">Tout voir</mat-checkbox>
     </section>
   </div>
   <div class="search">
-    <input class="searchField" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="search">
+    <input id="searchbar" class="form-control" type="text" (keyup)="onSearch($event)" name="searchValue"
+      autocomplete="off" placeholder="Chercher ...">
   </div>
+  <!-- <button (click)="search()"> Enregistrer </button> -->
 </div>
 
 <div class="gallery">
-  <div class="square" *ngFor="let photo of photos; let i=index;">
-    <img id="photo" alt="" (click)="openModal(i)" src="http://127.0.0.1:8000/uploads/images/galerie/{{
+  <ng-container *ngIf="filteredPhotos.length > 0">
+    <ng-container *ngFor="let photo of filteredPhotos ; let i=index;">
+      <div class="square" *ngIf="displayChecked(photo)">
+        <img id="photo" alt="" (click)="openModal(i)" src="http://127.0.0.1:8000/uploads/images/galerie/{{
             photo.photo
           }}" />
-  </div>
+      </div>
+    </ng-container>
+  </ng-container>
+  <ng-container *ngIf="filteredPhotos.length === 0">
+    <ng-container *ngFor="let photo of photos ; let i=index;">
+      <div class="square" *ngIf="displayChecked(photo)">
+        <img id="photo" alt="" (click)="openModal(i)" src="http://127.0.0.1:8000/uploads/images/galerie/{{
+            photo.photo
+          }}" />
+      </div>
+    </ng-container>
+  </ng-container>
 </div>
 
 <div class="modalImage" *ngIf="isModalOpen">

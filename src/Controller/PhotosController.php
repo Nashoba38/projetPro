@@ -17,17 +17,27 @@ class PhotosController extends AbstractController
         $photosRepository = $this->getDoctrine()->getRepository(Photos::class);
         $photosEntities = $photosRepository->findAllGalerie();
 
+        
         $photos = [];
-        foreach($photosEntities as $photo)
-        {
+        foreach($photosEntities as $photo) {
+            $arrayPays = [];
+                foreach ($photo->getPays() as $pays) 
+                {
+                    $arrayPays[] = $pays->getId();
+                } 
+               
+      
             $photos[] = [
                 'id' => $photo->getId(),
                 'nom' => $photo->getNom(),
                 'nomLatin' => $photo->getNomLatin(),
                 'photo' => $photo->getPhoto(),
-                'pays' => $photo->getPays(),
-            ];   
+                'pays' => $arrayPays,
+                'category' => $photo->getCategory()->getId()
+            ];
+                
         }
         return new JsonResponse($photos);
     }
+    
 }
