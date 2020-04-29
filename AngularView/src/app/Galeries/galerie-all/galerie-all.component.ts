@@ -22,7 +22,7 @@ import { element } from 'protractor';
 export class GalerieAllComponent implements OnInit {
 
 
-
+  
   category: number[] = [];
   pays: number[] = [];
   espece: string[] = [];
@@ -77,8 +77,7 @@ export class GalerieAllComponent implements OnInit {
       this.modal = this.filteredPhotos[i];
       this.currentIndex = i;
       this.isModalOpen = true;
-
-    } else {
+    } else if (this.filteredPhotos.length == 0) {
       this.modal = this.photos[i];
       this.currentIndex = i;
       this.isModalOpen = true;
@@ -91,14 +90,24 @@ export class GalerieAllComponent implements OnInit {
 
   precedent() {
     const btnPrevious = document.getElementsByClassName('previous');
-    this.currentIndex--;
-    this.modal = this.photos[this.currentIndex]
+    if (this.filteredPhotos.length > 0) {
+      this.currentIndex--;
+      this.modal = this.filteredPhotos[this.currentIndex];
+    } else if (this.filteredPhotos.length == 0) {
+      this.currentIndex--;
+      this.modal = this.photos[this.currentIndex];
+    }
   }
 
   suivant() {
     const btnNext = document.getElementsByClassName('next');
-    this.currentIndex++;
-    this.modal = this.photos[this.currentIndex];
+    if (this.filteredPhotos.length > 0) {
+      this.currentIndex++;
+      this.modal = this.filteredPhotos[this.currentIndex];
+    } else if (this.filteredPhotos.length == 0) {
+      this.currentIndex++;
+      this.modal = this.photos[this.currentIndex];
+    }
   }
 
   getCheckedValue(category?: number, pays?: number) {

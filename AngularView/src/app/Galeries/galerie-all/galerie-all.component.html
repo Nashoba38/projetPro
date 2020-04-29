@@ -2,29 +2,31 @@
   <div class="topPage">
     <h1 class="titre">Galerie photo</h1>
     <h4>
-      Ici vous trouverez toutes mes photos, soit en vrac, soit classées par
-      genre, pays, styles, ...
+      Ici vous trouverez toutes mes photos.
+      <br>
+      Je vous conseille d'utiliser les filtres pour trouver plus facilement ce que vous cherchez.
     </h4>
   </div>
 </div>
 
 <div class="filtres">
   <div class="categ">
-    <p>Catégories : </p>
+    <h6>Catégories : </h6>
     <section class="categCheckBox">
       <mat-checkbox class="choices" (change)="getCheckedValue(4)" [(ngModel)]="amphiChecked">Amphibiens</mat-checkbox>
       <mat-checkbox class="choices" (change)="getCheckedValue(5)" [(ngModel)]="floreChecked">Flore</mat-checkbox>
       <mat-checkbox class="choices" (change)="getCheckedValue(6)" [(ngModel)]="inverteChecked">Invertébrés
       </mat-checkbox>
       <mat-checkbox class="choices" (change)="getCheckedValue(1)" [(ngModel)]="mammiChecked">Mammifères</mat-checkbox>
+    </section>
+    <section class="categCheckBox">
       <mat-checkbox class="choices" (change)="getCheckedValue(3)" [(ngModel)]="oiseauChecked">Oiseaux</mat-checkbox>
       <mat-checkbox class="choices" (change)="getCheckedValue(7)" [(ngModel)]="paysaChecked">Paysages</mat-checkbox>
       <mat-checkbox class="choices" (change)="getCheckedValue(2)" [(ngModel)]="reptiChecked">Reptiles</mat-checkbox>
-      <mat-checkbox class="choices" (change)="getCheckedValue()" [(ngModel)]="allCatChecked">Tout voir</mat-checkbox>
     </section>
   </div>
   <div class="pays">
-    <p>Pays : </p>
+    <h6>Pays : </h6>
     <section class="paysCheckBox">
       <mat-checkbox class="choices" (change)="getCheckedValue(null,1)" [(ngModel)]="franceChecked">France</mat-checkbox>
       <mat-checkbox class="choices" (change)="getCheckedValue(null,2)" [(ngModel)]="marocChecked">Maroc</mat-checkbox>
@@ -32,15 +34,19 @@
       </mat-checkbox>
       <mat-checkbox class="choices" (change)="getCheckedValue(null,4)" [(ngModel)]="madaChecked">Madagascar
       </mat-checkbox>
-      <mat-checkbox class="choices" (change)="getCheckedValue()" [(ngModel)]="allPaysChecked">Tout voir</mat-checkbox>
     </section>
   </div>
   <div class="search">
+    <label for="searchValue">
+      <h6>Vous cherchez une espèce ou un genre en particulier ?</h6>
+    </label>
     <input id="searchbar" class="form-control" type="text" (keyup)="onSearch($event)" name="searchValue"
-      autocomplete="off" placeholder="Chercher ...">
+      autocomplete="off" placeholder="Chercher ici ...">
   </div>
   <!-- <button (click)="search()"> Enregistrer </button> -->
 </div>
+
+
 
 <div class="gallery">
   <ng-container *ngIf="filteredPhotos.length > 0">
@@ -53,6 +59,7 @@
     </ng-container>
   </ng-container>
   <ng-container *ngIf="filteredPhotos.length === 0">
+
     <ng-container *ngFor="let photo of photos ; let i=index;">
       <div class="square" *ngIf="displayChecked(photo)">
         <img id="photo" alt="" (click)="openModal(i)" src="http://127.0.0.1:8000/uploads/images/galerie/{{
@@ -61,19 +68,40 @@
       </div>
     </ng-container>
   </ng-container>
+
 </div>
 
-<div class="modalImage" *ngIf="isModalOpen">
-  <div class="close">
-    <button type="button" class="close" (click)="closeModal()">&times;</button>
-  </div>
-  <img class="img" alt="" src="http://127.0.0.1:8000/uploads/images/galerie/{{
+<ng-container *ngIf="filteredPhotos.length > 0">
+  <div class="modalImage" *ngIf="isModalOpen">
+    <div class="close">
+      <button type="button" class="close" (click)="closeModal()">&times;</button>
+    </div>
+    <img class="img" alt="" src="http://127.0.0.1:8000/uploads/images/galerie/{{
       modal.photo
     }}" />
-  <div class="previous" *ngIf="currentIndex > 0" (click)="precedent()"><i class="fas fa-chevron-left"></i></div>
-  <div class="next" *ngIf="currentIndex <= photos.length-2" (click)="suivant()"><i class="fas fa-chevron-right"></i>
+    <div class="previous" *ngIf="currentIndex > 0" (click)="precedent()"><i class="fas fa-chevron-left"></i></div>
+    <div class="next" *ngIf="currentIndex <= filteredPhotos.length-2" (click)="suivant()"><i
+        class="fas fa-chevron-right"></i>
+    </div>
+    <div class="presentation">
+      <p class="linkName"> {{ modal.nom }} - {{ modal.nomLatin}}</p>
+    </div>
   </div>
-  <div class="presentation">
-    <p class="linkName"> {{ modal.nom }} - {{ modal.nomLatin}}</p>
+</ng-container>
+
+<ng-container *ngIf="filteredPhotos.length === 0">
+  <div class="modalImage" *ngIf="isModalOpen">
+    <div class="close">
+      <button type="button" class="close" (click)="closeModal()">&times;</button>
+    </div>
+    <img class="img" alt="" src="http://127.0.0.1:8000/uploads/images/galerie/{{
+      modal.photo
+    }}" />
+    <div class="previous" *ngIf="currentIndex > 0" (click)="precedent()"><i class="fas fa-chevron-left"></i></div>
+    <div class="next" *ngIf="currentIndex <= photos.length-2" (click)="suivant()"><i class="fas fa-chevron-right"></i>
+    </div>
+    <div class="presentation">
+      <p class="linkName"> {{ modal.nom }} - {{ modal.nomLatin}}</p>
+    </div>
   </div>
-</div>
+</ng-container>

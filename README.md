@@ -6,4 +6,4 @@ orange = rgb(252, 239, 162)
 Alt + mal + F = indentation
 
 Ajouter champs "Plus d'info protections".
-Voir pour ne pas display les sous-category où il n'y a pas d'espèces.
+Mettre un loader sur la galerie photo avec un timer.

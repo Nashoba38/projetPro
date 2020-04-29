@@ -1,49 +1,41 @@
 <div class="container">
-  <div class="row mt-5">
-    <div class="col-12">
-      <h1 class="mb-3">Les articles</h1>
-      <h4>
-        Ici vous trouverez toutes sortes d'articles sur la faune, la flore, la
-        technique, l'écologie, ainsi que mon point de vue sur certaines
-        actualités.
-      </h4>
-      <br />
-      <div class="button_cont row filters" align="center">
-        <a
-          class="bouton m-2 col-6 col-sm-4 col-md-2"
-          href="#"
-          rel="nofollow noopener"
-          >Faune</a
-        >
-        <a
-          class="bouton m-2 col-6 col-sm-4 col-md-2"
-          href="#"
-          rel="nofollow noopener"
-          >Flore</a
-        >
-        <a
-          class="bouton m-2 col-6 col-sm-4 col-md-2"
-          href="#"
-          rel="nofollow noopener"
-          >Technique</a
-        >
-        <a
-          class="bouton m-2 col-6 col-sm-4 col-md-2"
-          href="#"
-          rel="nofollow noopener"
-          >Actualités</a
-        >
-      </div>
-    </div>
+  <div class="topPage">
+    <h1 class="titre">Articles</h1>
+    <h4>
+      Ici vous trouverez toutes sortes d'articles sur la faune, la flore, la
+      technique, l'écologie, ainsi que mon point de vue sur certaines
+      actualités.
+    </h4>
   </div>
+</div>
+
+<div class="filtres">
+  <!-- <div class="categ">
+    <h6>Catégories : </h6>
+    <section class="categCheckBox">
+      <mat-checkbox class="choices" >Faune</mat-checkbox>
+      <mat-checkbox class="choices" >Flore</mat-checkbox>
+      <mat-checkbox class="choices" >Protection de l'environnement</mat-checkbox>
+      <mat-checkbox class="choices" >Technique Photo</mat-checkbox>
+    </section>
+  </div> -->
+  <div class="search">
+    <label for="searchValue">
+      <h6>Vous cherchez un article qui traite d'un sujet en particulier ?</h6>
+    </label>
+    <input id="searchbar" class="form-control" type="text" name="searchValue" autocomplete="off"
+      placeholder="Chercher ici ...">
+  </div>
+  <!-- <button (click)="search()"> Enregistrer </button> -->
+</div>
+
+
+
+<div class="container">
   <div class="row my-4 ">
     <div class="mb-2 col-sm-12 col-md-6 col-lg-4 listArticles">
       <div class="card" style="width: 22rem;">
-        <img
-          class="card-img-top"
-          src="../../assets/images/vipere.jpg"
-          alt="Card image cap"
-        />
+        <img class="card-img-top" src="../../assets/images/vipere.jpg" alt="Card image cap" />
         <div class="card-body">
           <h5 class="card-title">l'éthique en photographie animalière</h5>
           <p class="card-text">
@@ -52,10 +44,8 @@
             longtemps vous pourrez peut-être vous remettre en question, sinon
             vous apprendrez comment vous comporter au mieux ...
           </p>
-          <div class="button_cont" align="center">
-            <a class="bouton" href="#" rel="nofollow noopener"
-              >Lire l'article</a
-            >
+          <div class="btn-container">
+            <button class="btn">Lire </button>
           </div>
         </div>
       </div>
@@ -63,11 +53,7 @@
 
     <div class="mb-2 col-sm-12 col-md-6 col-lg-4 listArticles">
       <div class="card" style="width: 22rem;">
-        <img
-          class="card-img-top"
-          src="../../assets/images/interrogation.jpg"
-          alt="Card image cap"
-        />
+        <img class="card-img-top" src="../../assets/images/interrogation.jpg" alt="Card image cap" />
         <div class="card-body">
           <h5 class="card-title"></h5>
           <p class="card-text"></p>
@@ -78,11 +64,7 @@
 
     <div class="mb-2 col-sm-12 col-md-6 col-lg-4 listArticles">
       <div class="card" style="width: 22rem;">
-        <img
-          class="card-img-top"
-          src="../../assets/images/interrogation.jpg"
-          alt="Card image cap"
-        />
+        <img class="card-img-top" src="../../assets/images/interrogation.jpg" alt="Card image cap" />
         <div class="card-body">
           <h5 class="card-title"></h5>
           <p class="card-text"></p>

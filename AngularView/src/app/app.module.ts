@@ -10,13 +10,6 @@ import { DiscoverComponent } from './discover/discover.component';
 import { DetailEspeceComponent } from './Especes/detail-espece/detail-espece.component';
 import { ReptilesComponent } from './Genres/reptiles/reptiles.component';
 import { ArticlesComponent } from './Articles/articles/articles.component';
-import { GalerieReptilesComponent } from './Galeries/galerie-reptiles/galerie-reptiles.component';
-import { GalerieOiseauxComponent } from './Galeries/galerie-oiseaux/galerie-oiseaux.component';
-import { GalerieMammiferesComponent } from './Galeries/galerie-mammiferes/galerie-mammiferes.component';
-import { GalerieInvertebresComponent } from './Galeries/galerie-invertebres/galerie-invertebres.component';
-import { GalerieFloreComponent } from './Galeries/galerie-flore/galerie-flore.component';
-import { GaleriePaysagesComponent } from './Galeries/galerie-paysages/galerie-paysages.component';
-import { GalerieAmphibiensComponent } from './Galeries/galerie-amphibiens/galerie-amphibiens.component';
 import { GalerieAllComponent } from './Galeries/galerie-all/galerie-all.component';;
 import { LoginComponent } from './Structure/login/login.component';
 import { LandingPageComponent } from './Structure/landing-page/landing-page.component';
@@ -28,11 +21,13 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatPaginatorModule} from '@angular/material/paginator';
 import { AmphibiensComponent } from './Genres/amphibiens/amphibiens.component';
 import { MammiferesComponent } from './Genres/mammiferes/mammiferes.component';
 import { OiseauxComponent } from './Genres/oiseaux/oiseaux.component';
 import { VegetauxComponent } from './Genres/vegetaux/vegetaux.component';
 import { InvertebresComponent } from './Genres/invertebres/invertebres.component';
+import { ArticleEthiqueComponent } from './Articles/article-ethique/article-ethique.component';
 
 
 
@@ -46,13 +41,6 @@ import { InvertebresComponent } from './Genres/invertebres/invertebres.component
     DetailEspeceComponent,
     ReptilesComponent,
     ArticlesComponent,
-    GalerieReptilesComponent,
-    GalerieOiseauxComponent,
-    GalerieMammiferesComponent,
-    GalerieInvertebresComponent,
-    GalerieFloreComponent,
-    GaleriePaysagesComponent,
-    GalerieAmphibiensComponent,
     GalerieAllComponent,
     LoginComponent,
     LandingPageComponent,
@@ -60,7 +48,8 @@ import { InvertebresComponent } from './Genres/invertebres/invertebres.component
     MammiferesComponent,
     OiseauxComponent,
     VegetauxComponent,
-    InvertebresComponent
+    InvertebresComponent,
+    ArticleEthiqueComponent
   ],
   imports: [
     HttpClientModule,
@@ -74,7 +63,8 @@ import { InvertebresComponent } from './Genres/invertebres/invertebres.component
     ReactiveFormsModule,
     MatCheckboxModule,
     FormsModule,
-    MatIconModule
+    MatIconModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
