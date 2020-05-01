@@ -10,109 +10,90 @@ use App\Entity\Article;
 class ArticleController extends AbstractController
 {
     /**
-     * @Route("/api/EspecesDetails", name="especesDetails")
+     * @Route("/api/Articles", name="listeArticles")
      */
     public function index()
     {
-        $especesArray = [];
-        $especes = $this->getDoctrine()->getRepository(Especes::class);
-        $especesEntities = $especes->findAll();
+        $articlesArray = [];
+        $articles = $this->getDoctrine()->getRepository(Article::class);
+        $articlesEntities = $articles->findAll();
         
 
-        for ($i=0; $i < count($especesEntities); $i++) { 
-            $espece = $especesEntities[$i];
-            $id = $espece->getId();
-            $category = $espece->getCategory();
-            $NomFrancais = $espece->getNomFrancais();
-            $NomLatin = $espece->getNomLatin();
-            $Image = $espece->getImage();
-            $Moeurs = $espece->getMoeurs();
-            $Description = $espece->getDescription();
-            $Alimentation = $espece->getAlimentation();
-            $Repartition = $espece->getRepartition();
-            $habitat = $espece->getHabitat();
-            $Longevite = $espece->getLongevite();
-            $reproduction = $espece->getReproduction();
-            $regne = $espece->getRegne();
-            $embranchement = $espece->getEmbranchement();
-            $classeTaxo=$espece->getClasseTaxo();
-            $ordre=$espece->getOrdre();
-            $famille=$espece->getFamille();
-            $statutConservation=$espece->getStatutConservation();
+        for ($i=0; $i < count($articlesEntities); $i++) { 
+            $article = $articlesEntities[$i];
+            $id = $article->getId();
+            $titre = $article->getTitre();
+            $date = $article->getDate();
+            $paragraphe1 = $article->getParagraphe1();
+            $paragraphe2 = $article->getParagraphe2();
+            $paragraphe3 = $article->getParagraphe3();
+            $paragraphe4 = $article->getParagraphe4();
+            $paragraphe5 = $article->getParagraphe5();
+            $image1 = $article->getImage1();
+            $image2 = $article->getImage2();
+            $image3 = $article->getImage3();
+            $image4 = $article->getImage4();
+            $image5 = $article->getImage5();
+            
 
 
-            $especeArray = [
+            $articleArray = [
                 "id" => $id,
-                "category" => $category,
-                "NomFrancais" => $NomFrancais,
-                "NomLatin" => $NomLatin,
-                "Image" => $Image,
-                "Moeurs" => $Moeurs,
-                "Description" => $Description,
-                "Alimentation" => $Alimentation,
-                "Repartition" => $Repartition,
-                "Habitat" => $habitat,
-                "Longevite" => $Longevite,
-                "Reproduction" => $reproduction,
-                "Regne" => $regne,
-                "Embranchement" => $embranchement,
-                "Classe" => $classeTaxo,
-                "Ordre" => $ordre,
-                "Famille" => $famille,
-                "StatutConservation" => $statutConservation,
-
+                "titre" => $titre,
+                "date" => $date,
+                "paragraphe1" => $paragraphe1,
+                "paragraphe2" => $paragraphe2,
+                "paragraphe3" => $paragraphe3,
+                "paragraphe4" => $paragraphe4,
+                "paragraphe5" => $paragraphe5,
+                "image1" => $image1,
+                "image2" => $image2,
+                "image3" => $image3,
+                "image4" => $image4,
+                "image5" => $image5,
             ];
-            $especesArray[] = $especeArray; //équivaut push en JS
+            $articlesArray[] = $articleArray; //équivaut push en JS
         }
-        return new JsonResponse($especesArray);
+        return new JsonResponse($articlesArray);
     }
 
 
     /** 
-     * @Route("/api/EspecesDetails/{id}", name="OneespeceDetail")
+     * @Route("/api/Articles/{id}", name="article")
     */
-    public function getEspeceById($id) {
+    public function getArticleById($id) {
        
-        $espece = $this ->getDoctrine()                      
-                        ->getRepository(Especes::class)             
+        $article = $this ->getDoctrine()                      
+                        ->getRepository(Article::class)             
                         ->find($id);
-        $id = $espece->getId();
-        $NomFrancais = $espece->getNomFrancais();
-        $NomLatin = $espece->getNomLatin();
-        $Image = $espece->getImage();
-        $Description = $espece->getDescription();
-        $Alimentation = $espece->getAlimentation();
-        $Repartition = $espece->getRepartition();
-        $Habitat = $espece->getHabitat();
-        $Moeurs = $espece->getMoeurs();
-        $Longevite = $espece->getLongevite();
-        $Reproduction = $espece->getReproduction();
-        $regne = $espece->getRegne();
-        $embranchement = $espece->getEmbranchement();
-        $classeTaxo = $espece->getClasseTaxo();
-        $ordre = $espece->getOrdre();
-        $famille = $espece->getFamille();
-        $statutConservation = $espece->getStatutConservation();
-        $especeId = [
+        $id = $article->getId();
+        $titre = $article->getTitre();
+        $date = $article->getdate();
+        $paragraphe1 = $article->getParagraphe1();
+        $paragraphe2 = $article->getParagraphe2();
+        $paragraphe3 = $article->getParagraphe3();
+        $paragraphe4 = $article->getParagraphe4();
+        $paragraphe5 = $article->getParagraphe5();
+        $image1 = $article->getImage1();
+        $image2 = $article->getImage2();
+        $image3 = $article->getImage3();
+        $image4 = $article->getImage4();
+        $image5 = $article->getImage5();
+        
+        $articleId = [
             "id" => $id,
-            "NomFrancais" => $NomFrancais,
-            "NomLatin" => $NomLatin,
-            "Image" => $Image,
-            "Moeurs" => $Moeurs,
-            "Description" => $Description,
-            "Alimentation" => $Alimentation,
-            "Repartition" => $Repartition,
-            "Habitat" => $Habitat,
-            "Longevite" => $Longevite,
-            "Reproduction" => $Reproduction,
-            "Regne" => $regne,
-            "Embranchement" => $embranchement,
-            "Classe" => $classeTaxo,
-            "Ordre" => $ordre,
-            "Famille" => $famille,
-            "StatutConservation" => $statutConservation,
-
+            "date" => $date,
+            "paragraphe1" => $paragraphe1,
+            "paragraphe2" => $paragraphe2,
+            "paragraphe3" => $paragraphe3,
+            "paragraphe4" => $paragraphe4,
+            "paragraphe5" => $paragraphe5,
+            "image1" => $image1,
+            "image2" => $image2,
+            "image3" => $image3,
+            "image4" => $image4,
+            "image5" => $image5,
         ];
-        return new JsonResponse($especeId);
+        return new JsonResponse($articleId);
     }
 }

@@ -306,7 +306,7 @@ class Article
         return $this->artImg4;
     }
 
-    public function setArtImg4(File $image1)
+    public function setArtImg4(File $image4)
     {
         $this->artImg4 = $image4;
 

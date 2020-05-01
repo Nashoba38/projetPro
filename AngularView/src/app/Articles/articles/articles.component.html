@@ -10,15 +10,6 @@
 </div>
 
 <div class="filtres">
-  <!-- <div class="categ">
-    <h6>Catégories : </h6>
-    <section class="categCheckBox">
-      <mat-checkbox class="choices" >Faune</mat-checkbox>
-      <mat-checkbox class="choices" >Flore</mat-checkbox>
-      <mat-checkbox class="choices" >Protection de l'environnement</mat-checkbox>
-      <mat-checkbox class="choices" >Technique Photo</mat-checkbox>
-    </section>
-  </div> -->
   <div class="search">
     <label for="searchValue">
       <h6>Vous cherchez un article qui traite d'un sujet en particulier ?</h6>
@@ -31,46 +22,25 @@
 
 
 
-<div class="container">
-  <div class="row my-4 ">
-    <div class="mb-2 col-sm-12 col-md-6 col-lg-4 listArticles">
-      <div class="card" style="width: 22rem;">
-        <img class="card-img-top" src="../../assets/images/vipere.jpg" alt="Card image cap" />
-        <div class="card-body">
-          <h5 class="card-title">l'éthique en photographie animalière</h5>
-          <p class="card-text">
-            Ici découvrez mon point de vue sur l'éthique dans le milieu de la
-            photographie animalière, si vous êtes dans ce domaine depuis
-            longtemps vous pourrez peut-être vous remettre en question, sinon
-            vous apprendrez comment vous comporter au mieux ...
-          </p>
-          <div class="btn-container">
-            <button class="btn">Lire </button>
-          </div>
-        </div>
-      </div>
+<div class="articlesContainer" *ngFor="let article of articles ; let i=index;">
+  <div class="articleBox">
+    <div class="photo">
+      <img src="http://127.0.0.1:8000/uploads/images/galerie/{{
+      article.image1
+    }}" />
     </div>
-
-    <div class="mb-2 col-sm-12 col-md-6 col-lg-4 listArticles">
-      <div class="card" style="width: 22rem;">
-        <img class="card-img-top" src="../../assets/images/interrogation.jpg" alt="Card image cap" />
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-          <p class="card-text"></p>
-          <!-- <div class="button_cont" align="center"><a class="bouton" href="#" rel="nofollow noopener">Lire l'article</a></div> -->
-        </div>
-      </div>
+    <div class="titreArt">
+      <h4>{{article.titre}}</h4>
     </div>
-
-    <div class="mb-2 col-sm-12 col-md-6 col-lg-4 listArticles">
-      <div class="card" style="width: 22rem;">
-        <img class="card-img-top" src="../../assets/images/interrogation.jpg" alt="Card image cap" />
-        <div class="card-body">
-          <h5 class="card-title"></h5>
-          <p class="card-text"></p>
-          <!-- <div class="button_cont" align="center"><a class="bouton" href="#" rel="nofollow noopener">Lire l'article</a></div> -->
-        </div>
-      </div>
+    <div class="presentation">
+      <p>Dans cet article, je vais vous expliquer ce qui pour moi différencie un "photographe naturaliste" d'un
+        "photographe animalier" ...
+      </p>
+      <p>
+        Une simple histoire d'éthique !</p>
+    </div>
+    <div class="btn-container">
+      <button class="btn">Lire</button>
     </div>
   </div>
 </div>
