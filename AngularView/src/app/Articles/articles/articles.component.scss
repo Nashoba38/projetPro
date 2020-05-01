@@ -33,7 +33,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: #ffffffd0;
+  background-color: #ffffffd9;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
@@ -45,8 +45,7 @@
     margin: 20px;
     box-shadow: 0px 0px 8px 2px white;
     border-radius: 2px;
-    width: 30%;
-
+    max-width: 360px;
 
     .photo {
       position: relative;
@@ -97,9 +96,10 @@
       .btn {
         color: #ffffff;
         border: 1px solid #ffffff;
+        font-size: medium;
 
         &:after {
-          border: solid #db1717;
+          border: solid rgb(241, 255, 176);
           border-width: 0 2px 2px 0;
           display: inline-block;
           padding: 4px;
@@ -114,6 +114,7 @@
         &:hover {
           border: 2px solid rgb(241, 255, 176);
           padding: 12px 40px;
+          color: rgb(241, 255, 176);
 
           &:after {
             opacity: 1;

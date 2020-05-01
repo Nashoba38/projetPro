@@ -1,5 +1,6 @@
 export class Article {
     date: { date: string, timezone: string, timezone_type: number };
+    titre: String;
     id: number;
     image1: string;
     image2: string;
@@ -11,5 +12,4 @@ export class Article {
     paragraphe3: Text;
     paragraphe4: Text;
     paragraphe5: Text;
-    titre: string;
 }
