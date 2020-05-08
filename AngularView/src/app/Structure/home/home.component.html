@@ -1,36 +1,48 @@
 <app-menu></app-menu>
-<div class="container-fluid mt-5 content">
-  <div class="container firstTitle">
-    <h1 class="animated zoomIn">Bienvenue à vous !</h1>
+
+<div class="previews">
+  <div class="article">
+    <p [innerHTML]="article.titre"></p>
+    <div class="image">
+      <img src="http://127.0.0.1:8000/uploads/images/galerie/{{
+      article.image1}}" />
+
+    </div>
+    <div class="espece"></div>
+    <div class="photo"></div>
   </div>
-  <div class="container home">
-    <p>
-      Vous êtes ici sur un site de Photographe Naturaliste, <br />
-      vous pourrez donc découvrir toutes mes photographies, <br />
-      mais aussi apprendre à mieux connaître la faune, la flore ainsi que leur
-      écologie.
-    </p>
-    <br />
-    <h4 class="animated slideInLeft pb-3">Comment est organisé le site ?</h4>
-    <p>
-      - Si vous désirez uniquement voir mes photos de la faune et de la flore,
-      classées selon les familles, les voyages, les milieux, ... je vous laisse
-      cliquer sur
-      <a [routerLink]="['/discover']"><span class="route">Galerie</span></a>
-      dans le menu.
+  <div class="container-fluid mt-5 content">
+    <div class="container firstTitle">
+      <h1 class="animated zoomIn">Bienvenue à vous !</h1>
+    </div>
+    <div class="container home">
+      <p>
+        Vous êtes ici sur un site de Photographe Naturaliste, <br />
+        vous pourrez donc découvrir toutes mes photographies, <br />
+        mais aussi apprendre à mieux connaître la faune, la flore ainsi que leur
+        écologie.
+      </p>
       <br />
-      - Si vous voulez en apprendre plus sur certaines espèces, dirigez-vous
-      vers
-      <a [routerLink]="['/discover']"><span class="route">Découvrir</span></a>
-      pour accéder à toutes les fiches descriptives.
-      <br />
-      - Si vous avez envie d'en savoir plus sur des sujets variés liés à la
-      nature ou à la photographie, jetez un oeil aux
-      <a [routerLink]="['/discover']"><span class="route">Articles</span></a
-      >, vous trouverez certainement des choses intéressantes.
-      <br />
-      <br />
-      Je vous souhaite une bonne visite !
-    </p>
+      <h4 class="animated slideInLeft pb-3">Comment est organisé le site ?</h4>
+      <p>
+        - Si vous désirez uniquement voir mes photos de la faune et de la flore,
+        classées selon les familles, les voyages, les milieux, ... je vous laisse
+        cliquer sur
+        <a [routerLink]="['/discover']"><span class="route">Galerie</span></a>
+        dans le menu.
+        <br />
+        - Si vous voulez en apprendre plus sur certaines espèces, dirigez-vous
+        vers
+        <a [routerLink]="['/discover']"><span class="route">Découvrir</span></a>
+        pour accéder à toutes les fiches descriptives.
+        <br />
+        - Si vous avez envie d'en savoir plus sur des sujets variés liés à la
+        nature ou à la photographie, jetez un oeil aux
+        <a [routerLink]="['/discover']"><span class="route">Articles</span></a>, vous trouverez certainement des choses
+        intéressantes.
+        <br />
+        <br />
+        Je vous souhaite une bonne visite !
+      </p>
+    </div>
   </div>
-</div>
