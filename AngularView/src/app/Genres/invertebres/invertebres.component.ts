@@ -4,7 +4,7 @@ import { SousCategoriesService } from '../sous-categories.service';
 @Component({
   selector: 'app-invertebres',
   templateUrl: './invertebres.component.html',
-  styleUrls: ['./invertebres.component.scss']
+  styleUrls: ['../categories.scss']
 })
 export class InvertebresComponent implements OnInit {
 

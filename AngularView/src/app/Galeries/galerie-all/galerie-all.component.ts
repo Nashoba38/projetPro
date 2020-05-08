@@ -21,8 +21,6 @@ import { element } from 'protractor';
 })
 export class GalerieAllComponent implements OnInit {
 
-
-  
   category: number[] = [];
   pays: number[] = [];
   espece: string[] = [];
@@ -49,6 +47,7 @@ export class GalerieAllComponent implements OnInit {
   costaChecked = false;
   madaChecked = false;
   allPaysChecked = false;
+  erreurMessage: string;
 
   searchText;
 
@@ -62,7 +61,6 @@ export class GalerieAllComponent implements OnInit {
   ngOnInit() {
     this.getPhotos();
     this.getEspeces();
-
   }
 
   getPhotos() {
@@ -73,6 +71,7 @@ export class GalerieAllComponent implements OnInit {
   }
 
   openModal(i) {
+    console.log(this.filteredPhotos);
     if (this.filteredPhotos.length > 0) {
       this.modal = this.filteredPhotos[i];
       this.currentIndex = i;
@@ -111,6 +110,7 @@ export class GalerieAllComponent implements OnInit {
   }
 
   getCheckedValue(category?: number, pays?: number) {
+    this.erreurMessage = "";
     if (category != undefined) {
       if (this.category.includes(category)) {
         let index = this.category.indexOf(category);
@@ -127,11 +127,22 @@ export class GalerieAllComponent implements OnInit {
         this.pays.push(pays)
       }
     }
+
+    this.filteredPhotos = [];
+
+    for (let index = 0; index < this.photos.length; index++) {
+      if (this.displayChecked(this.photos[index])) {
+        this.filteredPhotos.push(this.photos[index])
+      }
+    }
+
+    if (this.filteredPhotos.length === 0 && this.category.length !== 0 && this.pays.length !== 0) {
+      this.erreurMessage = "Il n'y a pas encore de photos qui correspondent à ces critères."
+    }
   }
 
 
   displayChecked(photo: Galeries) {
-
     for (let i = 0; i < photo.pays.length; i++) {
       if (this.pays.includes(photo.pays[i]) && this.category.length === 0) {
         return true;
@@ -149,6 +160,7 @@ export class GalerieAllComponent implements OnInit {
   }
 
   onSearch(event) {
+    this.erreurMessage = "";
     const searchValue = event.target.value;
     this.filteredPhotos = [];
     for (let i = 0; i < this.photos.length; i++) {
@@ -158,6 +170,9 @@ export class GalerieAllComponent implements OnInit {
       } else if (elem.nomLatin.toLowerCase().includes(searchValue.toLowerCase())) {
         this.filteredPhotos.push(elem);
       }
+    }
+    if (this.filteredPhotos.length === 0) {
+      this.erreurMessage = "Il n'y a pas encore de photos qui correspondent à ces critères."
     }
   }
 }

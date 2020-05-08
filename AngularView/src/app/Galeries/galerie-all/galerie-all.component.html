@@ -1,3 +1,4 @@
+<app-menu></app-menu>
 <div class="container">
   <div class="topPage">
     <h1 class="titre">Galerie photo</h1>
@@ -6,6 +7,12 @@
       <br>
       Je vous conseille d'utiliser les filtres pour trouver plus facilement ce que vous cherchez.
     </h4>
+  </div>
+  <div class="backBtn">
+    <span class="line tLine"></span>
+    <span class="line mLine"></span>
+    <span class="label" onclick="goBack()">Retour</span>
+    <span class="line bLine"></span>
   </div>
 </div>
 
@@ -43,7 +50,6 @@
     <input id="searchbar" class="form-control" type="text" (keyup)="onSearch($event)" name="searchValue"
       autocomplete="off" placeholder="Chercher ici ...">
   </div>
-  <!-- <button (click)="search()"> Enregistrer </button> -->
 </div>
 
 
@@ -51,24 +57,23 @@
 <div class="gallery">
   <ng-container *ngIf="filteredPhotos.length > 0">
     <ng-container *ngFor="let photo of filteredPhotos ; let i=index;">
-      <div class="square" *ngIf="displayChecked(photo)">
+      <div class="square">
         <img id="photo" alt="" (click)="openModal(i)" src="http://127.0.0.1:8000/uploads/images/galerie/{{
             photo.photo
           }}" />
       </div>
     </ng-container>
   </ng-container>
-  <ng-container *ngIf="filteredPhotos.length === 0">
-
+  <ng-container *ngIf="filteredPhotos.length === 0 && !erreurMessage">
     <ng-container *ngFor="let photo of photos ; let i=index;">
-      <div class="square" *ngIf="displayChecked(photo)">
+      <div class="square">
         <img id="photo" alt="" (click)="openModal(i)" src="http://127.0.0.1:8000/uploads/images/galerie/{{
             photo.photo
           }}" />
       </div>
     </ng-container>
   </ng-container>
-
+  <div class="errorMessage" *ngIf="erreurMessage" [innerHTML]="erreurMessage"></div>
 </div>
 
 <ng-container *ngIf="filteredPhotos.length > 0">
@@ -84,7 +89,7 @@
         class="fas fa-chevron-right"></i>
     </div>
     <div class="presentation">
-      <p class="linkName"> {{ modal.nom }} - {{ modal.nomLatin}}</p>
+      <p class="linkName"> {{ modal.nom }} - {{ modal.nomLatin }}</p>
     </div>
   </div>
 </ng-container>

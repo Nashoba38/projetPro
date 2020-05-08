@@ -4,7 +4,7 @@ import { SousCategoriesService } from '../sous-categories.service';
 @Component({
   selector: 'app-mammiferes',
   templateUrl: './mammiferes.component.html',
-  styleUrls: ['./mammiferes.component.scss']
+  styleUrls: ['../categories.scss']
 })
 export class MammiferesComponent implements OnInit {
 

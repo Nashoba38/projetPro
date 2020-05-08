@@ -4,7 +4,7 @@ import { SousCategoriesService } from '../sous-categories.service';
 @Component({
   selector: 'app-vegetaux',
   templateUrl: './vegetaux.component.html',
-  styleUrls: ['./vegetaux.component.scss']
+  styleUrls: ['../categories.scss']
 })
 export class VegetauxComponent implements OnInit {
   arbres = [];

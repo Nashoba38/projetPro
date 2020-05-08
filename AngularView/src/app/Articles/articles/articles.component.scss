@@ -1,5 +1,11 @@
+@media (max-width:550px) {
+ .topPage {
+  margin-top: 25%!important;
+ } 
+}
+
 .topPage {
-  margin-top: 8%;
+  margin-top: 7%;
 
   h1 {
     text-align: center;
@@ -7,6 +13,7 @@
     margin-bottom: 50px;
   }
 }
+
 
 .filtres {
   display: flex;

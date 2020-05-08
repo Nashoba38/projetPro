@@ -19,6 +19,12 @@
   }
 }
 
+@media (max-width: 1120px) {
+  .titre {
+    margin: 15% 10% 5% 10% !important;
+  }
+}
+
 //CSS contenu global
 p {
   margin-bottom: 0em !important;
@@ -64,6 +70,8 @@ h4 {
     }
   }
 }
+
+
 
 //Container tabs avec les choix de "comment découvrir la faune et la flore"
 

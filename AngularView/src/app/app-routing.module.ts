@@ -14,6 +14,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ListeEspecesComponent } from './Especes/liste-especes/liste-especes.component';
 import { VegetauxComponent } from './Genres/vegetaux/vegetaux.component';
 import { InvertebresComponent } from './Genres/invertebres/invertebres.component';
+import { ArticleEthiqueComponent } from './Articles/article-ethique/article-ethique.component';
 
 
 const routes: Routes = [
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'discover/EspecesByCat/5', component: VegetauxComponent },
   { path: 'discover/EspecesByCat/6', component: InvertebresComponent },
   { path: 'articles', component: ArticlesComponent },
+  { path: 'articles/5', component: ArticleEthiqueComponent },
   { path: 'galerie', component: GalerieAllComponent },
   { path: 'register', component: LoginComponent },
   { path: '', component: LandingPageComponent },

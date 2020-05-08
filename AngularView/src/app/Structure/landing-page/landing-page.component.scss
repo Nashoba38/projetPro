@@ -11,6 +11,7 @@ body {
   font-family: decade;
   src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/decade.ttf");
 }
+
 @mixin transition($dur) {
   -webkit-transition: $dur;
   -moz-transition: $dur;
@@ -18,6 +19,7 @@ body {
   -o-transition: $dur;
   transition: $dur;
 }
+
 @mixin transitionDelay($dur) {
   -webkit-transition-delay: $dur;
   -moz-transition-delay: $dur;
@@ -25,6 +27,7 @@ body {
   -o-transition-delay: $dur;
   transition-delay: $dur;
 }
+
 @mixin translateXY($x: 0, $y: 0) {
   -webkit-transform: translateX($x) translateY($y);
   -moz-transform: translateX($x) translateY($y);
@@ -32,6 +35,7 @@ body {
   -o-transform: translateX($x) translateY($y);
   transform: translateX($x) translateY($y);
 }
+
 @mixin translateXYandScale($x: 0, $y: 0, $scale: 0) {
   -webkit-transform: translateX($x) translateY($y) scale($scale);
   -moz-transform: translateX($x) translateY($y) scale($scale);
@@ -39,6 +43,7 @@ body {
   -o-transform: translateX($x) translateY($y) scale($scale);
   transform: translateX($x) translateY($y) scale($scale);
 }
+
 @mixin rotate($deg) {
   -webkit-transform: rotate($deg);
   -moz-transform: rotate($deg);
@@ -46,6 +51,7 @@ body {
   -o-transform: rotate($deg);
   transform: rotate($deg);
 }
+
 @mixin scale($val) {
   -webkit-transform: scale($val);
   -moz-transform: scale($val);
@@ -53,16 +59,13 @@ body {
   -o-transform: scale($val);
   transform: scale($val);
 }
+
 @mixin clearfix {
   content: "";
   display: table;
   clear: both;
 }
-$green: #c7ff66;
-$gray: #dcdcdc;
-$lightGray: #8f8f8f;
-$darkBg: rgba(49, 49, 49, 0.7);
-$red: #ff5954;
+
 *,
 *:before,
 *:after {
@@ -74,51 +77,27 @@ $red: #ff5954;
   margin: 0;
   padding: 0;
 }
+
 a {
   color: inherit;
   text-decoration: none;
 }
-.half {
-  position: absolute;
-  overflow: hidden;
-  z-index: 50;
-  left: 0;
-  width: 100%;
-  height: 50%;
-  @include transition(3s);
-  will-change: transform;
 
-  img {
-    position: absolute;
-    top: -10%;
-    left: 0;
-    width: 100%;
-  }
 
-  &.top {
-    top: 0;
-  }
-
-  &.bottom {
-    top: 50%;
-
-    img {
-      top: -110%;
-    }
-  }
-
-  &.active.top {
-    @include translateXY(0, -100%);
-  }
-
-  &.active.bottom {
-    @include translateXY(0, 100%);
-  }
+.main {
+  position: fixed;
+  top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: #000;
+   z-index: 200;
+background: #000;
 }
 .super-button {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 65%;
   z-index: 200;
   width: 200px;
   height: 80px;
@@ -127,7 +106,7 @@ a {
   text-transform: uppercase;
   font-size: 40px;
   font-weight: bold;
-  color: black;
+  color: rgba(146, 146, 123, 0.664);
   background-color: transparent;
   border: 4px solid rgba(32, 32, 32, 0.5);
   @include transition(1.5s);
@@ -139,14 +118,15 @@ a {
     border-color: #fff;
   }
 
-  &:hover ~ .overlay {
-    background-color: rgba(253, 190, 16, 0.5);
+  &:hover~.overlay {
+    background-color: rgba(255, 131, 228, 0.089);
   }
-  &:hover ~ .overlay.active {
+
+  &:hover~.overlay.active {
     background-color: transparent;
   }
 
-  &:hover ~ .button-line .inner {
+  &:hover~.button-line .inner {
     max-width: 100%;
   }
 
@@ -155,15 +135,19 @@ a {
     @include translateXY(-50%, -1000px);
   }
 }
+
 .overlay {
   position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: 100;
-  background-color: rgba(247, 183, 64, 0.185);
   @include transition(1.5s);
+  background-image: url("../../../assets/images//Erythronium.jpg");
   will-change: background-color;
 
   &.active {
@@ -171,18 +155,19 @@ a {
     background-color: transparent;
   }
 }
+
 .button-line {
   position: absolute;
-  top: -webkit-calc(50% - 2px);
-  top: -moz-calc(50% - 2px);
-  top: calc(50% - 2px);
+  top: -webkit-calc(65% - 2px);
+  top: -moz-calc(65% - 2px);
+  top: calc(65% - 2px);
   left: 0;
   z-index: 200;
   width: -webkit-calc(50% - 100px);
   width: -moz-calc(50% - 100px);
   width: calc(50% - 100px);
   height: 4px;
-  background-color: rgba(29, 29, 29, 0.5);
+  background-color: rgba(231, 255, 176, 0.5);
   @include transition(0.5s);
   will-change: width, max-width;
 
@@ -210,50 +195,58 @@ a {
 }
 
 
-@import url(https://fonts.googleapis.com/css?family=Quattrocento+Sans);
+// @import url(https://fonts.googleapis.com/css?family=Quattrocento+Sans);
 
-@mixin position-center($text-align: center) {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	margin: auto;
-	text-align: $text-align;
-}
+// @mixin position-center($text-align: center) {
+//   position: absolute;
+//   top: 0;
+//   bottom: 0;
+//   left: 0;
+//   right: 0;
+//   margin: auto;
+//   text-align: $text-align;
+// }
 
-.loading {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: #000;
-  z-index: -10;
-  visibility: hidden;
-}
+// .loading {
 
-.loading-text {
-	@include position-center;
-	width: 100%;
-	height: 100px;
-	line-height: 100px;
-	span {
-		display: inline-block;
-		margin: 0 5px;
-    color: #fff;
-    font-size: xx-large;
-    font-family: 'Quattrocento Sans', sans-serif;
-		@for $i from 0 through 6 {
-			&:nth-child(#{$i + 1}) {
-				filter: blur(0px);
-				animation: blur-text 1.5s (#{$i/5})+s infinite linear alternate;
-			}
-		}
-	}
-}
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   background: #000;
+//   z-index: 200;
+//   visibility: hidden;
+// }
 
-@keyframes blur-text {
-	0% {filter: blur(0px);}
-	100% {filter: blur(4px);}
-}
+// .loading-text {
+//   @include position-center;
+//   width: 100%;
+//   height: 100px;
+//   line-height: 100px;
+
+//   span {
+//     display: inline-block;
+//     margin: 0 5px;
+//     color: #fff;
+//     font-size: xx-large;
+//     font-family: 'Quattrocento Sans', sans-serif;
+
+//     @for $i from 0 through 6 {
+//       &:nth-child(#{$i + 1}) {
+//         filter: blur(0px);
+//         animation: blur-text 1.5s (#{$i/5})+s infinite linear alternate;
+//       }
+//     }
+//   }
+// }
+
+// @keyframes blur-text {
+//   0% {
+//     filter: blur(0px);
+//   }
+
+//   100% {
+//     filter: blur(4px);
+//   }
+// }

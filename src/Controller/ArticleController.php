@@ -83,6 +83,7 @@ class ArticleController extends AbstractController
         $articleId = [
             "id" => $id,
             "date" => $date,
+            "titre" => $titre,
             "paragraphe1" => $paragraphe1,
             "paragraphe2" => $paragraphe2,
             "paragraphe3" => $paragraphe3,

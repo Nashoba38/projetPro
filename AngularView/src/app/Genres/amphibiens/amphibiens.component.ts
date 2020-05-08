@@ -4,7 +4,7 @@ import { SousCategoriesService } from '../sous-categories.service';
 @Component({
   selector: 'app-amphibiens',
   templateUrl: './amphibiens.component.html',
-  styleUrls: ['./amphibiens.component.scss']
+  styleUrls: ['../categories.scss']
 })
 export class AmphibiensComponent implements OnInit {
 

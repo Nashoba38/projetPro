@@ -4,7 +4,7 @@ import { SousCategoriesService } from '../sous-categories.service';
 @Component({
   selector: 'app-oiseaux',
   templateUrl: './oiseaux.component.html',
-  styleUrls: ['./oiseaux.component.scss']
+  styleUrls: ['../categories.scss']
 })
 export class OiseauxComponent implements OnInit {
 
