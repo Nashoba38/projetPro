@@ -20,26 +20,26 @@
   <div class="categ">
     <h6>Catégories : </h6>
     <section class="categCheckBox">
-      <mat-checkbox class="choices" (change)="getCheckedValue(4)" [(ngModel)]="amphiChecked">Amphibiens</mat-checkbox>
-      <mat-checkbox class="choices" (change)="getCheckedValue(5)" [(ngModel)]="floreChecked">Flore</mat-checkbox>
-      <mat-checkbox class="choices" (change)="getCheckedValue(6)" [(ngModel)]="inverteChecked">Invertébrés
+      <mat-checkbox class="choices" onclick="document.getElementById('searchbar').value =''" (change)="getCheckedValue(4)" [(ngModel)]="amphiChecked">Amphibiens</mat-checkbox>
+      <mat-checkbox class="choices"  onclick="document.getElementById('searchbar').value =''" (change)="getCheckedValue(5)" [(ngModel)]="floreChecked">Flore</mat-checkbox>
+      <mat-checkbox class="choices"  onclick="document.getElementById('searchbar').value =''" (change)="getCheckedValue(6)" [(ngModel)]="inverteChecked">Invertébrés
       </mat-checkbox>
-      <mat-checkbox class="choices" (change)="getCheckedValue(1)" [(ngModel)]="mammiChecked">Mammifères</mat-checkbox>
+      <mat-checkbox class="choices"  onclick="document.getElementById('searchbar').value =''" (change)="getCheckedValue(1)" [(ngModel)]="mammiChecked">Mammifères</mat-checkbox>
     </section>
     <section class="categCheckBox">
-      <mat-checkbox class="choices" (change)="getCheckedValue(3)" [(ngModel)]="oiseauChecked">Oiseaux</mat-checkbox>
-      <mat-checkbox class="choices" (change)="getCheckedValue(7)" [(ngModel)]="paysaChecked">Paysages</mat-checkbox>
-      <mat-checkbox class="choices" (change)="getCheckedValue(2)" [(ngModel)]="reptiChecked">Reptiles</mat-checkbox>
+      <mat-checkbox class="choices"  onclick="document.getElementById('searchbar').value =''" (change)="getCheckedValue(3)" [(ngModel)]="oiseauChecked">Oiseaux</mat-checkbox>
+      <mat-checkbox class="choices"  onclick="document.getElementById('searchbar').value =''" (change)="getCheckedValue(7)" [(ngModel)]="paysaChecked">Paysages</mat-checkbox>
+      <mat-checkbox class="choices"  onclick="document.getElementById('searchbar').value =''" (change)="getCheckedValue(2)" [(ngModel)]="reptiChecked">Reptiles</mat-checkbox>
     </section>
   </div>
   <div class="pays">
     <h6>Pays : </h6>
     <section class="paysCheckBox">
-      <mat-checkbox class="choices" (change)="getCheckedValue(null,1)" [(ngModel)]="franceChecked">France</mat-checkbox>
-      <mat-checkbox class="choices" (change)="getCheckedValue(null,2)" [(ngModel)]="marocChecked">Maroc</mat-checkbox>
-      <mat-checkbox class="choices" (change)="getCheckedValue(null,3)" [(ngModel)]="costaChecked">Costa-Rica
+      <mat-checkbox class="choices"  onclick="document.getElementById('searchbar').value =''" (change)="getCheckedValue(null,1)" [(ngModel)]="franceChecked">France</mat-checkbox>
+      <mat-checkbox class="choices"  onclick="document.getElementById('searchbar').value =''" (change)="getCheckedValue(null,2)" [(ngModel)]="marocChecked">Maroc</mat-checkbox>
+      <mat-checkbox class="choices"  onclick="document.getElementById('searchbar').value =''" (change)="getCheckedValue(null,3)" [(ngModel)]="costaChecked">Costa-Rica
       </mat-checkbox>
-      <mat-checkbox class="choices" (change)="getCheckedValue(null,4)" [(ngModel)]="madaChecked">Madagascar
+      <mat-checkbox class="choices"  onclick="document.getElementById('searchbar').value =''" (change)="getCheckedValue(null,4)" [(ngModel)]="madaChecked">Madagascar
       </mat-checkbox>
     </section>
   </div>
@@ -52,10 +52,8 @@
   </div>
 </div>
 
-
-
 <div class="gallery">
-  <ng-container *ngIf="filteredPhotos.length > 0">
+  <ng-container *ngIf="filteredPhotos.length > 0 && !erreurMessage">
     <ng-container *ngFor="let photo of filteredPhotos ; let i=index;">
       <div class="square">
         <img id="photo" alt="" (click)="openModal(i)" src="http://127.0.0.1:8000/uploads/images/galerie/{{

@@ -61,6 +61,8 @@ export class GalerieAllComponent implements OnInit {
   ngOnInit() {
     this.getPhotos();
     this.getEspeces();
+    console.log(this.filteredPhotos);
+
   }
 
   getPhotos() {
@@ -139,6 +141,8 @@ export class GalerieAllComponent implements OnInit {
     if (this.filteredPhotos.length === 0 && this.category.length !== 0 && this.pays.length !== 0) {
       this.erreurMessage = "Il n'y a pas encore de photos qui correspondent à ces critères."
     }
+
+    console.log(this.filteredPhotos);
   }
 
 
@@ -163,17 +167,19 @@ export class GalerieAllComponent implements OnInit {
     this.erreurMessage = "";
     const searchValue = event.target.value;
     this.filteredPhotos = [];
+
     for (let i = 0; i < this.photos.length; i++) {
       const elem = this.photos[i];
-      if (elem.nom.toLowerCase().includes(searchValue.toLowerCase())) {
+      if (this.displayChecked(this.photos[i]) && elem.nom.toLowerCase().includes(searchValue.toLowerCase())) {
         this.filteredPhotos.push(elem);
-      } else if (elem.nomLatin.toLowerCase().includes(searchValue.toLowerCase())) {
+      } else if (this.displayChecked(this.photos[i]) && elem.nomLatin.toLowerCase().includes(searchValue.toLowerCase())) {
         this.filteredPhotos.push(elem);
       }
+
+      console.log(this.filteredPhotos);
     }
     if (this.filteredPhotos.length === 0) {
       this.erreurMessage = "Il n'y a pas encore de photos qui correspondent à ces critères."
     }
   }
 }
-

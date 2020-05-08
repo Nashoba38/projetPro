@@ -5,11 +5,97 @@
   <span class="label" onclick="goBack()">Retour</span>
   <span class="line bLine"></span>
 </div>
-<div class="topContent">
-  <div class="titre">
-    <h1>Choisissez votre façon de découvrir la faune et la flore.</h1>
+<div class="topPage">
+  <h1 class="titre">Encyclopédie</h1>
+  <h4>
+    Ici vous trouverez toutes les espèces que j'ai rencontrées et vous avez accès à leur fiche descriptive en cliquant
+    sur l'espèce qui vous intéresse..
+    <br>
+    Je vous conseille d'utiliser les filtres pour trouver plus facilement ce que vous cherchez.
+  </h4>
+</div>
+
+<div class="filtres">
+  <div class="categ">
+    <h6>Catégories : </h6>
+    <section class="categCheckBox">
+      <mat-checkbox class="choices" onclick="document.getElementById('searchbar').value =''"
+        (change)="getCheckedValue(4)" [(ngModel)]="amphiChecked">Amphibiens</mat-checkbox>
+      <mat-checkbox class="choices" onclick="document.getElementById('searchbar').value =''"
+        (change)="getCheckedValue(5)" [(ngModel)]="floreChecked">Flore</mat-checkbox>
+      <mat-checkbox class="choices" onclick="document.getElementById('searchbar').value =''"
+        (change)="getCheckedValue(6)" [(ngModel)]="inverteChecked">Invertébrés
+      </mat-checkbox>
+      <mat-checkbox class="choices" onclick="document.getElementById('searchbar').value =''"
+        (change)="getCheckedValue(1)" [(ngModel)]="mammiChecked">Mammifères</mat-checkbox>
+    </section>
+    <section class="categCheckBox">
+      <mat-checkbox class="choices" onclick="document.getElementById('searchbar').value =''"
+        (change)="getCheckedValue(3)" [(ngModel)]="oiseauChecked">Oiseaux</mat-checkbox>
+      <mat-checkbox class="choices" onclick="document.getElementById('searchbar').value =''"
+        (change)="getCheckedValue(2)" [(ngModel)]="reptiChecked">Reptiles</mat-checkbox>
+    </section>
+  </div>
+
+  <div class="search">
+    <label for="searchValue">
+      <h6>Vous cherchez une espèce ou un genre en particulier ?</h6>
+    </label>
+    <input id="searchbar" class="form-control" type="text" (keyup)="onSearch($event)" name="searchValue"
+      autocomplete="off" placeholder="Chercher ici ...">
   </div>
 </div>
+
+<div class="gallery">
+  <ng-container *ngIf="filteredSpecies.length > 0 && !erreurMessage">
+    <ng-container *ngFor="let espece of filteredSpecies ; let i=index;">
+      <a routerLink="/detailEspece/{{ espece.id }}" routerLinkActive="active">
+        <div class="miniature">
+          <div class="square">
+            <img id="photo" alt="" src="http://127.0.0.1:8000/uploads/images/espece/{{
+            espece.Image
+            }}" />
+          </div>
+          <div class="noms">
+            <p class="nomFr">{{espece.NomFrancais}}</p>
+            <p class="nomLat">{{espece.NomLatin}}</p>
+          </div>
+        </div>
+      </a>
+    </ng-container>
+  </ng-container>
+
+
+  <ng-container *ngIf="filteredSpecies.length === 0 && !erreurMessage">
+    <ng-container *ngFor="let espece of especes ; let i=index;">
+      <a routerLink="/detailEspece/{{ espece.id }}" routerLinkActive="active">
+        <div class="miniature">
+          <div class="square">
+            <img id="photo" alt="" src="http://127.0.0.1:8000/uploads/images/espece/{{
+          espece.Image
+          }}" />
+          </div>
+          <div class="noms">
+            <p class="nomFr">{{espece.NomFrancais}}</p>
+            <p class="nomLat">{{espece.NomLatin}}</p>
+          </div>
+        </div>
+      </a>
+    </ng-container>
+  </ng-container>
+  <div class="errorMessage" *ngIf="erreurMessage" [innerHTML]="erreurMessage"></div>
+</div>
+
+
+
+
+<!-- 
+
+
+
+
+
+
 
 <mat-tab-group mat-align-tabs="center" class="choixTri">
   <mat-tab class="contenant">
@@ -185,4 +271,4 @@
       </div>
     </div>
   </mat-tab>
-</mat-tab-group>
+</mat-tab-group> -->

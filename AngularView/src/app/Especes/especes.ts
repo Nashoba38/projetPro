@@ -13,7 +13,7 @@ export class Especes {
   Image: File;
   Regne: String;
   Embranchement: String;
-  ClasseTaxo: String;
+  ClasseTaxo: string;
   Ordre: String;
   Famille: String;
   StatutConservation: String;

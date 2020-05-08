@@ -22,7 +22,7 @@ class EspecesController extends AbstractController
         for ($i=0; $i < count($especesEntities); $i++) { 
             $espece = $especesEntities[$i];
             $id = $espece->getId();
-            $category = $espece->getCategory();
+            $category = $espece->getCategory()->getId();
             $NomFrancais = $espece->getNomFrancais();
             $NomLatin = $espece->getNomLatin();
             $Image = $espece->getImage();

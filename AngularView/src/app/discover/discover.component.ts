@@ -1,6 +1,8 @@
-import { CategoriesService } from '../Genres/categories.service';
+import { EspecesService } from 'src/app/Especes/especes.service.js';
+import { CategoriesService } from 'src/app/Genres/categories.service';
 import { Component, OnInit, NgModule } from '@angular/core';
 import { MatTabsModule } from '@angular/material/tabs';
+import { Especes } from '../Especes/especes';
 
 @Component({
   selector: 'app-discover',
@@ -8,81 +10,94 @@ import { MatTabsModule } from '@angular/material/tabs';
   styleUrls: ['./discover.component.scss']
 })
 
-@NgModule({
-  imports: [MatTabsModule]
-})
 
 export class DiscoverComponent implements OnInit {
+  category: number[] = [];
+  especes: Especes[] = [];
+  filteredSpecies: Especes[] = [];
 
-  reptiles = [];
-  amphibiens = [];
-  oiseaux = [];
-  mammiferes = [];
-  flores = [];
-  invertebres = [];
+  amphiChecked = false;
+  floreChecked = false;
+  inverteChecked = false;
+  mammiChecked = false;
+  oiseauChecked = false;
+  paysaChecked = false;
+  reptiChecked = false;
+  allCatChecked = false;
 
-  reptilesLatin = [];
-  amphibiensLatin = [];
-  oiseauxLatin = [];
-  mammiferesLatin = [];
-  floresLatin = [];
-  invertebresLatin = [];
+  franceChecked = false;
+  marocChecked = false;
+  costaChecked = false;
+  madaChecked = false;
+  allPaysChecked = false;
+  erreurMessage: string;
 
   constructor(
-    private categoriesService: CategoriesService) { }
+    private especesService: EspecesService) { }
 
   ngOnInit() {
-    this.getReptiles();
-    this.getAmphibiens();
-    this.getOiseaux();
-    this.getMammiferes();
-    this.getFlores();
-    this.getInvertebres();
-
-    this.getReptilesLatin();
-    this.getAmphibiensLatin();
-    this.getOiseauxLatin();
-    this.getMammiferesLatin();
-    this.getFloresLatin();
-    this.getInvertebresLatin();
+    this.getEspeces();
   }
 
-  getReptiles(): void {
-    this.categoriesService.getReptiles().subscribe(data => ((this.reptiles = data)));
-  }
-  getAmphibiens(): void {
-    this.categoriesService.getAmphibiens().subscribe(data => ((this.amphibiens = data)));
-  }
-  getOiseaux(): void {
-    this.categoriesService.getOiseaux().subscribe(data => ((this.oiseaux = data)));
-  }
-  getMammiferes(): void {
-    this.categoriesService.getMammiferes().subscribe(data => ((this.mammiferes = data)));
-  }
-  getFlores(): void {
-    this.categoriesService.getFlores().subscribe(data => ((this.flores = data)));
-  }
-  getInvertebres(): void {
-    this.categoriesService.getInvertebres().subscribe(data => ((this.invertebres = data)));
+  getEspeces(): void {
+    this.especesService.getEspeces().subscribe(data => ((this.especes = data)));
   }
 
-  // Version noms latins
-  getReptilesLatin(): void {
-    this.categoriesService.getReptilesLatin().subscribe(data => ((this.reptilesLatin = data)));
+
+  getCheckedValue(category?: number) {
+    this.erreurMessage = "";
+    if (category != undefined) {
+      if (this.category.includes(category)) {
+        let index = this.category.indexOf(category);
+        this.category.splice(index, 1);
+      } else {
+        this.category.push(category)
+      }
+    }
+
+    this.filteredSpecies = [];
+
+    for (let index = 0; index < this.especes.length; index++) {
+      if (this.displayChecked(this.especes[index])) {
+        this.filteredSpecies.push(this.especes[index])
+      }
+    }
+
+    if (this.filteredSpecies.length === 0 && this.category.length !== 0) {
+      this.erreurMessage = "Il n'y a pas encore de fiche qui correspond à cette espèce."
+    }
+
+    console.log(this.filteredSpecies);
   }
-  getAmphibiensLatin(): void {
-    this.categoriesService.getAmphibiensLatin().subscribe(data => ((this.amphibiensLatin = data)));
+
+  displayChecked(espece: Especes) {
+    if (this.category.length === 0) {
+      return true;
+    } else if (this.category.includes(espece.category)) {
+      return true;
+    } else {
+      return false;
+    }
   }
-  getOiseauxLatin(): void {
-    this.categoriesService.getOiseauxLatin().subscribe(data => ((this.oiseauxLatin = data)));
-  }
-  getMammiferesLatin(): void {
-    this.categoriesService.getMammiferesLatin().subscribe(data => ((this.mammiferesLatin = data)));
-  }
-  getFloresLatin(): void {
-    this.categoriesService.getFloresLatin().subscribe(data => ((this.floresLatin = data)));
-  }
-  getInvertebresLatin(): void {
-    this.categoriesService.getInvertebresLatin().subscribe(data => ((this.invertebresLatin = data)));
+
+  onSearch(event) {
+    this.erreurMessage = "";
+    const searchValue = event.target.value;
+    this.filteredSpecies = [];
+
+    for (let i = 0; i < this.especes.length; i++) {
+      const elem = this.especes[i];
+      if (this.displayChecked(this.especes[i]) && elem.NomFrancais.toLowerCase().includes(searchValue.toLowerCase())) {
+        this.filteredSpecies.push(elem);
+      } else if (this.displayChecked(this.especes[i]) && elem.NomFrancais.toLowerCase().includes(searchValue.toLowerCase())) {
+        this.filteredSpecies.push(elem);
+      }
+
+      console.log(this.filteredSpecies);
+    }
+    if (this.filteredSpecies.length === 0) {
+      this.erreurMessage = "Il n'y a pas encore de fiches qui correspondent à ces critères."
+    }
   }
 }
+

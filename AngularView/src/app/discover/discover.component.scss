@@ -1,27 +1,6 @@
-//Media queries
 @media (max-width:550px) {
-  .choixTri {
-    width: 90% !important;
-  }
-
-  .titre {
-    margin: 15% 10% 5% 10% !important;
-  }
-
-  .liste .especesliste {
-    width: 90% !important;
-  }
-}
-
-@media (max-width:700px) {
-  .liste .especesliste {
-    width: 45% !important;
-  }
-}
-
-@media (max-width: 1120px) {
-  .titre {
-    margin: 15% 10% 5% 10% !important;
+  .topPage {
+    margin-top: 25% !important;
   }
 }
 
@@ -55,213 +34,149 @@ h4 {
 }
 
 //Container du titre de la page
-.topContent {
-  margin-top: 0px;
-  margin-bottom: 80px;
-  z-index: -100 !important;
 
-  .titre {
-    margin: 7% 10% 5% 10%;
+
+.topPage {
+  margin-top: 7%;
+
+  h1 {
     text-align: center;
-    color: white;
-
-    h1 {
-      font-family: 'Rajdhani', serif;
-    }
+    font-size: 50px;
+    margin-bottom: 50px;
   }
 }
 
 
+.filtres {
+  display: flex;
+  background-color: #ffffffd9;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  width: 90%;
 
-//Container tabs avec les choix de "comment découvrir la faune et la flore"
 
-.choixTri {
-  background-color: rgba(255, 255, 255, 0.76);
+  .categ,
+  .pays {
+    padding: 20px 60px;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    min-width: 280px;
+    justify-content: center;
+
+    h6,
+    .searchField {
+      margin-right: 30px;
+      align-self: center;
+    }
+
+    .categCheckBox,
+    .paysCheckBox {
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      padding-right: 20px;
+
+
+      .choices {
+        padding-right: 10px;
+      }
+    }
+  }
+
+  h6 {
+    border-bottom: 1px solid black;
+  }
+
+  .search {
+    align-self: center;
+    padding: 20px;
+
+    .searchField {
+      padding-right: 20px;
+      align-self: center;
+    }
+  }
+}
+
+.gallery {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #00000080;
   width: 80%;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 5%;
 
-  .contenant {
-    height: 100%;
-    overflow: auto;
-    display: flex !important;
-    justify-content: space-around !important;
-
-
-  }
-}
-
-//CSS des cards
-.card {
-  border: 1px solid rgb(167, 167, 167);
-  background-color: rgba(255, 255, 255, 0.267);
-  width: 25%;
-  min-width: min-content;
-  text-align: center;
-  margin: 25px 10px !important;
-
-  .card-header {
-    font-family: 'Rajdhani', serif;
-    padding: 5px !important;
-    background-color: rgb(255, 255, 255);
-    text-align: center;
-    height: 35px;
+  a:hover {
+    text-decoration: none;
   }
 
+  .miniature {
+    background-color: white;
+    margin: 20px;
+    box-shadow: 0px 0px 8px 2px white;
+    border-radius: 2px;
+    width: 180px;
+    cursor: pointer;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
 
-  .card-body {
-    display: flex;
-
-    a {
-      margin-top: auto;
-      margin-bottom: auto;
-    }
-
-    img {
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
-}
-
-//Affichage liste
-
-.liste {
-  padding: 10px;
-  margin: 10px;
-  width: 95%;
-  background-color: rgba(255, 255, 255, 0.93);
-  display: flex;
-  flex-flow: wrap;
-  justify-content: center !important;
-
-  .especesliste {
-    width: 30%;
-    margin: 15px 10px;
-
-    h6 {
-      margin-top: 10px;
-      font-weight: bolder;
-      text-transform: uppercase;
-      font-size: large;
-      color: black;
-      text-align: center;
-      padding-top: 3px;
-      padding-bottom: 3px;
+    &:hover {
       background-color: rgb(241, 255, 176);
-      font-family: 'Rajdhani', serif;
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
     }
 
-    .listeEspeces {
-      text-align: center;
-
-      &:hover {
-        background-color: #fcefa261;
-      }
-
-      .btn-link {
-        font-weight: 900;
-        color: black;
-        text-decoration: none;
-      }
-
-      .btn-link:hover {
-        font-weight: bold;
-        text-decoration: underline;
-        font-style: italic;
-        color: black;
-      }
+    .noms {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding-top: 5px;
+      padding-bottom: 5px;
     }
   }
-}
 
+  .square {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    overflow: hidden;
+  }
 
-// Style hover et exceptions visuelles
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 
-@-webkit-keyframes hvr-pulse-grow {
-  to {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
+  }
+
+  p {
+    text-align: center;
+  }
+
+  .nomFr {
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 0px 10px;
+  }
+
+  .nomLat {
+    font-style: italic;
+    font-size: small;
+    font-weight: 500;
+    padding: 0px 10px;
   }
 }
 
-@keyframes hvr-pulse-grow {
-  to {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-  }
-}
 
-
-
-.hvr-pulse-grow {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-}
-
-.hvr-pulse-grow:hover,
-.hvr-pulse-grow:focus,
-.hvr-pulse-grow:active {
-  -webkit-animation-name: hvr-pulse-grow;
-  animation-name: hvr-pulse-grow;
-  -webkit-animation-duration: 0.3s;
-  animation-duration: 0.3s;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  -webkit-animation-direction: alternate;
-  animation-direction: alternate;
-}
-
-/* Hover sur chaque card */
-
-#sudamerique-card {
-  font-size: medium;
-}
-
-#reptile-card:hover,
-#mammifere-card:hover,
-#oiseau-card:hover,
-#amphibien-card:hover,
-#invertebres-card:hover,
-#flore-card:hover,
-#europe-card:hover,
-#afrique-card:hover,
-#sudamerique-card:hover {
-  font-weight: bolder;
-  font-size: large;
-  color: black;
-  text-decoration: underline;
-  background-color: rgb(241, 255, 176);
-}
-
-#reptile-card-bg,
-#mammifere-card-bg,
-#oiseau-card-bg,
-#amphibien-card-bg,
-#invertebres-card-bg,
-#flore-card-bg,
-#europe-card-bg,
-#afrique-card-bg,
-#sudamerique-card-bg {
-  background-color: rgba(255, 255, 255, 0.76);
-  display: flex;
-  justify-content: center;
-}
-
-#reptile-card-bg:hover,
-#mammifere-card-bg:hover,
-#oiseau-card-bg:hover,
-#amphibien-card-bg:hover,
-#invertebres-card-bg:hover,
-#flore-card-bg:hover,
-#europe-card-bg:hover,
-#afrique-card-bg:hover,
-#sudamerique-card-bg:hover {
-  background-color: rgb(241, 255, 176);
+.errorMessage {
+  color: red;
 }
