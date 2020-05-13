@@ -39,5 +39,28 @@ class PhotosController extends AbstractController
         }
         return new JsonResponse($photos);
     }
+
+    /** 
+     * @Route("/api/photo/{id}", name="photo")
+    */
+    public function getPhotoId($id) {
+       
+        $image = $this ->getDoctrine()                      
+                        ->getRepository(Photos::class)             
+                        ->find($id);
+        $id = $image->getId();
+        $nom = $image->getNom();
+        $nomLatin = $image->getNomLatin();
+        $photo = $image->getPhoto();
+        
+        $photoById = [
+            "id" => $id,
+            "nom" => $nom,
+            "nomLatin" => $nomLatin,
+            "photo" => $photo
+
+        ];
+        return new JsonResponse($photoById);
+    }
     
 }

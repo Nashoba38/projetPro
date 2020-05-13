@@ -29,10 +29,12 @@
 
 <div class="articlesContainer" *ngFor="let article of articles ; let i=index;">
   <div class="articleBox">
-    <div class="photo">
-      <img src="http://127.0.0.1:8000/uploads/images/galerie/{{
+    <div class="image">
+      <a [routerLink]="['/articles/5']">
+        <img src="http://127.0.0.1:8000/uploads/images/galerie/{{
       article.image1
     }}" />
+      </a>
     </div>
     <div class="titreArt">
       <h4>{{article.titre}}</h4>

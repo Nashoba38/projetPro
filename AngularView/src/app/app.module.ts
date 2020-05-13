@@ -28,6 +28,7 @@ import { OiseauxComponent } from './Genres/oiseaux/oiseaux.component';
 import { VegetauxComponent } from './Genres/vegetaux/vegetaux.component';
 import { InvertebresComponent } from './Genres/invertebres/invertebres.component';
 import { ArticleEthiqueComponent } from './Articles/article-ethique/article-ethique.component';
+import { BiographieComponent } from './biographie/biographie.component';
 
 
 
@@ -49,7 +50,8 @@ import { ArticleEthiqueComponent } from './Articles/article-ethique/article-ethi
     OiseauxComponent,
     VegetauxComponent,
     InvertebresComponent,
-    ArticleEthiqueComponent
+    ArticleEthiqueComponent,
+    BiographieComponent
   ],
   imports: [
     HttpClientModule,

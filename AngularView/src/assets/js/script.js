@@ -3,7 +3,7 @@ function pageRedirect() {
 }
 
 $(document).on("click", ".super-button", function() {
-  setTimeout("pageRedirect()", 2000);
+  setTimeout("pageRedirect()", 1000);
 });
 
 
@@ -16,17 +16,6 @@ $(document).ready(function() {
   });
 });
 
-$(document).ready(function() {
-  setTimeout(function() {
-    $(".loading").css("z-index", "1");
-  }, 1500);
-});
-
-$(document).ready(function() {
-  setTimeout(function() {
-    $(".loading").css("visibility", "visible");
-  }, 500);
-});
 
 $(window).scroll(function() {
   var x=$(window).innerWidth();

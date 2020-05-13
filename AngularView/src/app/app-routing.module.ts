@@ -15,6 +15,7 @@ import { ListeEspecesComponent } from './Especes/liste-especes/liste-especes.com
 import { VegetauxComponent } from './Genres/vegetaux/vegetaux.component';
 import { InvertebresComponent } from './Genres/invertebres/invertebres.component';
 import { ArticleEthiqueComponent } from './Articles/article-ethique/article-ethique.component';
+import { BiographieComponent } from './biographie/biographie.component';
 
 
 const routes: Routes = [
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'articles/5', component: ArticleEthiqueComponent },
   { path: 'galerie', component: GalerieAllComponent },
   { path: 'register', component: LoginComponent },
+  { path: 'biographie', component: BiographieComponent },
   { path: '', component: LandingPageComponent },
 ];
 

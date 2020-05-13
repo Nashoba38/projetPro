@@ -1,18 +1,25 @@
-.firstTitle {
-  margin-top: 180px;
-  text-align: center;
-  margin-bottom: 80px;
-  margin-left: auto;
-  margin-right: auto;
+.topPage {
+  margin-top: 10%;
+
+  h1 {
+    text-align: center;
+    font-size: 50px;
+  }
+
+  .titre {
+    margin-bottom: 50px;
+  }
 }
+
 
 .home {
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.548);
-  padding: 20px 15px;
-  margin-bottom: 30px;
+  background-color: rgba(0, 0, 0, 0.63);
+  width: 90%;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 40px;
+  padding-bottom: 20px;
 
   p {
     color: rgba(223, 255, 106, 0.603);
@@ -28,41 +35,97 @@
   }
 }
 
-.previews {
+.nouveautes {
+  background-color: rgba(0, 0, 0, 0.63);
   width: 90%;
-  margin-top: 100px;
+  margin-top: 60px;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
 
-  .article {
-    width: 30%;
-    background-color: #00000080;
+  h3 {
+    text-align: center;
+    border-bottom: 1px solid black;
+    padding-bottom: 8px;
+    color: black;
+  }
+
+  .previews {
     display: flex;
-    flex-direction: column;
-    box-shadow: 0px 0px 8px 2px white;
+    justify-content: space-around;
+    flex-wrap: wrap;
 
-    p {
-      color: white;
-      text-align: center;
-    }
+    .espece,
+    .photo,
+    .article {
+      width: 25%;
+      background-color: rgba(255, 255, 255, 0.877);
+      display: flex;
+      flex-direction: column;
+      padding: 5px;
+      margin: 10px;
+      min-width: 250px;
 
-    .image {
-      position: relative;
-      width: 200px;
-      height: 200px;
-      overflow: hidden;
-      margin: 20px auto;
-      border-radius: 2px;
+      h4 {
+        font-family: 'Architects Daughter', cursive;
+        border-bottom: 1px dashed black;
+        padding-bottom: 8px;
+        color: black;
+      }
+
+      h6,
+      p {
+        color: black;
+        text-align: center;
+      }
+
+      .hoverTitre {
+        color: black;
+        text-align: center;
+        width: 300px;
+        padding: 5px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .image:hover~.hoverTitre {
+        font-style: italic;
+        background-color: rgb(241, 255, 176);
+      }
+
+
+      h6 {
+        font-style: italic;
+      }
+
+      .image {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        margin: 20px;
+        box-shadow: 0px 0px 8px 2px black;
+        border-radius: 2px;
+        margin-left: auto;
+        margin-right: auto;
+      }
 
       img {
-        width: 200px;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        cursor: pointer;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
+
+        &:hover {
+          -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+        }
       }
     }
-  }
-
-  .espece {
-    width: 30%;
-  }
-
-  .photo {
-    width: 30%;
   }
 }

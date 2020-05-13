@@ -16,4 +16,9 @@ export class GaleriesService {
     return photos;
   }
 
+  getPhoto(id: number): Observable<Galeries[]> {
+    const photoById = this.http.get<Galeries[]>('http://localhost:8000/api/photo/'+id);
+    return photoById;
+  }
+
 }
