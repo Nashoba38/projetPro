@@ -2,14 +2,14 @@
 
 <div class="nouveautes">
   <h3>Les Nouveautés</h3>
-  <div class="previews">
+  <div class="previews" *ngIf="isReady" >
 
     <!-- Dernier article -->
     <div class="article">
       <div class="entete">
         <h4>Dernier article</h4>
       </div>
-      <div *ngIf="isReady" class="content">
+      <div class="content">
         <div class="image">
           <a [routerLink]="['/articles/5']">
             <ng-container *ngIf="article">
@@ -32,7 +32,7 @@
       <div class="entete">
         <h4>Dernière fiche espèce</h4>
       </div>
-      <div *ngIf="isReady" class="content">
+      <div class="content">
         <div class="image">
           <a routerLink="/detailEspece/{{ espece.id }}" routerLinkActive="active">
             <ng-container *ngIf="espece">
@@ -51,7 +51,7 @@
       <div class="entete">
         <h4>Dernière photo</h4>
       </div>
-      <div *ngIf="isReady" class="content">
+      <div class="content">
         <div class="image">
           <a [routerLink]="['/galerie']">
             <ng-container *ngIf="image">

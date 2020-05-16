@@ -1,36 +1,49 @@
-@media (max-width:550px) {
-  .topPage {
-    margin-top: 25% !important;
+
+@media (min-width: 10px) and (max-width:375px) {
+  .modalImage .img {
+    height: 16%!important;
   }
 }
-// @media (min-width: 10px) and (max-width:320px) {
-//   .modalImage .img {
-//     height: 22%!important;
-//   }
-// }
 // @media (min-width: 321px) and (max-width:375px) {
 //   .modalImage .img {
 //     height: 26%!important;
 //   }
 // }
 
-// @media (min-width: 376px) and (max-width:425px) {
-//   .modalImage .img {
-//     height: 30%!important;
-//   }
-// }
+@media (min-width: 376px) and (max-width:425px) {
+  .modalImage .img {
+    height: 19%!important;
+  }
+}
 
-// @media (min-width: 426px) and (max-width:770px) {
-//   .modalImage .img {
-//     height: 54%!important;
-//   }
-// }
 
-// @media (min-width: 771px) and (max-width:1030px) {
-//   .modalImage .img {
-//     height: 70%!important;
-//   }
-// }
+@media (min-width: 426px) and (max-width:598px) {
+  .modalImage .img {
+    height: 22%!important;
+  }
+}
+
+@media (min-width: 599px) and (max-width:770px) {
+  .modalImage .img {
+    height: 32%!important;
+  }
+}
+@media (max-width:550px) {
+  .topPage {
+    margin-top: 25% !important;
+  }
+}
+@media (min-width: 771px) and (max-width:1030px) {
+  .modalImage .img {
+    height: 42%!important;
+  }
+}
+
+@media (min-width: 1031px) and (max-width:1200px) {
+  .modalImage .img {
+    height: 56%!important;
+  }
+}
 
 .filtres {
   display: flex;
@@ -88,7 +101,7 @@
 }
 
 .topPage {
-  margin-top: 10%;
+  margin-top: 100px;
 
   h1 {
     text-align: center;
@@ -119,6 +132,10 @@
     margin: 20px;
     box-shadow: 0px 0px 8px 2px white;
     border-radius: 2px;
+
+    &:hover {
+      box-shadow: 0px 0px 8px 2px rgb(241, 255, 176);
+    }
   }
 
   img {
@@ -168,8 +185,8 @@
   .img {
     position: relative;
     background-color: #ffffffa9;
-    margin: 5% auto 0 auto;
-    height: 75%;
+    margin: 3% auto 0 auto;
+    height: 80%;
     width: auto;
   }
 

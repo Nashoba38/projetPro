@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
       this.getEspece();
       this.getPhoto();
       console.log(this.photos);
-    }, 4000);
+    }, 5000);
 
   }
 
@@ -50,6 +50,7 @@ export class HomeComponent implements OnInit {
   }
 
   getEspece(): void {
+    this.isReady = false;
     let id = this.especes.length;
     this.especesService.getEspece(id+2).subscribe(espece => (this.espece = espece));
     this.isReady = true;
@@ -60,6 +61,7 @@ export class HomeComponent implements OnInit {
   }
 
   getPhoto(): void {
+    this.isReady = false;
     let id = this.photos.length;
     this.galeriesService.getPhoto(id).subscribe(image => (this.image = image));
     this.isReady = true;

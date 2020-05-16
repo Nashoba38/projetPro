@@ -27,6 +27,15 @@ $(window).scroll(function() {
     }
 });
 
+$(window).scroll(function() {
+  var y=$(window).scrollTop();
+    if(y > 150){
+      $(".navbar").addClass("animated fadeOutUp");
+    } else {
+      $(".navbar").removeClass("animated fadeOutUp");
+    }
+});
+
 function goBack() {
   window.history.back();
 }
