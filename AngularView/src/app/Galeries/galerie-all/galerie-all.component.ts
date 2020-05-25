@@ -12,6 +12,7 @@ import { DetailEspeceComponent } from 'src/app/Especes/detail-espece/detail-espe
 import { Pipe, PipeTransform } from '@angular/core';
 import { Galeries } from '../galeries.js';
 import { element } from 'protractor';
+import { environment } from 'src/environments/environment.js';
 
 
 @Component({
@@ -20,6 +21,7 @@ import { element } from 'protractor';
   styleUrls: ['./galerie-all.component.scss']
 })
 export class GalerieAllComponent implements OnInit {
+  urlBack: string = environment.urlBack;
 
   category: number[] = [];
   pays: number[] = [];

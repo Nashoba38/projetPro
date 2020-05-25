@@ -1,5 +1,5 @@
 function pageRedirect() {
-  window.location.replace("http://localhost:4200/home");
+  window.location.replace("/home");
 }
 
 $(document).on("click", ".super-button", function() {

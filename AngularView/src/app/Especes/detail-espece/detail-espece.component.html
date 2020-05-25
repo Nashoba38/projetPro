@@ -11,7 +11,7 @@
     <h4><i>{{ espece.NomLatin }}</i></h4>
   </div>
   <div class="photo" *ngIf="espece">
-    <img src="http://127.0.0.1:8000/uploads/images/espece/{{espece.Image}}" alt="{{espece.NomFrancais}}"
+    <img src="{{urlBack}}/uploads/images/espece/{{espece.Image}}" alt="{{espece.NomFrancais}}"
       title="{{espece.NomFrancais}}">
   </div>
 </div>

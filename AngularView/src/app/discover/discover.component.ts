@@ -3,6 +3,7 @@ import { CategoriesService } from 'src/app/Genres/categories.service';
 import { Component, OnInit, NgModule } from '@angular/core';
 import { MatTabsModule } from '@angular/material/tabs';
 import { Especes } from '../Especes/especes';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-discover',
@@ -12,6 +13,7 @@ import { Especes } from '../Especes/especes';
 
 
 export class DiscoverComponent implements OnInit {
+  urlBack: string = environment.urlBack;
   category: number[] = [];
   especes: Especes[] = [];
   filteredSpecies: Especes[] = [];

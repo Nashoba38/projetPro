@@ -6,6 +6,7 @@ import { Especes } from '../../Especes/especes';
 import { ActivatedRoute } from '@angular/router';
 import { Galeries } from '../../Galeries/galeries';
 import { GaleriesService } from 'src/app/Galeries/galeries.service.js';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-home',
@@ -13,6 +14,7 @@ import { GaleriesService } from 'src/app/Galeries/galeries.service.js';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  urlBack: string = environment.urlBack;
   title = 'Découvrez la diversité de la faune autour du globe !';
   article = null;
   especes: Especes[] = [];
@@ -24,35 +26,37 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private articleService: ArticleService,
-    private especesService: EspecesService, 
+    private especesService: EspecesService,
     private galeriesService: GaleriesService,
     private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    this.getArticle();
     this.getEspeces();
     this.getPhotos();
-    setTimeout(() => {
-      this.getEspece();
-      this.getPhoto();
-      console.log(this.photos);
-    }, 5000);
+   
+setTimeout(() => {
+  
+  this.getArticle();
+  this.getEspece();
+  this.getPhoto();
+}, 5000);
+    
 
   }
 
-  getArticle(): void {
+  getArticle() {
     this.articleService.getArticle(5).subscribe(data => ((this.article = data)));
+    this.isReady = true;
   }
 
-  getEspeces(): void {
+  getEspeces() {
     this.especesService.getEspeces().subscribe(data => ((this.especes = data)));
   }
 
-  getEspece(): void {
-    this.isReady = false;
-    let id = this.especes.length;
-    this.especesService.getEspece(id+2).subscribe(espece => (this.espece = espece));
+  getEspece() {
+    let numero = this.especes.length;
+    this.especesService.getEspece(numero + 2).subscribe(espece => (this.espece = espece));
     this.isReady = true;
   }
 
@@ -60,10 +64,9 @@ export class HomeComponent implements OnInit {
     this.galeriesService.getPhotos().subscribe(photo => ((this.photos = photo)));
   }
 
-  getPhoto(): void {
-    this.isReady = false;
-    let id = this.photos.length;
-    this.galeriesService.getPhoto(id).subscribe(image => (this.image = image));
+  getPhoto() {
+    let numero = this.photos.length;
+    this.galeriesService.getPhoto(numero).subscribe(image => (this.image = image));
     this.isReady = true;
   }
 }

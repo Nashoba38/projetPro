@@ -2,6 +2,7 @@ import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { EspecesService } from '../especes.service';
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -10,6 +11,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./detail-espece.component.scss']
 })
 export class DetailEspeceComponent implements OnInit {
+  urlBack: string = environment.urlBack;
  espece = null;
 
   constructor(

@@ -56,7 +56,7 @@
   <ng-container *ngIf="filteredPhotos.length > 0 && !erreurMessage">
     <ng-container *ngFor="let photo of filteredPhotos ; let i=index;">
       <div class="square">
-        <img id="photo" alt="" (click)="openModal(i)" src="http://127.0.0.1:8000/uploads/images/galerie/{{
+        <img id="photo" alt="" (click)="openModal(i)" src="{{urlBack}}/uploads/images/galerie/{{
             photo.photo
           }}" />
       </div>
@@ -65,7 +65,7 @@
   <ng-container *ngIf="filteredPhotos.length === 0 && !erreurMessage">
     <ng-container *ngFor="let photo of photos ; let i=index;">
       <div class="square">
-        <img id="photo" alt="" (click)="openModal(i)" src="http://127.0.0.1:8000/uploads/images/galerie/{{
+        <img id="photo" alt="" (click)="openModal(i)" src="{{urlBack}}/uploads/images/galerie/{{
             photo.photo
           }}" />
       </div>
@@ -79,7 +79,7 @@
     <div class="close">
       <button type="button" class="close" (click)="closeModal()">&times;</button>
     </div>
-    <img class="img" alt="" src="http://127.0.0.1:8000/uploads/images/galerie/{{
+    <img class="img" alt="" src="{{urlBack}}/uploads/images/galerie/{{
       modal.photo
     }}" />
     <div class="previous" *ngIf="currentIndex > 0" (click)="precedent()"><i class="fas fa-chevron-left"></i></div>
@@ -97,7 +97,7 @@
     <div class="close">
       <button type="button" class="close" (click)="closeModal()">&times;</button>
     </div>
-    <img class="img" alt="" src="http://127.0.0.1:8000/uploads/images/galerie/{{
+    <img class="img" alt="" src="{{urlBack}}/uploads/images/galerie/{{
       modal.photo
     }}" />
     <div class="previous" *ngIf="currentIndex > 0" (click)="precedent()"><i class="fas fa-chevron-left"></i></div>

@@ -2,6 +2,7 @@ import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { ArticleService } from '../article.service';
 import { Component, OnInit } from '@angular/core';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-article-ethique',
@@ -9,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./article-ethique.component.scss']
 })
 export class ArticleEthiqueComponent implements OnInit {
+  urlBack: string = environment.urlBack;
   article = null;
 
   constructor(private articleService: ArticleService,
