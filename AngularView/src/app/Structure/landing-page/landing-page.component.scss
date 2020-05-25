@@ -187,7 +187,6 @@ a {
   z-index: 100;
   @include transition(1.5s);
   background-image: url("../../../assets/images/fritillaria.jpg");
-  will-change: background-color;
 
   &.active {
     overflow: hidden;
