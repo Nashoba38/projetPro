@@ -6,7 +6,7 @@ import { Especes } from '../../Especes/especes';
 import { ActivatedRoute } from '@angular/router';
 import { Galeries } from '../../Galeries/galeries';
 import { GaleriesService } from 'src/app/Galeries/galeries.service.js';
-import { environment } from '../../../environments/environment';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-home',
