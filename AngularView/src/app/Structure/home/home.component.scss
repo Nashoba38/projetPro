@@ -21,18 +21,34 @@
   padding-top: 40px;
   padding-bottom: 20px;
 
+  h4 {
+    font-family: 'Architects Daughter', cursive;
+    color: white;
+  }
+
   p {
-    color: rgba(223, 255, 106, 0.603);
+    color: rgb(241, 255, 176);
     font-size: large;
-    font-weight: bold;
     margin-bottom: 0 !important;
     font-family: "Rajdhani", sans-serif;
 
     .route {
       color: white;
       font-weight: bolder;
+      &:hover{
+        color: rgb(252, 173, 56)!important;
+        text-decoration: none !important;
+      }
     }
   }
+}
+
+.loader {
+  width: 90%;
+  margin-top: 60px;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .nouveautes {
@@ -47,7 +63,7 @@
     text-align: center;
     border-bottom: 1px solid black;
     padding-bottom: 8px;
-    color: black;
+    color: white;
   }
 
   .previews {

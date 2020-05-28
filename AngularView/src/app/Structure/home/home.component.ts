@@ -34,14 +34,14 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.getEspeces();
     this.getPhotos();
-   
-setTimeout(() => {
-  
-  this.getArticle();
-  this.getEspece();
-  this.getPhoto();
-}, 5000);
-    
+
+    setTimeout(() => {
+
+      this.getArticle();
+      this.getEspece();
+      this.getPhoto();
+    }, 5000);
+
 
   }
 

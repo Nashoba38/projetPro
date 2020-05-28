@@ -212,3 +212,7 @@ div.backBtn:hover span.bLine {
   outline: 0;
   box-shadow: 0 0 0 0.2rem #92c51c;
 }
+
+.mat-progress-spinner circle, .mat-spinner circle {
+  stroke: #92c51c !important;
+}

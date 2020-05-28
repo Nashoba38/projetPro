@@ -2,7 +2,10 @@
 
 <div class="nouveautes">
   <h3>Les Nouveautés</h3>
-  <div class="previews" *ngIf="isReady" >
+  <ng-container *ngIf="!isReady">
+    <mat-spinner class="loader"></mat-spinner>
+  </ng-container>
+  <div class="previews" *ngIf="isReady">
 
     <!-- Dernier article -->
     <div class="article">
@@ -80,19 +83,19 @@
   <h4 class="animated slideInLeft pb-3">Comment est organisé le site ?</h4>
   <p>
     - Si vous désirez uniquement voir mes photos de la faune et de la flore,
-    classées selon les familles, les voyages, les milieux, ... je vous laisse
+    classées selon leurs familles ou les pays où je les ai prises, je vous laisse
     cliquer sur
-    <a [routerLink]="['/discover']"><span class="route">Galerie</span></a>
+    <a [routerLink]="['/discover']" class="route">Galerie</a>
     dans le menu.
     <br />
     - Si vous voulez en apprendre plus sur certaines espèces, dirigez-vous
-    vers les 
-    <a [routerLink]="['/discover']"><span class="route">Fiches Espèces</span></a>
+    vers les
+    <a [routerLink]="['/discover']" class="route">Fiches Espèces</a>
     .
     <br />
     - Si vous avez envie d'en savoir plus sur des sujets variés liés à la
     nature ou à la photographie, jetez un oeil aux
-    <a [routerLink]="['/discover']"><span class="route">Articles</span></a>, vous trouverez certainement des choses
+    <a [routerLink]="['/discover']" class="route">Articles</a>, vous trouverez certainement des choses
     intéressantes.
     <br />
     <br />
