@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  urlBack: "http://naturaclic.fr:8080"
+  urlBack: "https://naturaclic.fr:8080"
 };
