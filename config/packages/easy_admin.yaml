@@ -96,7 +96,7 @@ easy_admin:
           - { property: 'category', label: 'Catégorie'}
       form:
         fields:
-          - { property: 'photoFile', type: 'file', label: 'Photo : ' }
+          - { property: 'photoFile', type: 'vich_image', label: 'Photo : ' }
           - { property: 'nom', label: 'Nom vernaculaire : '}
           - { property: 'nomLatin', label: 'Nom latin : '}
           - { property: 'category', label: 'Catégorie : '}
