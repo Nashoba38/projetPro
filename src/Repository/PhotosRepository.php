@@ -26,7 +26,7 @@ class PhotosRepository extends ServiceEntityRepository
     public function findAllGalerie()
     {
         return $this->createQueryBuilder('p')
-        ->orderBy('p.nom', 'ASC')
+        ->orderBy('p.id', 'DESC')
         ->getQuery()
         ->getResult()
         ;

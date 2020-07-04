@@ -55,8 +55,8 @@ export class HomeComponent implements OnInit {
   }
 
   getEspece() {
-    let numero = this.especes.length;
-    this.especesService.getEspece(numero + 2).subscribe(espece => (this.espece = espece));
+    let numero = this.especes.length +2;
+    this.especesService.getEspece(numero).subscribe(espece => (this.espece = espece));
     this.isReady = true;
   }
 
@@ -65,8 +65,10 @@ export class HomeComponent implements OnInit {
   }
 
   getPhoto() {
-    let numero = this.photos.length;
+    let numero = this.photos.length +1;
+    console.log(numero);
     this.galeriesService.getPhoto(numero).subscribe(image => (this.image = image));
     this.isReady = true;
+    
   }
 }
