@@ -1,20 +1,20 @@
 export class Especes {
   id: number;
   category: number;
-  NomFrancais: string;
-  NomLatin: string;
-  Repartition: Text;
-  Description: Text;
-  Reproduction: string;
-  Alimentation: Text;
-  Longevite: string;
-  Moeurs: Text;
-  Habitat: Text;
+  nomFrancais: string;
+  nomLatin: string;
+  repartition: Text;
+  description: Text;
+  reproduction: string;
+  alimentation: Text;
+  longevite: string;
+  moeurs: Text;
+  habitat: Text;
   Image: File;
-  Regne: String;
-  Embranchement: String;
-  ClasseTaxo: string;
-  Ordre: String;
-  Famille: String;
-  StatutConservation: String;
+  regne: String;
+  embranchement: String;
+  classeTaxo: string;
+  ordre: String;
+  famille: String;
+  statutConservation: String;
 }

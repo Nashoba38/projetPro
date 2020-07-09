@@ -14,8 +14,8 @@
     <h5>Serpents / Ophidiens</h5>
     <p class="listeReptiles" *ngFor="let ophidien of ophidiens">
       <a routerLink="/detailEspece/{{ophidien.id}}" routerLinkActive="active" class="btn btn-link">-
-        <strong>{{ ophidien.NomFrancais }}</strong> -
-        <i>{{ ophidien.NomLatin }}</i>
+        <strong>{{ ophidien.nomFrancais }}</strong> -
+        <i>{{ ophidien.nomLatin }}</i>
       </a>
     </p>
   </div>
@@ -23,8 +23,8 @@
     <h5>Lézards / Sauriens</h5>
     <p class="listeReptiles" *ngFor="let saurien of sauriens">
       <a routerLink="/detailEspece/{{saurien.id}}" routerLinkActive="active" class="btn btn-link">-
-        <strong>{{ saurien.NomFrancais }}</strong> -
-        <i>{{ saurien.NomLatin }}</i>
+        <strong>{{ saurien.nomFrancais }}</strong> -
+        <i>{{ saurien.nomLatin }}</i>
       </a>
     </p>
   </div>

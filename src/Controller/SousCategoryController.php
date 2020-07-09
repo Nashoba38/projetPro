@@ -15,7 +15,7 @@ class SousCategoryController extends AbstractController
     /**
      * @Route("/api/EspecesBySousCat/{id}", name="especesBySousCat")
      */
-    public function sousCategories(SousCategory $sousCategory)
+    public function sousCategories(sousCategory $sousCategory)
     {
         $especesRepository = $this->getDoctrine()->getRepository(Especes::class);
         $especesEntities = $especesRepository->findBySousCategory($sousCategory);
@@ -25,8 +25,8 @@ class SousCategoryController extends AbstractController
         {
             $especes[] = [
                 'id' => $espece->getId(),
-                'NomFrancais' => $espece->getNomFrancais(),
-                'NomLatin' => $espece->getNomLatin(),
+                'nomFrancais' => $espece->getNomFrancais(),
+                'nomLatin' => $espece->getNomLatin(),
                 'Photo' => $espece->getImage(),
             ];   
         }

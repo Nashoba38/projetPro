@@ -29,7 +29,7 @@ $(window).scroll(function() {
 
 $(window).scroll(function() {
   var y=$(window).scrollTop();
-    if(y > 150){
+    if(y > 50){
       $(".navbar").addClass("animated fadeOutUp");
     } else {
       $(".navbar").removeClass("animated fadeOutUp");

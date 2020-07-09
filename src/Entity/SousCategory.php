@@ -21,16 +21,16 @@ class SousCategory
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Especes", mappedBy="sousCategory")
      */
-    private $SousCategory;
+    private $sousCategory;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Name;
+    private $name;
 
     public function __construct()
     {
-        $this->SousCategory = new ArrayCollection();
+        $this->sousCategory = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -43,13 +43,13 @@ class SousCategory
      */
     public function getSousCategory(): Collection
     {
-        return $this->SousCategory;
+        return $this->sousCategory;
     }
 
     public function addSousCategory(Especes $sousCategory): self
     {
-        if (!$this->SousCategory->contains($sousCategory)) {
-            $this->SousCategory[] = $sousCategory;
+        if (!$this->sousCategory->contains($sousCategory)) {
+            $this->sousCategory[] = $sousCategory;
             $sousCategory->setSousCategory($this);
         }
 
@@ -58,8 +58,8 @@ class SousCategory
 
     public function removeSousCategory(Especes $sousCategory): self
     {
-        if ($this->SousCategory->contains($sousCategory)) {
-            $this->SousCategory->removeElement($sousCategory);
+        if ($this->sousCategory->contains($sousCategory)) {
+            $this->sousCategory->removeElement($sousCategory);
             // set the owning side to null (unless already changed)
             if ($sousCategory->getSousCategory() === $this) {
                 $sousCategory->setSousCategory(null);
@@ -71,17 +71,17 @@ class SousCategory
 
     public function getName(): ?string
     {
-        return $this->Name;
+        return $this->name;
     }
 
-    public function setName(string $Name): self
+    public function setName(string $name): self
     {
-        $this->Name = $Name;
+        $this->name = $name;
 
         return $this;
     }
 
     public function __toString() {
-        return $this->Name;
+        return $this->name;
     }
 }

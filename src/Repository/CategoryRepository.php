@@ -7,10 +7,10 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 
 /**
- * @method Category|null find($id, $lockMode = null, $lockVersion = null)
- * @method Category|null findOneBy(array $criteria, array $orderBy = null)
- * @method Category[]    findAll()
- * @method Category[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method category|null find($id, $lockMode = null, $lockVersion = null)
+ * @method category|null findOneBy(array $criteria, array $orderBy = null)
+ * @method category[]    findAll()
+ * @method category[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
 class CategoryRepository extends ServiceEntityRepository
 {
@@ -20,7 +20,7 @@ class CategoryRepository extends ServiceEntityRepository
     }
 
     // /**
-    //  * @return Category[] Returns an array of Category objects
+    //  * @return category[] Returns an array of category objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class CategoryRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Category
+    public function findOneBySomeField($value): ?category
     {
         return $this->createQueryBuilder('c')
             ->andWhere('c.exampleField = :val')

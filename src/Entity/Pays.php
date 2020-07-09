@@ -21,16 +21,16 @@ class Pays
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Especes", mappedBy="pays", cascade={"persist","remove"})
      */
-    private $Pays;
+    private $pays;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Name;
+    private $name;
 
     public function __construct()
     {
-        $this->Pays = new ArrayCollection();
+        $this->pays = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -43,13 +43,13 @@ class Pays
      */
     public function getPays(): Collection
     {
-        return $this->Pays;
+        return $this->pays;
     }
 
     public function addPays(Especes $espece): self
     {
-        if (!$this->Pays->contains($espece)) {
-            $this->Pays[] = $espece;
+        if (!$this->pays->contains($espece)) {
+            $this->pays[] = $espece;
             $espece->addPays($this);
         }
 
@@ -58,8 +58,8 @@ class Pays
 
     public function removePays(Especes $espece): self
     {
-        if ($this->Pays->contains($espece)) {
-            $this->Pays->removeElement($espece);
+        if ($this->pays->contains($espece)) {
+            $this->pays->removeElement($espece);
 
             if ($espece->getPays() === $this) {
                 $espece->addPays(null);
@@ -71,17 +71,17 @@ class Pays
 
     public function getName(): ?string
     {
-        return $this->Name;
+        return $this->name;
     }
 
-    public function setName(string $Name): self
+    public function setName(string $name): self
     {
-        $this->Name = $Name;
+        $this->name = $name;
 
         return $this;
     }
 
     public function __toString() {
-        return $this->Name;
+        return $this->name;
     }
 }

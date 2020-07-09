@@ -24,59 +24,59 @@ class Especes
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $NomFrancais;
+    private $nomFrancais;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $NomLatin;
+    private $nomLatin;
 
     /**
      * @ORM\Column(type="text", nullable=true)
      */
-    private $Repartition;
+    private $repartition;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $Description;
+    private $description;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
      */
-    private $Reproduction;
+    private $reproduction;
 
     /**
      * @ORM\Column(type="text", nullable=true)
      */
-    private $Alimentation;
+    private $alimentation;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $Longevite;
+    private $longevite;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $Moeurs;
+    private $moeurs;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $Habitat;
+    private $habitat;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="Category")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="category")
      */
     private $category;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\SousCategory", inversedBy="SousCategory")
+     * @ORM\ManyToOne(targetEntity="App\Entity\SousCategory", inversedBy="sousCategory")
      */
     private $sousCategory;
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Pays", inversedBy="Pays", cascade={"persist","remove"})
+     * @ORM\ManyToMany(targetEntity="App\Entity\Pays", inversedBy="pays", cascade={"persist","remove"})
      */
     private $pays;
 
@@ -101,32 +101,32 @@ class Especes
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Regne;
+    private $regne;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Embranchement;
+    private $embranchement;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $ClasseTaxo;
+    private $classeTaxo;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Ordre;
+    private $ordre;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Famille;
+    private $famille;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $StatutConservation;
+    private $statutConservation;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Photos", mappedBy="espece")
@@ -148,48 +148,48 @@ class Especes
 
     public function getNomFrancais(): ?string
     {
-        return $this->NomFrancais;
+        return $this->nomFrancais;
     }
 
-    public function setNomFrancais(string $NomFrancais): self
+    public function setNomFrancais(string $nomFrancais): self
     {
-        $this->NomFrancais = $NomFrancais;
+        $this->nomFrancais = $nomFrancais;
 
         return $this;
     }
 
     public function getNomLatin(): ?string
     {
-        return $this->NomLatin;
+        return $this->nomLatin;
     }
 
-    public function setNomLatin(string $NomLatin): self
+    public function setNomLatin(string $nomLatin): self
     {
-        $this->NomLatin = $NomLatin;
+        $this->nomLatin = $nomLatin;
 
         return $this;
     }
 
     public function getRepartition(): ?string
     {
-        return $this->Repartition;
+        return $this->repartition;
     }
 
-    public function setRepartition(?string $Repartition): self
+    public function setRepartition(?string $repartition): self
     {
-        $this->Repartition = $Repartition;
+        $this->repartition = $repartition;
 
         return $this;
     }
 
     public function getDescription(): ?string
     {
-        return $this->Description;
+        return $this->description;
     }
 
-    public function setDescription(string $Description): self
+    public function setDescription(string $description): self
     {
-        $this->Description = $Description;
+        $this->description = $description;
 
         return $this;
     }
@@ -222,82 +222,82 @@ class Especes
 
     public function getReproduction(): ?string
     {
-        return $this->Reproduction;
+        return $this->reproduction;
     }
 
-    public function setReproduction(string $Reproduction): self
+    public function setReproduction(string $reproduction): self
     {
-        $this->Reproduction = $Reproduction;
+        $this->reproduction = $reproduction;
 
         return $this;
     }
 
     public function getAlimentation(): ?string
     {
-        return $this->Alimentation;
+        return $this->alimentation;
     }
 
-    public function setAlimentation(string $Alimentation): self
+    public function setAlimentation(string $alimentation): self
     {
-        $this->Alimentation = $Alimentation;
+        $this->alimentation = $alimentation;
 
         return $this;
     }
 
     public function getLongevite(): ?string
     {
-        return $this->Longevite;
+        return $this->longevite;
     }
 
-    public function setLongevite(?string $Longevite): self
+    public function setLongevite(?string $longevite): self
     {
-        $this->Longevite = $Longevite;
+        $this->longevite = $longevite;
 
         return $this;
     }
 
     public function getMoeurs(): ?string
     {
-        return $this->Moeurs;
+        return $this->moeurs;
     }
 
-    public function setMoeurs(string $Moeurs): self
+    public function setMoeurs(string $moeurs): self
     {
-        $this->Moeurs = $Moeurs;
+        $this->moeurs = $moeurs;
 
         return $this;
     }
 
     public function getHabitat(): ?string
     {
-        return $this->Habitat;
+        return $this->habitat;
     }
 
-    public function setHabitat(string $Habitat): self
+    public function setHabitat(string $habitat): self
     {
-        $this->Habitat = $Habitat;
+        $this->habitat = $habitat;
 
         return $this;
     }
     
-    public function getCategory(): ?Category
+    public function getCategory(): ?category
     {
         return $this->category;
     }
     
-    public function setCategory(?Category $category): self
+    public function setCategory(?category $category): self
     {
         $this->category = $category;
         
         return $this;
     }
 
-    public function getSousCategory(): ?SousCategory
+    public function getSousCategory(): ?sousCategory
     {
         return $this->sousCategory;
     }
     
-    public function setSousCategory(?SousCategory $sousCategory): self
+    public function setSousCategory(?sousCategory $sousCategory): self
     {
         $this->sousCategory = $sousCategory;
         
@@ -306,24 +306,24 @@ class Especes
 
     public function getRegne(): ?string
     {
-        return $this->Regne;
+        return $this->regne;
     }
 
-    public function setRegne(string $Regne): self
+    public function setRegne(string $regne): self
     {
-        $this->Regne = $Regne;
+        $this->regne = $regne;
 
         return $this;
     }
 
     public function getEmbranchement(): ?string
     {
-        return $this->Embranchement;
+        return $this->embranchement;
     }
 
-    public function setEmbranchement(string $Embranchement): self
+    public function setEmbranchement(string $embranchement): self
     {
-        $this->Embranchement = $Embranchement;
+        $this->embranchement = $embranchement;
 
         return $this;
     }
@@ -331,48 +331,48 @@ class Especes
 
     public function getClasseTaxo(): ?string
     {
-        return $this->ClasseTaxo;
+        return $this->classeTaxo;
     }
 
-    public function setClasseTaxo(string $ClasseTaxo): self
+    public function setClasseTaxo(string $classeTaxo): self
     {
-        $this->ClasseTaxo = $ClasseTaxo;
+        $this->classeTaxo = $classeTaxo;
 
         return $this;
     }
 
     public function getOrdre(): ?string
     {
-        return $this->Ordre;
+        return $this->ordre;
     }
 
-    public function setOrdre(string $Ordre): self
+    public function setOrdre(string $ordre): self
     {
-        $this->Ordre = $Ordre;
+        $this->ordre = $ordre;
 
         return $this;
     }
 
     public function getFamille(): ?string
     {
-        return $this->Famille;
+        return $this->famille;
     }
 
-    public function setFamille(string $Famille): self
+    public function setFamille(string $famille): self
     {
-        $this->Famille = $Famille;
+        $this->famille = $famille;
 
         return $this;
     }
     
     public function getStatutConservation(): ?string
     {
-        return $this->StatutConservation;
+        return $this->statutConservation;
     }
     
-    public function setStatutConservation(?string $StatutConservation): self
+    public function setStatutConservation(?string $statutConservation): self
     {
-        $this->StatutConservation = $StatutConservation;
+        $this->statutConservation = $statutConservation;
         
         return $this;
     }
@@ -380,7 +380,7 @@ class Especes
    
     
     /**
-     * @return Collection|Pays[]
+     * @return Collection|pays[]
      */
 
     public function getPays(): Collection
@@ -388,7 +388,7 @@ class Especes
         return $this->pays;
     }
 
-    public function addPays(Pays $pays): self
+    public function addPays(pays $pays): self
     {
         if (!$this->pays->contains($pays)) {
             $this->pays[] = $pays;
@@ -398,7 +398,7 @@ class Especes
         return $this;
     }
 
-    public function removePays(Pays $pays): self
+    public function removePays(pays $pays): self
     {
         if ($this->pays->contains($pays)) {
             $this->pays->removeElement($pays);
@@ -440,7 +440,7 @@ class Especes
     }
 
     public function __toString() {
-        return $this->NomLatin;
+        return $this->nomLatin;
     }
 }
 

@@ -16,7 +16,7 @@ class CategoryController extends AbstractController
     /**
      * @Route("/api/EspecesByCat/{id}", name="especesByCat")
      */
-    public function categories(Category $category)
+    public function categories(category $category)
     {
         $especesRepository = $this->getDoctrine()->getRepository(Especes::class);
         $especesEntities = $especesRepository->findByCategory($category);
@@ -26,8 +26,8 @@ class CategoryController extends AbstractController
         {
             $especes[] = [
                 'id' => $espece->getId(),
-                'NomFrancais' => $espece->getNomFrancais(),
-                'NomLatin' => $espece->getNomLatin(),
+                'nomFrancais' => $espece->getNomFrancais(),
+                'nomLatin' => $espece->getNomLatin(),
                 'Photo' => $espece->getImage(),
             ];   
         }
@@ -37,7 +37,7 @@ class CategoryController extends AbstractController
     /**
      * @Route("/api/EspecesByLatinCat/{id}", name="especesByLatinCat")
      */
-    public function latinCategories(Category $category)
+    public function latinCategories(category $category)
     {
         $especesLatinRepository = $this->getDoctrine()->getRepository(Especes::class);
         $especesLatinEntities = $especesLatinRepository->findByLatinNameCategory($category);
@@ -47,8 +47,8 @@ class CategoryController extends AbstractController
         {
             $latinEspeces[] = [
                 'id' => $especeLatin->getId(),
-                'NomFrancais' => $especeLatin->getNomFrancais(),
-                'NomLatin' => $especeLatin->getNomLatin(),
+                'nomFrancais' => $especeLatin->getNomFrancais(),
+                'nomLatin' => $especeLatin->getNomLatin(),
                 'Photo' => $especeLatin->getImage(),
             ];   
         }

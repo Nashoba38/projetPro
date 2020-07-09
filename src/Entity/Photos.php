@@ -32,12 +32,12 @@ class Photos
     private $nomLatin;
 
      /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="Category")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="category")
      */
     private $category;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Pays", inversedBy="Pays", cascade={"persist","remove"})
+     * @ORM\ManyToMany(targetEntity="App\Entity\Pays", inversedBy="pays", cascade={"persist","remove"})
      */
     private $pays;
 
@@ -93,12 +93,12 @@ class Photos
     }
 
 
-    public function getCategory(): ?Category
+    public function getCategory(): ?category
     {
         return $this->category;
     }
     
-    public function setCategory(?Category $category): self
+    public function setCategory(?category $category): self
     {
         $this->category = $category;
         
@@ -138,7 +138,7 @@ class Photos
     }
 
     /**
-     * @return Collection|Pays[]
+     * @return Collection|pays[]
      */
 
     public function getPays(): Collection
@@ -146,7 +146,7 @@ class Photos
         return $this->pays;
     }
 
-    public function addPays(Pays $pays): self
+    public function addPays(pays $pays): self
     {
         if (!$this->pays->contains($pays)) {
             $this->pays[] = $pays;
@@ -156,7 +156,7 @@ class Photos
         return $this;
     }
 
-    public function removePays(Pays $pays): self
+    public function removePays(pays $pays): self
     {
         if ($this->pays->contains($pays)) {
             $this->pays->removeElement($pays);

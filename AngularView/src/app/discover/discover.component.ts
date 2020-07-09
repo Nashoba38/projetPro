@@ -89,9 +89,9 @@ export class DiscoverComponent implements OnInit {
 
     for (let i = 0; i < this.especes.length; i++) {
       const elem = this.especes[i];
-      if (this.displayChecked(this.especes[i]) && elem.NomFrancais.toLowerCase().includes(searchValue.toLowerCase())) {
+      if (this.displayChecked(this.especes[i]) && elem.nomFrancais.toLowerCase().includes(searchValue.toLowerCase())) {
         this.filteredSpecies.push(elem);
-      } else if (this.displayChecked(this.especes[i]) && elem.NomFrancais.toLowerCase().includes(searchValue.toLowerCase())) {
+      } else if (this.displayChecked(this.especes[i]) && elem.nomFrancais.toLowerCase().includes(searchValue.toLowerCase())) {
         this.filteredSpecies.push(elem);
       }
 

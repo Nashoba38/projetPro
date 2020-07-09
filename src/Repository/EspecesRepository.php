@@ -23,34 +23,34 @@ class EspecesRepository extends ServiceEntityRepository
         parent::__construct($registry, Especes::class);
     }
 
-    public function findByCategory(Category $category) 
+    public function findByCategory(category $category) 
     {
         return $this->createQueryBuilder('espece')
            ->where('espece.category = :mycategory')
            ->setParameter('mycategory', $category)
-           ->orderBy('espece.NomFrancais', 'ASC')
+           ->orderBy('espece.nomFrancais', 'ASC')
            ->getQuery()
            ->getResult()
         ;
     }
 
-    public function findByLatinNameCategory(Category $category) 
+    public function findByLatinNameCategory(category $category) 
     {
         return $this->createQueryBuilder('especeLatin')
            ->where('especeLatin.category = :mycategory')
            ->setParameter('mycategory', $category)
-           ->orderBy('especeLatin.NomLatin', 'ASC')
+           ->orderBy('especeLatin.nomLatin', 'ASC')
            ->getQuery()
            ->getResult()
         ;
     }
 
-    public function findBySousCategory(SousCategory $sousCategory) 
+    public function findBySousCategory(sousCategory $sousCategory) 
     {
         return $this->createQueryBuilder('e')
            ->where('e.sousCategory = :mysouscategory')
            ->setParameter('mysouscategory', $sousCategory)
-           ->orderBy('e.NomFrancais', 'ASC')
+           ->orderBy('e.nomFrancais', 'ASC')
            ->getQuery()
            ->getResult()
         ;
@@ -60,7 +60,7 @@ class EspecesRepository extends ServiceEntityRepository
     {
         return $this->getEntityManager()
             ->createQuery(
-                'SELECT e FROM especes e ORDER BY e.NomFrancais ASC'
+                'SELECT e FROM especes e ORDER BY e.nomFrancais ASC'
             )
             ->getResult();
             }
@@ -75,21 +75,21 @@ class EspecesRepository extends ServiceEntityRepository
 //    public function EspeceMaroc() {
 //        return $this->egetEntityManager()
 //             ->createQuery(
-//                 'SELECT NomLatin NomFrancais FROM especes e JOIN especes_pays ep ON ep.especes_id = e.especes_id WHERE ep.pays_id = 2 '
+//                 'SELECT nomLatin nomFrancais FROM especes e JOIN especes_pays ep ON ep.especes_id = e.especes_id WHERE ep.pays_id = 2 '
 //             )
 //             ->getResult();
 //    }
 
 //    public function reptilesList(){
 //     return $this->getEntityManager()
-//             ->createQuery("SELECT NomLatin NomFrancais FROM especes e  WHERE e.category_id = 2 ORDER BY NomFrançais DESC")
+//             ->createQuery("SELECT nomLatin nomFrancais FROM especes e  WHERE e.category_id = 2 ORDER BY NomFrançais DESC")
 //             ->getResult();
 
 //     }
 
     // public function especeByCategory(){
     //     return $this->getEntityManager()
-    //             ->createQuery("SELECT e.NomLatin e.NomFrancais e.category_id 
+    //             ->createQuery("SELECT e.nomLatin e.nomFrancais e.category_id 
     //             c.id
     //             FROM especes e, category c
     //             where e.category_id = c.id")

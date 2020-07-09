@@ -58,8 +58,8 @@
             }}" />
           </div>
           <div class="noms">
-            <p class="nomFr">{{espece.NomFrancais}}</p>
-            <p class="nomLat">{{espece.NomLatin}}</p>
+            <p class="nomFr">{{espece.nomFrancais}}</p>
+            <p class="nomLat">{{espece.nomLatin}}</p>
           </div>
         </div>
       </a>
@@ -77,8 +77,8 @@
           }}" />
           </div>
           <div class="noms">
-            <p class="nomFr">{{espece.NomFrancais}}</p>
-            <p class="nomLat">{{espece.NomLatin}}</p>
+            <p class="nomFr">{{espece.nomFrancais}}</p>
+            <p class="nomLat">{{espece.nomLatin}}</p>
           </div>
         </div>
       </a>
@@ -165,7 +165,7 @@
         <h6>Reptiles</h6>
         <p class="listeEspeces" *ngFor="let reptile of reptiles">
           <a routerLink="/detailEspece/{{ reptile.id }}" routerLinkActive="active" class="btn btn-link"><i
-              class="fas fa-angle-right pr-2"></i><span>{{ reptile.NomFrancais }}</span>
+              class="fas fa-angle-right pr-2"></i><span>{{ reptile.nomFrancais }}</span>
           </a>
         </p>
       </div>
@@ -173,7 +173,7 @@
         <h6>Oiseaux</h6>
         <p class="listeEspeces" *ngFor="let oiseau of oiseaux">
           <a routerLink="/detailEspece/{{ oiseau.id }}" routerLinkActive="active" class="btn btn-link"><i
-              class="fas fa-angle-right pr-2"></i><span>{{ oiseau.NomFrancais }}</span>
+              class="fas fa-angle-right pr-2"></i><span>{{ oiseau.nomFrancais }}</span>
           </a>
         </p>
       </div>
@@ -181,7 +181,7 @@
         <h6>Mammifères</h6>
         <p class="listeEspeces" *ngFor="let mammifere of mammiferes">
           <a routerLink="/detailEspece/{{ mammifere.id }}" routerLinkActive="active" class="btn btn-link"><i
-              class="fas fa-angle-right pr-2"></i><span>{{ mammifere.NomFrancais }}</span>
+              class="fas fa-angle-right pr-2"></i><span>{{ mammifere.nomFrancais }}</span>
           </a>
         </p>
       </div>
@@ -189,7 +189,7 @@
         <h6>Invertebrés</h6>
         <p class="listeEspeces" *ngFor="let invertebre of invertebres">
           <a routerLink="/detailEspece/{{ invertebre.id }}" routerLinkActive="active" class="btn btn-link"><i
-              class="fas fa-angle-right pr-2"></i><span>{{ invertebre.NomFrancais }}</span>
+              class="fas fa-angle-right pr-2"></i><span>{{ invertebre.nomFrancais }}</span>
           </a>
         </p>
       </div>
@@ -197,7 +197,7 @@
         <h6>Flore</h6>
         <p class="listeEspeces" *ngFor="let flore of flores">
           <a routerLink="/detailEspece/{{ flore.id }}" routerLinkActive="active" class="btn btn-link"><i
-              class="fas fa-angle-right pr-2"></i><span>{{ flore.NomFrancais }}</span>
+              class="fas fa-angle-right pr-2"></i><span>{{ flore.nomFrancais }}</span>
           </a>
         </p>
       </div>
@@ -205,7 +205,7 @@
         <h6>Amphibiens</h6>
         <p class="listeEspeces" *ngFor="let amphibien of amphibiens">
           <a routerLink="/detailEspece/{{ amphibien.id }}" routerLinkActive="active" class="btn btn-link"><i
-              class="fas fa-angle-right pr-2"></i><span>{{ amphibien.NomFrancais }}</span>
+              class="fas fa-angle-right pr-2"></i><span>{{ amphibien.nomFrancais }}</span>
           </a>
         </p>
       </div>
@@ -226,7 +226,7 @@
         <h6>Reptilia</h6>
         <p class="listeEspeces" *ngFor="let reptileLatin of reptilesLatin">
           <a routerLink="/detailEspece/{{ reptileLatin.id }}" routerLinkActive="active" class="btn btn-link"><i
-              class="fas fa-angle-right pr-2"></i><span>{{ reptileLatin.NomLatin }}</span>
+              class="fas fa-angle-right pr-2"></i><span>{{ reptileLatin.nomLatin }}</span>
           </a>
         </p>
       </div>
@@ -234,7 +234,7 @@
         <h6>Aves</h6>
         <p class="listeEspeces" *ngFor="let oiseauLatin of oiseauxLatin">
           <a routerLink="/detailEspece/{{ oiseauLatin.id }}" routerLinkActive="active" class="btn btn-link"><i
-              class="fas fa-angle-right pr-2"></i><span>{{ oiseauLatin.NomLatin }}</span>
+              class="fas fa-angle-right pr-2"></i><span>{{ oiseauLatin.nomLatin }}</span>
           </a>
         </p>
       </div>
@@ -242,7 +242,7 @@
         <h6>Mammalia</h6>
         <p class="listeEspeces" *ngFor="let mammifereLatin of mammiferesLatin">
           <a routerLink="/detailEspece/{{ mammifereLatin.id }}" routerLinkActive="active" class="btn btn-link"><i
-              class="fas fa-angle-right pr-2"></i><span>{{ mammifereLatin.NomLatin }}</span>
+              class="fas fa-angle-right pr-2"></i><span>{{ mammifereLatin.nomLatin }}</span>
           </a>
         </p>
       </div>
@@ -250,7 +250,7 @@
         <h6>Invertebrata</h6>
         <p class="listeEspeces" *ngFor="let invertebreLatin of invertebresLatin">
           <a routerLink="/detailEspece/{{ invertebreLatin.id }}" routerLinkActive="active" class="btn btn-link"><i
-              class="fas fa-angle-right pr-2"></i><span>{{ invertebreLatin.NomLatin }}</span>
+              class="fas fa-angle-right pr-2"></i><span>{{ invertebreLatin.nomLatin }}</span>
           </a>
         </p>
       </div>
@@ -258,7 +258,7 @@
         <h6>Plantae</h6>
         <p class="listeEspeces" *ngFor="let floreLatin of floresLatin">
           <a routerLink="/detailEspece/{{ floreLatin.id }}" routerLinkActive="active" class="btn btn-link"><i
-              class="fas fa-angle-right pr-2"></i><span>{{ floreLatin.NomLatin }}</span>
+              class="fas fa-angle-right pr-2"></i><span>{{ floreLatin.nomLatin }}</span>
           </a>
         </p>
       </div>
@@ -266,7 +266,7 @@
         <h6>Amphibia</h6>
         <p class="listeEspeces" *ngFor="let amphibienLatin of amphibiensLatin">
           <a routerLink="/detailEspece/{{ amphibienLatin.id }}" routerLinkActive="active" class="btn btn-link"><i
-              class="fas fa-angle-right pr-2"></i><span>{{ amphibienLatin.NomLatin }}</span>
+              class="fas fa-angle-right pr-2"></i><span>{{ amphibienLatin.nomLatin }}</span>
           </a>
         </p>
       </div>

@@ -21,16 +21,16 @@ class Category
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Especes", mappedBy="category")
      */
-    private $Category;
+    private $category;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Name;
+    private $name;
 
     public function __construct()
     {
-        $this->Category = new ArrayCollection();
+        $this->category = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -43,13 +43,13 @@ class Category
      */
     public function getCategory(): Collection
     {
-        return $this->Category;
+        return $this->category;
     }
 
     public function addCategory(Especes $category): self
     {
-        if (!$this->Category->contains($category)) {
-            $this->Category[] = $category;
+        if (!$this->category->contains($category)) {
+            $this->category[] = $category;
             $category->setCategory($this);
         }
 
@@ -58,8 +58,8 @@ class Category
 
     public function removeCategory(Especes $category): self
     {
-        if ($this->Category->contains($category)) {
-            $this->Category->removeElement($category);
+        if ($this->category->contains($category)) {
+            $this->category->removeElement($category);
             // set the owning side to null (unless already changed)
             if ($category->getCategory() === $this) {
                 $category->setCategory(null);
@@ -71,17 +71,17 @@ class Category
 
     public function getName(): ?string
     {
-        return $this->Name;
+        return $this->name;
     }
 
-    public function setName(string $Name): self
+    public function setName(string $name): self
     {
-        $this->Name = $Name;
+        $this->name = $name;
 
         return $this;
     }
 
     public function __toString() {
-        return $this->Name;
+        return $this->name;
     }
 }

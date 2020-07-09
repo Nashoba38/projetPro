@@ -32,60 +32,60 @@ easy_admin:
       list:
         fields:
           - { property: 'image', type: 'image', base_path: '%app.path.image%' }
-          - { property: 'NomFrancais', label: 'Nom Vernaculaire'}
-          - { property: 'NomLatin', label: 'Nom Latin'}
+          - { property: 'nomFrancais', label: 'Nom Vernaculaire'}
+          - { property: 'nomLatin', label: 'Nom Latin'}
           - { property: 'category', label: 'Catégorie'}
           
       form:
         fields:
           - { property: 'imageFile', type: 'file' }
-          - { property: 'NomFrancais', label: 'Nom Vernaculaire'}
-          - { property: 'NomLatin', label: 'Nom Latin'}
-          - { property: 'Description', label: 'Description' , type: 'fos_ckeditor' }
-          - { property: 'Longevite', label: "Longevite de l'animal" , type: 'fos_ckeditor' }
-          - { property: 'Alimentation', label: 'Régime alimentaire' , type: 'fos_ckeditor' }
-          - { property: 'Repartition', label: 'Répartition' , type: 'fos_ckeditor' }
-          - { property: 'Habitat', label: 'Habitat' , type: 'fos_ckeditor' }
-          - { property: 'Moeurs', label: 'Moeurs / Généralités' , type: 'fos_ckeditor' }
-          - { property: 'Reproduction', label: 'Reproduction / Floraison' , type: 'fos_ckeditor' }
-          - { property: 'Regne', label: 'Règne'}
-          - { property: 'Embranchement', label: "Embranchement"}
-          - { property: 'ClasseTaxo', label: 'Classe'}
-          - { property: 'Ordre', label: 'Ordre'}
-          - { property: 'Famille', label: 'Famille'}
-          - { property: 'StatutConservation', label: 'Statut de Conservation'}
+          - { property: 'nomFrancais', label: 'Nom Vernaculaire'}
+          - { property: 'nomLatin', label: 'Nom Latin'}
+          - { property: 'description', label: 'description' , type: 'fos_ckeditor' }
+          - { property: 'longevite', label: "longevite de l'animal" , type: 'fos_ckeditor' }
+          - { property: 'alimentation', label: 'Régime alimentaire' , type: 'fos_ckeditor' }
+          - { property: 'repartition', label: 'Répartition' , type: 'fos_ckeditor' }
+          - { property: 'habitat', label: 'habitat' , type: 'fos_ckeditor' }
+          - { property: 'moeurs', label: 'moeurs / Généralités' , type: 'fos_ckeditor' }
+          - { property: 'reproduction', label: 'reproduction / Floraison' , type: 'fos_ckeditor' }
+          - { property: 'regne', label: 'Règne'}
+          - { property: 'embranchement', label: "embranchement"}
+          - { property: 'classeTaxo', label: 'Classe'}
+          - { property: 'ordre', label: 'ordre'}
+          - { property: 'famille', label: 'famille'}
+          - { property: 'statutConservation', label: 'Statut de Conservation'}
           - { property: 'category', label: 'Catégorie'}
           - { property: 'sousCategory', label: 'Sous-Catégorie'}
-          - { property: 'pays', label: 'Pays', type: 'entity', type_options: { multiple: 'true', by_reference: 'false' }}
+          - { property: 'pays', label: 'pays', type: 'entity', type_options: { multiple: 'true', by_reference: 'false' }}
               
-    Category:
+    category:
       class: App\Entity\Category
       list:
         fields:
-          - { property: 'Category', label: 'Nombre'}
-          - { property: 'Name', label: 'Famille' }
+          - { property: 'category', label: 'Nombre'}
+          - { property: 'name', label: 'famille' }
       form:
         fields:
-          - { property: 'Name', label: 'Famille' }
+          - { property: 'name', label: 'famille' }
               
-    SousCategory:
+    sousCategory:
       class: App\Entity\SousCategory
       list:
         fields:
-          - { property: 'SousCategory', label: 'Nombre'}
-          - { property: 'Name', label: 'Sous-Famille' }
+          - { property: 'sousCategory', label: 'Nombre'}
+          - { property: 'name', label: 'Sous-famille' }
       form:
         fields:
-          - { property: 'Name', label: 'Sous-Famille' }
+          - { property: 'name', label: 'Sous-famille' }
 
-    Pays:
+    pays:
       class: App\Entity\Pays
       list:
         fields:
-          - { property: 'Name', label: 'Pays' }
+          - { property: 'name', label: 'pays' }
       form:
         fields:
-          - { property: 'Name', label: 'Pays' }
+          - { property: 'name', label: 'pays' }
             
     Photos:
       class: App\Entity\Photos
@@ -101,7 +101,7 @@ easy_admin:
           - { property: 'nomLatin', label: 'Nom latin : '}
           - { property: 'category', label: 'Catégorie : '}
           - { property: 'espece', label: 'Espèce à lier : '}
-          - { property: 'pays', label: 'Pays', type: 'entity', type_options: { multiple: 'true', by_reference: 'false' }}
+          - { property: 'pays', label: 'pays', type: 'entity', type_options: { multiple: 'true', by_reference: 'false' }}
                                   
     Article:      
       class: App\Entity\Article
