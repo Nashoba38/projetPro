@@ -58,3 +58,26 @@ $ ./bin/phpunit
 [2]: https://symfony.com/doc/current/reference/requirements.html
 [3]: https://symfony.com/doc/current/cookbook/configuration/web_server_configuration.html
 [4]: https://symfony.com/download
+
+
+Push modif on Prod
+------------
+
+Launch a terminal and run this commands :
+
+```bash
+$ ssh debian@**.***.***.***
+```
+Password is asked, write it.
+
+After that, go to the Project folder : 
+
+```bash
+$ cd /var/www/ProjetPro
+```
+
+To collect the new commits on the project, run : 
+
+```bash
+$ git pull origin
+```
