@@ -1,0 +1,28 @@
+{
+  "name": "projetpro",
+  "version": "1.0.0",
+  "description": "Symfony Demo Application\r ========================",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "hammerjs": "^2.0.8",
+    "angular2-image-gallery": "^8.0.0",
+    "font-awesome": "^4.7.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nashoba38/ProjetPro.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nashoba38/ProjetPro/issues"
+  },
+  "homepage": "https://github.com/Nashoba38/ProjetPro#readme"
+}
