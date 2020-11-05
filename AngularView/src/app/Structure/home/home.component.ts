@@ -36,7 +36,6 @@ export class HomeComponent implements OnInit {
     setTimeout(() => {
       this.getEspece();
       this.getPhoto();
-      console.log(this.photos);
     }, 5000);
 
   }
@@ -62,7 +61,7 @@ export class HomeComponent implements OnInit {
 
   getPhoto(): void {
     this.isReady = false;
-    let id = this.photos.length;
+    let id = this.photos.length +1;
     this.galeriesService.getPhoto(id).subscribe(image => (this.image = image));
     this.isReady = true;
   }
