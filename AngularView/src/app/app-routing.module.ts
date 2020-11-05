@@ -1,4 +1,3 @@
-import { LandingPageComponent } from './Structure/landing-page/landing-page.component';
 import { LoginComponent } from './Structure/login/login.component';
 import { GalerieAllComponent } from './Galeries/galerie-all/galerie-all.component';
 import { ArticlesComponent } from './Articles/articles/articles.component';
@@ -34,7 +33,7 @@ const routes: Routes = [
   { path: 'galerie', component: GalerieAllComponent },
   { path: 'register', component: LoginComponent },
   { path: 'biographie', component: BiographieComponent },
-  { path: '', component: LandingPageComponent },
+  { path: '',component: HomeComponent  },
 ];
 
 @NgModule({
