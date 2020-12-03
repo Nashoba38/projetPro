@@ -22,6 +22,6 @@ export class ArticleEthiqueComponent implements OnInit {
   }
 
   getArticle(): void { 
-    this.articleService.getArticle(5).subscribe(data => (this.article = data));
+    this.articleService.getArticle(1).subscribe(data => (this.article = data));
   }
 }
