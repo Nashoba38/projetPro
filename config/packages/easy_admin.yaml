@@ -127,9 +127,9 @@ easy_admin:
           - { property: 'sousTitre5', label: 'Titre de Paragraphe N°5'}
           - { property: 'paragraphe5', label: 'Paragraphe N°5' , type: 'fos_ckeditor'}
           - { property: 'nomenclature', label: 'Nomenclature' , type: 'fos_ckeditor'}
-          - { property: 'artImg1', label: 'Photo N°1', type: 'file' }
-          - { property: 'artImg2', label: 'Photo N°2', type: 'file' }
-          - { property: 'artImg3', label: 'Photo N°3', type: 'file' }
-          - { property: 'artImg4', label: 'Photo N°4', type: 'file' }
-          - { property: 'artImg5', label: 'Photo N°5', type: 'file' }
+          - { property: 'artImg1', label: 'Photo N°1', type: 'vich_image', base_path: '%app.path.articleImages%' }
+          - { property: 'artImg2', label: 'Photo N°2', type: 'vich_image', base_path: '%app.path.articleImages%' }
+          - { property: 'artImg3', label: 'Photo N°3', type: 'vich_image', base_path: '%app.path.articleImages%'}
+          - { property: 'artImg4', label: 'Photo N°4', type: 'vich_image', base_path: '%app.path.articleImages%' }
+          - { property: 'artImg5', label: 'Photo N°5', type: 'vich_image', base_path: '%app.path.articleImages%'}
 
