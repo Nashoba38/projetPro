@@ -54,7 +54,7 @@ export class HomeComponent implements OnInit {
   }
 
   getArticle() {
-    let article = this.articles.length +4;
+    let article = this.articles.length;
     this.articleService.getArticle(article).subscribe(data => ((this.article = data)));
     this.isReady = true;
   }

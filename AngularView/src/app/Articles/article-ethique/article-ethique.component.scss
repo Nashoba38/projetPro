@@ -15,58 +15,97 @@
 }
 
 
+h3 {
+  padding-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.nomenclature{
+  flex-wrap: wrap;
+  padding: 5% 15%;
+  width: 100%;
+  font-size: small;
+}
+
 .article {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   background-color: #ffffffd9;
-  width: 90%;
+  width: 70%;
   margin-left: auto;
   margin-right: auto;
   font-size: 1.1rem !important;
   font-weight: 500 !important;
+  
+  .bloc2,
+  .bloc3,
+  .bloc4,
+  .bloc5 {
+    border-top: 1px dashed black;
+  }
 
-  .bloc1 {
+  .bloc1,
+  .bloc3,
+  .bloc5 {
     display: flex;
     width: 100%;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: space-between;
+    
 
-    .par1 {
-      max-width: 1120px;
+    .par1,
+    .par3,
+    .par5 {
       flex-wrap: wrap;
-      padding: 30px;
-      text-align: center;
+      padding: 5% 15%;
+      width: 100%;
     }
 
-    .photo {
+    .photo1,
+    .photo3,
+    .photo5 {
       position: relative;
       margin: 20px;
       flex-wrap: wrap;
-      margin-left: auto;
-      margin-right: auto;
+      align-self: center;
 
       img {
         width: 100%;
-        max-width: 400px;
-        height: auto;
+        max-width: 500px;
       }
     }
   }
 
-  .par2,
-  .par4 {
-    flex-wrap: wrap;
-    padding: 30px;
-    border-top: 1px dashed black;
-    text-align: end;
-    background-color: #ffffff94;
-  }
 
-  .par3,
-  .par5 {
-    flex-wrap: wrap;
-    padding: 30px;
+  .bloc2,
+  .bloc4 {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #ffffff94;
     border-top: 1px dashed black;
+
+
+    .par2,
+    .par4 {
+      flex-wrap: wrap;
+      padding: 5% 15%;
+      width: 100%;
+    }
+
+    .photo2,
+    .photo4 {
+      position: relative;
+      margin: 20px;
+      flex-wrap: wrap;
+      align-self: center;
+
+      img {
+        width: 100%;
+        max-width: 500px;
+      }
+    }
   }
 }

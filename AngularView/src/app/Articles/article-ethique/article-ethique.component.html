@@ -11,15 +11,49 @@
 
 <div class="article">
   <div class="bloc1">
+    <h3 class="titrePar1" [innerHTML]="article.sousTitre1"></h3>
     <div class="par1" [innerHTML]="article.paragraphe1"></div>
-    <div class="photo">
-      <img src="{{urlBack}}/uploads/images/galerie/{{
+    <div class="photo1">
+      <img src="{{urlBack}}/uploads/images/articleImages/{{
                 article.image1
             }}" />
     </div>
   </div>
-  <div class="par2" [innerHTML]="article.paragraphe2"></div>
-  <div class="par3" [innerHTML]="article.paragraphe3"></div>
-  <div class="par4" [innerHTML]="article.paragraphe4"></div>
-  <div class="par5" [innerHTML]="article.paragraphe5"></div>
+  <div class="bloc2">
+    <h3 class="titrePar2" [innerHTML]="article.sousTitre2"></h3>
+    <div class="par2" [innerHTML]="article.paragraphe2"></div>
+    <div class="photo2">
+      <img src="{{urlBack}}/uploads/images/articleImages/{{
+              article.image2
+          }}" />
+    </div>
+  </div>
+  <div class="bloc3">
+    <h3 class="titrePar3" [innerHTML]="article.sousTitre3"></h3>
+    <div class="par3" [innerHTML]="article.paragraphe3"></div>
+    <div class="photo3">
+      <img src="{{urlBack}}/uploads/images/articleImages/{{
+              article.image3
+          }}" />
+    </div>
+  </div>
+  <div class="bloc4">
+    <h3 class="titrePar4" [innerHTML]="article.sousTitre4"></h3>
+    <div class="par4" [innerHTML]="article.paragraphe4"></div>
+    <div class="photo4">
+      <img src="{{urlBack}}/uploads/images/articleImages/{{
+              article.image4
+          }}" />
+    </div>
+  </div>
+  <div class="bloc5">
+    <h3 class="titrePar5" [innerHTML]="article.sousTitre5"></h3>
+    <div class="par5" [innerHTML]="article.paragraphe5"></div>
+    <div class="photo5">
+      <img src="{{urlBack}}/uploads/images/articleImages/{{
+              article.image5
+          }}" />
+    </div>
+    <div class="nomenclature" [innerHTML]="article.nomenclature"></div>
+  </div>
 </div>
