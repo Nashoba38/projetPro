@@ -115,7 +115,7 @@ easy_admin:
         fields:    
           - { property: 'titre', label: 'Titre' }
           - { property: 'date', label: 'Date de création' }
-          - { property: 'presentation', label: 'Présentation' , type: 'fos_ckeditor'}
+          - { property: 'presentation', label: 'Présentation'}
           - { property: 'sousTitre1', label: 'Titre de Paragraphe N°1'}
           - { property: 'paragraphe1', label: 'Paragraphe N°1' , type: 'fos_ckeditor'}
           - { property: 'sousTitre2', label: 'Titre de Paragraphe N°2'}

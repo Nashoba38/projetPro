@@ -14,7 +14,7 @@
       </div>
       <div class="content">
         <div class="image">
-          <a [routerLink]="['/articles/5']">
+          <a routerLink="/articles/{{ article.id }}" routerLinkActive="active">
             <ng-container *ngIf="article">
               <img src="{{urlBack}}/uploads/images/galerie/{{
                 article.image1}}" />
@@ -22,11 +22,7 @@
           </a>
         </div>
         <h5 class="hoverTitre" *ngIf="article">{{article.titre}}</h5>
-        <p>Dans cet article, je vais vous expliquer ce qui pour moi différencie un "photographe naturaliste" d'un
-          "photographe animalier" ...
-        </p>
-        <p>
-          Une simple histoire d'éthique !</p>
+        <p [innerHTML]="article.presentation"></p>
       </div>
     </div>
 
