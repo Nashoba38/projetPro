@@ -13,7 +13,9 @@ export class ArticleService {
 
   getArticles(): Observable<Article[]> {
     const articles = this.http.get<Article[]>(environment.urlBack+'/api/Articles');
+    console.log(articles);
     return articles;
+    
   }
 
 

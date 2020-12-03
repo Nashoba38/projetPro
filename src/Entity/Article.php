@@ -34,6 +34,11 @@ class Article
     /**
      * @ORM\Column(type="text")
      */
+    private $presentation;
+
+    /**
+     * @ORM\Column(type="text")
+     */
     private $paragraphe1;
 
     /**
@@ -55,6 +60,36 @@ class Article
      * @ORM\Column(type="text", nullable=true)
      */
     private $paragraphe5;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $sousTitre1;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $sousTitre2;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $sousTitre3;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $sousTitre4;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $sousTitre5;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $nomenclature;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -145,6 +180,18 @@ class Article
         return $this;
     }
 
+    public function getPresentation(): ?string
+    {
+        return $this->presentation;
+    }  
+
+    public function setPresentation(string $presentation): self
+    {
+        $this->presentation = $presentation;
+
+        return $this;
+    }
+    
     public function getParagraphe1(): ?string
     {
         return $this->paragraphe1;
@@ -201,6 +248,77 @@ class Article
     public function setParagraphe5(?string $paragraphe5): self
     {
         $this->paragraphe5 = $paragraphe5;
+
+        return $this;
+    }
+
+    public function getSousTitre1(): ?string
+    {
+        return $this->sousTitre1;
+    }
+
+    public function setSousTitre1(?string $sousTitre1): self
+    {
+        $this->sousTitre1 = $sousTitre1;
+
+        return $this;
+    }
+
+    public function getSousTitre2(): ?string
+    {
+        return $this->sousTitre2;
+    }
+
+    public function setSousTitre2(?string $sousTitre2): self
+    {
+        $this->sousTitre2 = $sousTitre2;
+
+        return $this;
+    }
+
+    public function getSousTitre3(): ?string
+    {
+        return $this->sousTitre3;
+    }
+
+    public function setSousTitre3(?string $sousTitre3): self
+    {
+        $this->sousTitre3 = $sousTitre3;
+
+        return $this;
+    }
+    public function getSousTitre4(): ?string
+    {
+        return $this->sousTitre4;
+    }
+
+    public function setSousTitre4(?string $sousTitre4): self
+    {
+        $this->sousTitre4 = $sousTitre4;
+
+        return $this;
+    }
+
+    public function getSousTitre5(): ?string
+    {
+        return $this->sousTitre5;
+    }
+
+    public function setSousTitre5(?string $sousTitre5): self
+    {
+        $this->sousTitre5 = $sousTitre5;
+
+        return $this;
+    }
+    
+    public function getNomenclature(): ?string
+    {
+        return $this->nomenclature;
+    }  
+
+    public function setNomenclature(?string $nomenclature): self
+    {
+        $this->nomenclature = $nomenclature;
 
         return $this;
     }

@@ -43,6 +43,7 @@ body {
     font-size: 250%;
     letter-spacing: 4px;
     color: white;
+    text-decoration: underline;
   }
 
   h2,
@@ -64,6 +65,8 @@ body {
     text-align: center;
     font-family: 'Quicksand', sans-serif;
     color: white;
+    margin-left: 5%;
+    margin-right: 5%;
     margin-bottom: 20px;
   }
 
@@ -159,7 +162,7 @@ span.bLine {
   text-align: center;
   transition: all 0.4s ease;
   font-size: 1.1em;
-  color: white;
+  color:  rgb(241, 255, 176);
   font-family: "Architects Daughter", cursive;
 
 

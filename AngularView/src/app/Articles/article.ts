@@ -1,6 +1,6 @@
 export class Article {
     date: { date: string, timezone: string, timezone_type: number };
-    titre: String;
+    titre: string;
     id: number;
     image1: string;
     image2: string;
@@ -12,4 +12,10 @@ export class Article {
     paragraphe3: Text;
     paragraphe4: Text;
     paragraphe5: Text;
+    sousTitre1: string;
+    sousTitre2: string;
+    sousTitre3: string;
+    sousTitre4: string;
+    sousTitre5: string;
+    nomenclature: Text;
 }

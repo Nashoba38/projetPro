@@ -12,7 +12,6 @@ import { ReptilesComponent } from './Genres/reptiles/reptiles.component';
 import { ArticlesComponent } from './Articles/articles/articles.component';
 import { GalerieAllComponent } from './Galeries/galerie-all/galerie-all.component';;
 import { LoginComponent } from './Structure/login/login.component';
-import { LandingPageComponent } from './Structure/landing-page/landing-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
@@ -30,6 +29,7 @@ import { VegetauxComponent } from './Genres/vegetaux/vegetaux.component';
 import { InvertebresComponent } from './Genres/invertebres/invertebres.component';
 import { ArticleEthiqueComponent } from './Articles/article-ethique/article-ethique.component';
 import { BiographieComponent } from './biographie/biographie.component';
+import { ArticlePhotographierReptilesComponent } from './Articles/article-photographier-reptiles/article-photographier-reptiles.component';
 
 
 
@@ -45,14 +45,14 @@ import { BiographieComponent } from './biographie/biographie.component';
     ArticlesComponent,
     GalerieAllComponent,
     LoginComponent,
-    LandingPageComponent,
     AmphibiensComponent,
     MammiferesComponent,
     OiseauxComponent,
     VegetauxComponent,
     InvertebresComponent,
     ArticleEthiqueComponent,
-    BiographieComponent
+    BiographieComponent,
+    ArticlePhotographierReptilesComponent
   ],
   imports: [
     HttpClientModule,

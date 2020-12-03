@@ -7,6 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Galeries } from '../../Galeries/galeries';
 import { GaleriesService } from 'src/app/Galeries/galeries.service.js';
 import { environment } from 'src/environments/environment';
+import { Article } from 'src/app/Articles/article.js';
 
 @Component({
   selector: 'app-home',
@@ -17,6 +18,7 @@ export class HomeComponent implements OnInit {
   urlBack: string = environment.urlBack;
   title = 'Découvrez la diversité de la faune autour du globe !';
   article = null;
+  articles: Article[] = [];
   especes: Especes[] = [];
   photos: Galeries[] = [];
   espece = null;
@@ -34,6 +36,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.getEspeces();
     this.getPhotos();
+    this.getArticles()
 
     setTimeout(() => {
 
@@ -45,8 +48,14 @@ export class HomeComponent implements OnInit {
 
   }
 
+
+  getArticles() {
+    this.articleService.getArticles().subscribe(data => ((this.articles = data)));
+  }
+
   getArticle() {
-    this.articleService.getArticle(5).subscribe(data => ((this.article = data)));
+    let article = this.articles.length +4;
+    this.articleService.getArticle(article).subscribe(data => ((this.article = data)));
     this.isReady = true;
   }
 
@@ -65,7 +74,7 @@ export class HomeComponent implements OnInit {
   }
 
   getPhoto() {
-    let numero = this.photos.length +2;
+    let numero = this.photos.length +1;
     console.log(numero);
     this.galeriesService.getPhoto(numero).subscribe(image => (this.image = image));
     this.isReady = true;

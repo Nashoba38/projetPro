@@ -1,4 +1,3 @@
-
 @media (max-width:550px) {
   .topPage {
     margin-top: 25% !important;
@@ -24,9 +23,9 @@
   width: 90%;
   margin-left: auto;
   margin-right: auto;
-  font-size: 1.1rem!important;
-  font-weight: 500!important;
-  
+  font-size: 1.1rem !important;
+  font-weight: 500 !important;
+
   .bloc1 {
     display: flex;
     width: 100%;
@@ -44,6 +43,8 @@
       position: relative;
       margin: 20px;
       flex-wrap: wrap;
+      margin-left: auto;
+      margin-right: auto;
 
       img {
         width: 100%;

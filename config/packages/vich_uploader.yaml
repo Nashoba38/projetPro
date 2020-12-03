@@ -13,4 +13,20 @@ vich_uploader:
         artImg1:
             uri_prefix: '%app.path.articleImages%'
             upload_destination: '%kernel.project_dir%/public%app.path.articleImages%'
+
+        artImg2:
+            uri_prefix: '%app.path.articleImages%'
+            upload_destination: '%kernel.project_dir%/public%app.path.articleImages%'
+
+        artImg3:
+            uri_prefix: '%app.path.articleImages%'
+            upload_destination: '%kernel.project_dir%/public%app.path.articleImages%'
+
+        artImg4:
+            uri_prefix: '%app.path.articleImages%'
+            upload_destination: '%kernel.project_dir%/public%app.path.articleImages%'
+
+        artImg5:
+            uri_prefix: '%app.path.articleImages%'
+            upload_destination: '%kernel.project_dir%/public%app.path.articleImages%'
         

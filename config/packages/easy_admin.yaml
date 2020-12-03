@@ -115,11 +115,18 @@ easy_admin:
         fields:    
           - { property: 'titre', label: 'Titre' }
           - { property: 'date', label: 'Date de création' }
+          - { property: 'presentation', label: 'Présentation' , type: 'fos_ckeditor'}
+          - { property: 'sousTitre1', label: 'Titre de Paragraphe N°1'}
           - { property: 'paragraphe1', label: 'Paragraphe N°1' , type: 'fos_ckeditor'}
+          - { property: 'sousTitre2', label: 'Titre de Paragraphe N°2'}
           - { property: 'paragraphe2', label: 'Paragraphe N°2' , type: 'fos_ckeditor'}
+          - { property: 'sousTitre3', label: 'Titre de Paragraphe N°3'}
           - { property: 'paragraphe3', label: 'Paragraphe N°3' , type: 'fos_ckeditor'}
+          - { property: 'sousTitre4', label: 'Titre de Paragraphe N°4'}
           - { property: 'paragraphe4', label: 'Paragraphe N°4' , type: 'fos_ckeditor'}
+          - { property: 'sousTitre5', label: 'Titre de Paragraphe N°5'}
           - { property: 'paragraphe5', label: 'Paragraphe N°5' , type: 'fos_ckeditor'}
+          - { property: 'nomenclature', label: 'Nomenclature' , type: 'fos_ckeditor'}
           - { property: 'artImg1', label: 'Photo N°1', type: 'file' }
           - { property: 'artImg2', label: 'Photo N°2', type: 'file' }
           - { property: 'artImg3', label: 'Photo N°3', type: 'file' }

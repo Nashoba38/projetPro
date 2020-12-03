@@ -26,27 +26,23 @@
 
 
 
-<div class="articlesContainer" *ngFor="let article of articles ; let i=index;">
-  <div class="articleBox">
+<div class="articlesContainer">
+  <div class="articleBox" *ngFor="let article of articles ; let i=index;">
     <div class="image">
-      <a [routerLink]="['/articles/5']">
+      <a routerLink="/articles/{{article.id}}">
         <img src="{{urlBack}}/uploads/images/galerie/{{
       article.image1
     }}" />
       </a>
     </div>
     <div class="titreArt">
-      <h4>{{article.titre}}</h4>
+      <h4 [innerHTML]="article.titre"></h4>
     </div>
     <div class="presentation">
-      <p>Dans cet article, je vais vous expliquer ce qui pour moi différencie un "photographe naturaliste" d'un
-        "photographe animalier" ...
-      </p>
-      <p>
-        Une simple histoire d'éthique !</p>
+      <p [innerHTML]="article.presentation"></p>
     </div>
     <div class="btn-container">
-      <button class="btn" routerLink="/articles/5">Lire</button>
+      <button class="btn" routerLink="/articles/{{article.id}}">Lire</button>
     </div>
   </div>
 </div>

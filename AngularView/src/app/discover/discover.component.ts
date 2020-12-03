@@ -43,6 +43,8 @@ export class DiscoverComponent implements OnInit {
 
   getEspeces(): void {
     this.especesService.getEspeces().subscribe(data => ((this.especes = data)));
+    console.log(this.especes);
+    
   }
 
 
