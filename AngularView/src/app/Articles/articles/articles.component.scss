@@ -40,7 +40,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 90%;
+  background-color: #00000080;
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
 
@@ -79,6 +80,7 @@
       padding: 10px 0px;
       background-color: #f1ffb0d4;
       border-bottom: 1px dashed black;
+
       h4 {
         margin-bottom: 0 !important;
         color: black;
@@ -102,4 +104,3 @@
     }
   }
 }
-
