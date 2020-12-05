@@ -42,7 +42,7 @@ i {
 //Ligne où il y a le nom de l'espèce et la photo
 .titreBox {
   text-align: center;
-  margin-top: 5%;
+  margin-top: 10%;
   margin-bottom: 2%;
   width: 90%;
   display: flex;
@@ -82,10 +82,11 @@ i {
 
 .choixTri {
   background-color: rgba(255, 255, 255, 0.76);
-  width: 80%;
+  width: 65%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 5%;
+  border-radius: 3px;
 
   .contenant {
     height: 100%;
@@ -102,11 +103,13 @@ i {
 .containerTexte {
   padding: 10px;
   margin: 10px;
-  width: 95%;
+  width: 65%;
   background-color: rgb(255, 255, 255);
   display: flex;
   flex-flow: wrap;
-  justify-content: center !important;
+  justify-content: center !important;   
+  box-shadow: inset 0px 0px 11px 3px #F1FFB0;
+  border-radius: 2px;
 
   .contenu {
     width: 80%;
@@ -123,5 +126,7 @@ i {
   flex-direction: column;
   background-color: rgb(255, 255, 255);
   margin: 10px;
+  box-shadow: 0px 0px 11px 3px #000000;
+  border-radius: 2px;
 }
 

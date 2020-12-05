@@ -101,14 +101,8 @@ body {
   justify-content: center;
 }
 
-
-.mat-tab-body-wrapper {
-  background-color: rgba(0, 0, 0, 0.75);
-}
-
 .mat-tab-labels {
   background-color: white;
-  color: black;
 }
 
 // bouton retour 
@@ -218,4 +212,8 @@ div.backBtn:hover span.bLine {
 
 .mat-progress-spinner circle, .mat-spinner circle {
   stroke: #92c51c !important;
+}
+
+mat-ink-bar.mat-ink-bar {
+  background-color: black!important;
 }

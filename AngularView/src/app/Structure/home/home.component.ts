@@ -74,7 +74,7 @@ export class HomeComponent implements OnInit {
   }
 
   getPhoto() {
-    let numero = this.photos.length +1;
+    let numero = this.photos.length;
     console.log(numero);
     this.galeriesService.getPhoto(numero).subscribe(image => (this.image = image));
     this.isReady = true;
