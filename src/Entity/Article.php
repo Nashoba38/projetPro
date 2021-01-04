@@ -87,6 +87,31 @@ class Article
     private $sousTitre5;
 
     /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $legende1;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $legende2;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $legende3;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $legende4;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $legende5;
+
+    /**
      * @ORM\Column(type="text", nullable=true)
      */
     private $nomenclature;
@@ -307,6 +332,65 @@ class Article
     public function setSousTitre5(?string $sousTitre5): self
     {
         $this->sousTitre5 = $sousTitre5;
+
+        return $this;
+    }
+
+    public function getLegende1(): ?string
+    {
+        return $this->legende1;
+    }
+
+    public function setLegende1(?string $legende1): self
+    {
+        $this->legende1 = $legende1;
+
+        return $this;
+    }
+
+    public function getLegende2(): ?string
+    {
+        return $this->legende2;
+    }
+
+    public function setLegende2(?string $legende2): self
+    {
+        $this->legende2 = $legende2;
+
+        return $this;
+    }
+
+    public function getLegende3(): ?string
+    {
+        return $this->legende3;
+    }
+
+    public function setLegende3(?string $legende3): self
+    {
+        $this->legende3 = $legende3;
+
+        return $this;
+    }
+    public function getLegende4(): ?string
+    {
+        return $this->legende4;
+    }
+
+    public function setLegende4(?string $legende4): self
+    {
+        $this->legende4 = $legende4;
+
+        return $this;
+    }
+
+    public function getLegende5(): ?string
+    {
+        return $this->legende5;
+    }
+
+    public function setLegende5(?string $legende5): self
+    {
+        $this->legende5 = $legende5;
 
         return $this;
     }

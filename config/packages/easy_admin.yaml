@@ -128,8 +128,13 @@ easy_admin:
           - { property: 'paragraphe5', label: 'Paragraphe N°5' , type: 'fos_ckeditor'}
           - { property: 'nomenclature', label: 'Nomenclature' , type: 'fos_ckeditor'}
           - { property: 'artImg1', label: 'Photo N°1', type: 'vich_image', base_path: '%app.path.articleImages%' }
+          - { property: 'legende1', label: 'Légende N°1'}
           - { property: 'artImg2', label: 'Photo N°2', type: 'vich_image', base_path: '%app.path.articleImages%' }
+          - { property: 'legende2', label: 'Légende N°2'}
           - { property: 'artImg3', label: 'Photo N°3', type: 'vich_image', base_path: '%app.path.articleImages%'}
+          - { property: 'legende3', label: 'Légende N°3'}
           - { property: 'artImg4', label: 'Photo N°4', type: 'vich_image', base_path: '%app.path.articleImages%' }
+          - { property: 'legende4', label: 'Légende N°4'}
           - { property: 'artImg5', label: 'Photo N°5', type: 'vich_image', base_path: '%app.path.articleImages%'}
+          - { property: 'legende5', label: 'Légende N°5'}
 

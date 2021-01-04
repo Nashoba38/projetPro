@@ -41,6 +41,11 @@ class ArticleController extends AbstractController
             $image3 = $article->getImage3();
             $image4 = $article->getImage4();
             $image5 = $article->getImage5();
+            $legende1 = $article->getLegende1();
+            $legende2 = $article->getLegende2();
+            $legende3 = $article->getLegende3();
+            $legende4 = $article->getLegende4();
+            $legende5 = $article->getLegende5();
             
 
 
@@ -65,6 +70,12 @@ class ArticleController extends AbstractController
                 "image3" => $image3,
                 "image4" => $image4,
                 "image5" => $image5,
+                "legende1" => $legende1,
+                "legende2" => $legende2,
+                "legende3" => $legende3,
+                "legende4" => $legende4,
+                "legende5" => $legende5,
+                
             ];
             $articlesArray[] = $articleArray; //équivaut push en JS
         }
@@ -100,7 +111,12 @@ class ArticleController extends AbstractController
         $image3 = $article->getImage3();
         $image4 = $article->getImage4();
         $image5 = $article->getImage5();
-        
+        $legende1 = $article->getLegende1();
+        $legende2 = $article->getLegende2();
+        $legende3 = $article->getLegende3();
+        $legende4 = $article->getLegende4();
+        $legende5 = $article->getLegende5();
+            
         $articleId = [
             "id" => $id,
             "date" => $date,
@@ -122,6 +138,11 @@ class ArticleController extends AbstractController
             "image3" => $image3,
             "image4" => $image4,
             "image5" => $image5,
+            "legende1" => $legende1,
+            "legende2" => $legende2,
+            "legende3" => $legende3,
+            "legende4" => $legende4,
+            "legende5" => $legende5,
         ];
         return new JsonResponse($articleId);
     }
