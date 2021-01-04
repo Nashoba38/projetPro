@@ -1,0 +1,64 @@
+<app-menu></app-menu>
+<div class="backBtn">
+  <span class="line tLine"></span>
+  <span class="line mLine"></span>
+  <span class="label" onclick="goBack()">Retour</span>
+  <span class="line bLine"></span>
+</div>
+<div class="topPage">
+  <h1 [innerHTML]="article.titre"></h1>
+</div>
+
+<div class="article">
+  <div class="bloc1">
+    <h3 class="titrePar1" *ngIf="article.sousTitre1" [innerHTML]="article.sousTitre1"></h3>
+    <div class="par1" [innerHTML]="article.paragraphe1"></div>
+    <div class="photo1">
+      <img src="{{urlBack}}/uploads/images/articleImages/{{
+                article.image1
+            }}" />
+            <p class="legende" [innerHTML]="article.legende1"></p>
+    </div>
+  </div>
+  <div class="bloc2">
+    <h3 class="titrePar2" *ngIf="article.sousTitre2" [innerHTML]="article.sousTitre2"></h3>
+    <div class="par2" *ngIf="article.paragraphe2" [innerHTML]="article.paragraphe2"></div>
+    <div class="photo2" *ngIf="article.image2">
+      <img *ngIf="article.image2" src="{{urlBack}}/uploads/images/articleImages/{{
+              article.image2
+          }}" />
+          <p *ngIf="article.legende2" class="legende" [innerHTML]="article.legende2"></p>
+    </div>
+  </div>
+  <div class="bloc3">
+    <h3 class="titrePar3" *ngIf="article.sousTitre3" [innerHTML]="article.sousTitre3"></h3>
+    <div class="par3" *ngIf="article.paragraphe3" [innerHTML]="article.paragraphe3"></div>
+    <div class="photo3" *ngIf="article.image3">
+      <img *ngIf="article.image3" src="{{urlBack}}/uploads/images/articleImages/{{
+              article.image3
+          }}" />
+          <p  *ngIf="article.legende3" class="legende" [innerHTML]="article.legende3"></p>
+    </div>
+  </div>
+  <div class="bloc4">
+    <h3 class="titrePar4" *ngIf="article.sousTitre4" [innerHTML]="article.sousTitre4"></h3>
+    <div class="par4" *ngIf="article.paragraphe4" [innerHTML]="article.paragraphe4"></div>
+    <div class="photo4" >
+      <img *ngIf="article.image4" src="{{urlBack}}/uploads/images/articleImages/{{
+              article.image4
+          }}" />
+          <p *ngIf="article.legende4" class="legende" [innerHTML]="article.legende4"></p>
+    </div>
+  </div>
+  <div class="bloc5">
+    <h3 class="titrePar5"  *ngIf="article.sousTitre5" [innerHTML]="article.sousTitre5"></h3>
+    <div class="par5" *ngIf="article.paragraphe5" [innerHTML]="article.paragraphe5"></div>
+    <div class="photo5">
+      <img *ngIf="article.image5" src="{{urlBack}}/uploads/images/articleImages/{{
+              article.image5
+          }}" />
+          <p *ngIf="article.legende5" class="legende" [innerHTML]="article.legende5"></p>
+    </div>
+    <div class="nomenclature" *ngIf="article.nomenclature" [innerHTML]="article.nomenclature"></div>
+  </div>
+</div>

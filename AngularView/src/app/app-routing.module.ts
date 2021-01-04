@@ -16,6 +16,7 @@ import { InvertebresComponent } from './Genres/invertebres/invertebres.component
 import { ArticleEthiqueComponent } from './Articles/article-ethique/article-ethique.component';
 import { BiographieComponent } from './biographie/biographie.component';
 import { ArticlePhotographierReptilesComponent } from './Articles/article-photographier-reptiles/article-photographier-reptiles.component';
+import { ArticleSortieHelicoComponent } from './Articles/article-sortie-helico/article-sortie-helico.component';
 
 
 const routes: Routes = [
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'articles', component: ArticlesComponent },
   { path: 'articles/1', component: ArticleEthiqueComponent },
   { path: 'articles/2', component: ArticlePhotographierReptilesComponent },
+  { path: 'articles/3', component: ArticleSortieHelicoComponent },
   { path: 'galerie', component: GalerieAllComponent },
   { path: 'register', component: LoginComponent },
   { path: 'biographie', component: BiographieComponent },

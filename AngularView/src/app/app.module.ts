@@ -30,6 +30,7 @@ import { InvertebresComponent } from './Genres/invertebres/invertebres.component
 import { ArticleEthiqueComponent } from './Articles/article-ethique/article-ethique.component';
 import { BiographieComponent } from './biographie/biographie.component';
 import { ArticlePhotographierReptilesComponent } from './Articles/article-photographier-reptiles/article-photographier-reptiles.component';
+import { ArticleSortieHelicoComponent } from './Articles/article-sortie-helico/article-sortie-helico.component';
 
 
 
@@ -52,7 +53,8 @@ import { ArticlePhotographierReptilesComponent } from './Articles/article-photog
     InvertebresComponent,
     ArticleEthiqueComponent,
     BiographieComponent,
-    ArticlePhotographierReptilesComponent
+    ArticlePhotographierReptilesComponent,
+    ArticleSortieHelicoComponent
   ],
   imports: [
     HttpClientModule,
