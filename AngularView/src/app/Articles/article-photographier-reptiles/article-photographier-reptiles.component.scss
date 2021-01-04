@@ -69,15 +69,20 @@ h3 {
       margin: 20px;
       flex-wrap: wrap;
       align-self: center;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
 
       img {
         width: 100%;
         max-width: 500px;
+        align-self: center;
       }
 
       .legende{
         font-size: small;
         font-style: italic;
+        text-align: center;
       }
     }
   }
@@ -106,15 +111,20 @@ h3 {
       margin: 20px;
       flex-wrap: wrap;
       align-self: center;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
 
       img {
         width: 100%;
         max-width: 500px;
+        align-self: center;
       }
 
       .legende{
         font-size: small;
         font-style: italic;
+        text-align: center;
       }
     }
   }
