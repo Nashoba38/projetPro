@@ -17,5 +17,10 @@ export class Article {
     sousTitre3: string;
     sousTitre4: string;
     sousTitre5: string;
+    legende1: string;
+    legende2: string;
+    legende3: string;
+    legende4: string;
+    legende5: string;
     nomenclature: Text;
 }
