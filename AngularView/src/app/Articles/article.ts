@@ -1,6 +1,7 @@
 export class Article {
     date: { date: string, timezone: string, timezone_type: number };
     titre: string;
+    presentation: Text;
     id: number;
     image1: string;
     image2: string;

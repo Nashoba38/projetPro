@@ -33,18 +33,21 @@ export class DiscoverComponent implements OnInit {
   madaChecked = false;
   allPaysChecked = false;
   erreurMessage: string;
+  isReady: boolean;
 
   constructor(
     private especesService: EspecesService) { }
 
   ngOnInit() {
-    this.getEspeces();
+    this.isReady = false;
+    setTimeout(() => {
+      this.getEspeces();
+      this.isReady = true;
+    }, 1500);
   }
 
   getEspeces(): void {
     this.especesService.getEspeces().subscribe(data => ((this.especes = data)));
-    console.log(this.especes);
-    
   }
 
 
@@ -70,8 +73,6 @@ export class DiscoverComponent implements OnInit {
     if (this.filteredSpecies.length === 0 && this.category.length !== 0) {
       this.erreurMessage = "Il n'y a pas encore de fiche qui correspond à cette espèce."
     }
-
-    console.log(this.filteredSpecies);
   }
 
   displayChecked(espece: Especes) {
@@ -96,8 +97,6 @@ export class DiscoverComponent implements OnInit {
       } else if (this.displayChecked(this.especes[i]) && elem.nomFrancais.toLowerCase().includes(searchValue.toLowerCase())) {
         this.filteredSpecies.push(elem);
       }
-
-      console.log(this.filteredSpecies);
     }
     if (this.filteredSpecies.length === 0) {
       this.erreurMessage = "Il n'y a pas encore de fiches qui correspondent à ces critères."

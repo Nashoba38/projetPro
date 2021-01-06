@@ -48,6 +48,9 @@
 </div>
 
 <div class="gallery">
+  <ng-container *ngIf="!isReady">
+    <mat-spinner class="loader"></mat-spinner>
+  </ng-container>
   <ng-container *ngIf="filteredSpecies.length > 0 && !erreurMessage">
     <ng-container *ngFor="let espece of filteredSpecies ; let i=index;">
       <a routerLink="/detailEspece/{{ espece.id }}" routerLinkActive="active">

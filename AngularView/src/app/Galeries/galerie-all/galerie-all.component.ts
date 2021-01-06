@@ -1,17 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import '../../../assets/js/script.js';
-import { Location } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
 import { GaleriesService } from '../galeries.service';
-import { FormsModule } from '@angular/forms';
-import { Especes } from 'src/app/Especes/especes.js';
-import { Categories } from 'src/app/Genres/categories';
 import { EspecesService } from 'src/app/Especes/especes.service.js';
-import { CategoriesService } from 'src/app/Genres/categories.service';
-import { DetailEspeceComponent } from 'src/app/Especes/detail-espece/detail-espece.component.js';
-import { Pipe, PipeTransform } from '@angular/core';
 import { Galeries } from '../galeries.js';
-import { element } from 'protractor';
 import { environment } from 'src/environments/environment.js';
 
 
@@ -50,21 +41,21 @@ export class GalerieAllComponent implements OnInit {
   madaChecked = false;
   allPaysChecked = false;
   erreurMessage: string;
+  isReady: boolean;
 
   searchText;
 
   constructor(
     private galeriesService: GaleriesService,
-    private categoriesService: CategoriesService,
-    private especesService: EspecesService,
-    private route: ActivatedRoute,
-    private location: Location) { }
+    private especesService: EspecesService) { }
 
   ngOnInit() {
-    this.getPhotos();
-    this.getEspeces();
-    console.log(this.filteredPhotos);
-
+    this.isReady = false;
+    setTimeout(() => {
+      this.getPhotos();
+      this.getEspeces();
+      this.isReady = true;
+    }, 3000);
   }
 
   getPhotos() {
@@ -75,7 +66,6 @@ export class GalerieAllComponent implements OnInit {
   }
 
   openModal(i) {
-    console.log(this.filteredPhotos);
     if (this.filteredPhotos.length > 0) {
       this.modal = this.filteredPhotos[i];
       this.currentIndex = i;
@@ -143,8 +133,6 @@ export class GalerieAllComponent implements OnInit {
     if (this.filteredPhotos.length === 0 && this.category.length !== 0 && this.pays.length !== 0) {
       this.erreurMessage = "Il n'y a pas encore de photos qui correspondent à ces critères."
     }
-
-    console.log(this.filteredPhotos);
   }
 
 
@@ -178,7 +166,6 @@ export class GalerieAllComponent implements OnInit {
         this.filteredPhotos.push(elem);
       }
 
-      console.log(this.filteredPhotos);
     }
     if (this.filteredPhotos.length === 0) {
       this.erreurMessage = "Il n'y a pas encore de photos qui correspondent à ces critères."
