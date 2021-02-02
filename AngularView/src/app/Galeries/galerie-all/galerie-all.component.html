@@ -17,7 +17,10 @@
 </div>
 
 <div class="filtres">
-  <div class="categ">
+  <ng-container *ngIf="!isReady">
+    <mat-spinner class="loader"></mat-spinner>
+  </ng-container>
+  <div class="categ" *ngIf="isReady">
     <h6>Catégories : </h6>
     <section class="categCheckBox">
       <mat-checkbox class="choices" onclick="document.getElementById('searchbar').value =''"
@@ -39,7 +42,7 @@
         (change)="getCheckedValue(2)" [(ngModel)]="reptiChecked">Reptiles</mat-checkbox>
     </section>
   </div>
-  <div class="pays">
+  <div class="pays" *ngIf="isReady">
     <h6>pays : </h6>
     <section class="paysCheckBox">
       <mat-checkbox class="choices" onclick="document.getElementById('searchbar').value =''"
@@ -54,7 +57,7 @@
       </mat-checkbox>
     </section>
   </div>
-  <div class="search">
+  <div class="search" *ngIf="isReady">
     <label for="searchValue">
       <h6>Vous cherchez une espèce ou un genre en particulier ?</h6>
     </label>
@@ -63,10 +66,7 @@
   </div>
 </div>
 
-<div class="gallery">
-  <ng-container *ngIf="!isReady">
-    <mat-spinner class="loader"></mat-spinner>
-  </ng-container>
+<div class="gallery" *ngIf="isReady">
   <ng-container *ngIf="filteredPhotos.length > 0 && !erreurMessage">
     <ng-container *ngFor="let photo of filteredPhotos ; let i=index;">
         
