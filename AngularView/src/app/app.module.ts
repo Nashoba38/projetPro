@@ -56,7 +56,7 @@ import { ArticleFleursHiverComponent } from './Articles/article-fleurs-hiver/art
     BiographieComponent,
     ArticlePhotographierReptilesComponent,
     ArticleSortieHelicoComponent,
-    ArticleFleursHiverComponent
+    ArticleFleursHiverComponent,
   ],
   imports: [
     HttpClientModule,

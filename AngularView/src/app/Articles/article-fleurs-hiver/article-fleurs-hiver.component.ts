@@ -16,6 +16,7 @@ export class ArticleFleursHiverComponent implements OnInit {
     this.getArticle()
   }
 
+  
   getArticle(): void {
     this.articleService.getArticle(6).subscribe(data => (this.article = data));
 
