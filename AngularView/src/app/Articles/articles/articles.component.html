@@ -31,18 +31,19 @@
     <mat-spinner class="loader"></mat-spinner>
   </ng-container>
   <div class="articleBox" *ngFor="let article of articles ; let i=index;">
-    <div class="image">
-      <a routerLink="/articles/{{article.id}}">
+    <a routerLink="/articles/{{article.id}}">
+      <div class="image">
+
         <img src="{{urlBack}}/uploads/images/galerie/{{
       article.image1
     }}" />
-      </a>
-    </div>
-    <div class="titreArt">
-      <h4 [innerHTML]="article.titre"></h4>
-    </div>
-    <div class="presentation">
-      <p [innerHTML]="article.presentation"></p>
-    </div>
+      </div>
+      <div class="titreArt">
+        <h4 [innerHTML]="article.titre"></h4>
+      </div>
+      <div class="presentation">
+        <p [innerHTML]="article.presentation"></p>
+      </div>
+    </a>
   </div>
 </div>

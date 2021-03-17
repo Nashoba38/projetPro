@@ -32,7 +32,7 @@ import { BiographieComponent } from './biographie/biographie.component';
 import { ArticlePhotographierReptilesComponent } from './Articles/article-photographier-reptiles/article-photographier-reptiles.component';
 import { ArticleSortieHelicoComponent } from './Articles/article-sortie-helico/article-sortie-helico.component';
 import { ArticleFleursHiverComponent } from './Articles/article-fleurs-hiver/article-fleurs-hiver.component';
-
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -62,6 +62,7 @@ import { ArticleFleursHiverComponent } from './Articles/article-fleurs-hiver/art
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
+    RouterModule,
     BrowserAnimationsModule,
     MatTabsModule,
     MatCardModule,
