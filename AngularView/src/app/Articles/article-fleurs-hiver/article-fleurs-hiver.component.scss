@@ -1,0 +1,132 @@
+@media (max-width:550px) {
+    .topPage {
+      margin-top: 25% !important;
+    }
+  }
+  
+  .topPage {
+    margin-top: 8%;
+  
+    h1 {
+      text-align: center;
+      font-size: 50px;
+      margin-bottom: 50px;
+    }
+  }
+  
+  h3 {
+    padding: 3% 15%;
+    margin-left: auto;
+    text-align: center;
+    margin-right: auto;
+  }
+  .nomenclature{
+    flex-wrap: wrap;
+    padding: 5% 15%;
+    width: 100%;
+    font-size: small;
+  }
+  
+  .article {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #ffffffd9;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.1rem !important;
+    font-weight: 500 !important;
+    
+    .bloc2,
+    .bloc3,
+    .bloc4,
+    .bloc5 {
+      border-top: 1px dashed black;
+    }
+  
+    .bloc1,
+    .bloc3,
+    .bloc5 {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      justify-content: space-between;
+      
+  
+      .par1,
+      .par3,
+      .par5 {
+        flex-wrap: wrap;
+        padding: 1% 10%;
+        width: 100%;
+      }
+  
+      .photo1,
+      .photo3,
+      .photo5 {
+        position: relative;
+        margin: 20px;
+        flex-wrap: wrap;
+        align-self: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+  
+        img {
+          width: 100%;
+          max-width: 500px;
+          align-self: center;
+        }
+  
+        .legende{
+          font-size: small;
+          font-style: italic;
+          text-align: center;
+        }
+      }
+    }
+  
+  
+    .bloc2,
+    .bloc4 {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: #ffffff94;
+      border-top: 1px dashed black;
+  
+  
+      .par2,
+      .par4 {
+        flex-wrap: wrap;
+        padding: 1% 10%;
+        width: 100%;
+      }
+  
+      .photo2,
+      .photo4 {
+        position: relative;
+        margin: 20px;
+        flex-wrap: wrap;
+        align-self: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+  
+        img {
+          width: 100%;
+          max-width: 500px;
+          align-self: center;
+        }
+  
+        .legende{
+          font-size: small;
+          font-style: italic;
+          text-align: center;
+        }
+      }
+    }
+  }
+  
