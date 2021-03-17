@@ -31,6 +31,7 @@ import { ArticleEthiqueComponent } from './Articles/article-ethique/article-ethi
 import { BiographieComponent } from './biographie/biographie.component';
 import { ArticlePhotographierReptilesComponent } from './Articles/article-photographier-reptiles/article-photographier-reptiles.component';
 import { ArticleSortieHelicoComponent } from './Articles/article-sortie-helico/article-sortie-helico.component';
+import { ArticleFleursHiverComponent } from './Articles/article-fleurs-hiver/article-fleurs-hiver.component';
 
 
 
@@ -54,7 +55,8 @@ import { ArticleSortieHelicoComponent } from './Articles/article-sortie-helico/a
     ArticleEthiqueComponent,
     BiographieComponent,
     ArticlePhotographierReptilesComponent,
-    ArticleSortieHelicoComponent
+    ArticleSortieHelicoComponent,
+    ArticleFleursHiverComponent
   ],
   imports: [
     HttpClientModule,
