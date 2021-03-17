@@ -35,7 +35,7 @@ const routes: Routes = [
   { path: 'articles/1', component: ArticleEthiqueComponent },
   { path: 'articles/2', component: ArticlePhotographierReptilesComponent },
   { path: 'articles/3', component: ArticleSortieHelicoComponent },
-  { path: 'articles/4', component: ArticleFleursHiverComponent },
+  { path: 'articles/7', component: ArticleFleursHiverComponent },
   { path: 'galerie', component: GalerieAllComponent },
   { path: 'register', component: LoginComponent },
   { path: 'biographie', component: BiographieComponent },
