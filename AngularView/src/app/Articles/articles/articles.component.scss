@@ -58,6 +58,8 @@
     &:hover {
       -webkit-transform: scale(1.025);
       transform: scale(1.025);
+      text-transform: none;
+      background-color: #d9ebff;
     }
 
     .image {
